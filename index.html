@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco Edu — Éducation Durable et Culturelle</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Eco Edu">
+<link rel="apple-touch-icon" href="logo_ecoedu.jpeg">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f9ff;color:#0c4a6e;}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(14,165,233,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.nav-logo img{width:40px;height:40px;border-radius:10px;object-fit:cover;}
+.nav-brand{font-size:20px;font-weight:700;color:#0c4a6e;}
+.nav-links{display:flex;gap:6px;}
+.nav-links a{font-size:14px;color:#0369a1;text-decoration:none;cursor:pointer;padding:8px 16px;border-radius:8px;transition:background 0.15s;}
+.nav-links a:hover{background:#e0f2fe;color:#0c4a6e;}
+.nav-links a.active{background:#0ea5e9;color:#fff;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.lang-sel{font-size:13px;color:#0369a1;background:#e0f2fe;border:1px solid #bae6fd;border-radius:8px;padding:7px 14px;cursor:pointer;}
+.btn-dl{background:#0ea5e9;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;}
+
+/* PAGES */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ===================== PAGE ACCUEIL ===================== */
+.hero{background:#e0f7fa;overflow:hidden;}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;min-height:380px;max-width:1100px;margin:0 auto;padding:0 32px;}
+.hero-text{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:48px 32px 48px 0;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #7dd3fc;border-radius:20px;padding:6px 14px;width:fit-content;font-size:12px;color:#0284c7;font-weight:500;}
+.hero-h1{font-size:32px;font-weight:700;color:#0c4a6e;line-height:1.3;}
+.hero-h1 em{color:#0ea5e9;font-style:normal;}
+.hero-sub{font-size:15px;color:#0369a1;line-height:1.7;max-width:400px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:#0ea5e9;color:#fff;border:none;padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;}
+.btn-secondary{background:#fff;color:#0284c7;border:1px solid #7dd3fc;padding:12px 28px;border-radius:10px;font-size:14px;cursor:pointer;}
+.hero-flags{display:flex;gap:8px;flex-wrap:wrap;}
+.flag-chip{background:#fff;border:1px solid #bae6fd;border-radius:16px;padding:5px 12px;font-size:12px;color:#0284c7;display:flex;align-items:center;gap:5px;}
+.hero-illus{display:flex;align-items:center;justify-content:center;padding:32px 0;}
+.hero-illus svg{width:300px;height:260px;}
+
+.erasmus-strip{background:#003399;padding:12px 32px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.erasmus-strip img{width:28px;height:19px;object-fit:cover;border-radius:2px;}
+.erasmus-strip span{font-size:13px;color:#ffcc00;font-weight:500;}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #bae6fd;}
+.stat{background:#fff;padding:24px 16px;text-align:center;border-right:1px solid #bae6fd;}
+.stat:last-child{border-right:none;}
+.stat-num{font-size:28px;font-weight:700;color:#0ea5e9;}
+.stat-label{font-size:12px;color:#0369a1;margin-top:4px;}
+
+/* ===================== PAGE MODULES ===================== */
+.page-header{background:#e0f7fa;padding:48px 32px;text-align:center;}
+.page-header h1{font-size:32px;font-weight:700;color:#0c4a6e;margin-bottom:10px;}
+.page-header p{font-size:16px;color:#0369a1;max-width:560px;margin:0 auto;}
+.content-wrap{max-width:1100px;margin:0 auto;padding:48px 32px;}
+.section-label{font-size:11px;color:#0284c7;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-size:26px;font-weight:700;color:#0c4a6e;margin-bottom:8px;}
+.section-sub{font-size:15px;color:#0369a1;line-height:1.7;margin-bottom:32px;}
+
+.modules-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.mod-card{background:#fff;border:1px solid #bae6fd;border-radius:14px;padding:22px 18px;cursor:pointer;transition:all 0.15s;}
+.mod-card:hover{border-color:#0ea5e9;transform:translateY(-3px);box-shadow:0 4px 16px rgba(14,165,233,0.12);}
+.mod-icon{font-size:32px;margin-bottom:12px;}
+.mod-name{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:5px;}
+.mod-desc{font-size:12px;color:#0369a1;line-height:1.6;}
+
+/* MODULE DETAIL */
+.module-detail{display:none;background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:32px;margin-top:24px;}
+.module-detail.active{display:block;}
+.module-detail h2{font-size:22px;font-weight:700;color:#0c4a6e;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.back-link{font-size:14px;color:#0ea5e9;cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:20px;width:fit-content;}
+.back-link:hover{text-decoration:underline;}
+
+/* GLOSSAIRE */
+.glossaire-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+.term-card{background:#f0f9ff;border-radius:12px;padding:16px;border-left:4px solid #0ea5e9;}
+.term-card h3{color:#0c4a6e;font-size:14px;font-weight:700;}
+.term-card p{color:#0369a1;font-size:13px;margin-top:6px;line-height:1.6;}
+.term-tag{display:inline-block;background:#e0f2fe;color:#0284c7;font-size:11px;padding:3px 10px;border-radius:10px;margin-top:8px;}
+
+/* CALCULATEUR */
+.calc-box{background:#0ea5e9;border-radius:16px;padding:24px;margin-bottom:24px;}
+.calc-box h2{color:#fff;font-size:18px;font-weight:700;margin-bottom:8px;}
+.calc-box p{color:#bae6fd;font-size:14px;line-height:1.6;}
+.water-result{background:rgba(255,255,255,0.2);border-radius:12px;padding:16px;margin-top:16px;text-align:center;}
+.water-num{font-size:40px;font-weight:700;color:#fff;}
+.water-unit{font-size:14px;color:#e0f2fe;}
+.slider-row{margin-bottom:20px;}
+.slider-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.slider-lbl span{color:#0c4a6e;font-size:14px;font-weight:500;}
+.slider-val{color:#0ea5e9;font-size:14px;font-weight:700;background:#e0f2fe;padding:4px 12px;border-radius:10px;}
+input[type=range]{width:100%;accent-color:#0ea5e9;}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
+.tip-card{background:#fff;border-radius:12px;padding:16px;border:1px solid #bae6fd;text-align:center;}
+.tip-icon{font-size:28px;margin-bottom:8px;}
+.tip-card p{color:#0369a1;font-size:13px;line-height:1.5;}
+
+/* QUIZ */
+.quiz-box{background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:28px;max-width:700px;margin:0 auto;}
+.quiz-prog-bar{width:100%;height:6px;background:#bae6fd;border-radius:3px;margin-bottom:24px;}
+.quiz-prog-fill{height:100%;background:#0ea5e9;border-radius:3px;transition:width 0.4s;}
+.quiz-q{font-size:18px;font-weight:600;color:#0c4a6e;line-height:1.5;margin-bottom:24px;}
+.quiz-opts{display:flex;flex-direction:column;gap:12px;}
+.quiz-opt{background:#f0f9ff;border:2px solid #bae6fd;border-radius:12px;padding:16px 20px;font-size:15px;color:#0c4a6e;cursor:pointer;text-align:left;transition:all 0.15s;}
+.quiz-opt:hover{border-color:#0ea5e9;background:#e0f2fe;}
+.quiz-opt.correct{background:#dcfce7;border-color:#22c55e;color:#166534;}
+.quiz-opt.wrong{background:#fef2f2;border-color:#ef4444;color:#991b1b;}
+.quiz-feedback{background:#e0f2fe;border-radius:12px;padding:16px;margin-top:16px;display:none;}
+.quiz-feedback p{color:#0369a1;font-size:14px;line-height:1.6;}
+.quiz-next-btn{background:#0ea5e9;color:#fff;border:none;border-radius:12px;padding:14px 32px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px;display:none;}
+.quiz-num{font-size:13px;color:#0284c7;font-weight:600;margin-bottom:8px;}
+
+/* RECETTES */
+.recipes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.recipe-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #bae6fd;transition:transform 0.15s;}
+.recipe-card:hover{transform:translateY(-3px);}
+.recipe-img{height:120px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;}
+.recipe-flag{position:absolute;top:10px;right:10px;background:#fff;border-radius:12px;padding:4px 10px;display:flex;align-items:center;gap:5px;border:1px solid #bae6fd;font-size:12px;color:#0284c7;}
+.recipe-body{padding:16px;}
+.recipe-body h3{color:#0c4a6e;font-size:15px;font-weight:700;margin-bottom:6px;}
+.recipe-body p{color:#0369a1;font-size:13px;line-height:1.5;}
+.recipe-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.rtag{background:#e0f2fe;color:#0284c7;font-size:11px;padding:3px 10px;border-radius:10px;}
+
+/* ===================== PAGE PAYS ===================== */
+.countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.country-card{background:#fff;border:1px solid #bae6fd;border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.15s;cursor:pointer;}
+.country-card:hover{border-color:#0ea5e9;transform:translateY(-3px);box-shadow:0 4px 16px rgba(14,165,233,0.12);}
+.country-flag{font-size:48px;margin-bottom:12px;}
+.country-name{font-size:16px;font-weight:700;color:#0c4a6e;margin-bottom:4px;}
+.country-lang{font-size:13px;color:#0369a1;margin-bottom:8px;}
+.country-desc{font-size:12px;color:#7dd3fc;line-height:1.5;}
+
+/* ===================== PAGE CONTACT ===================== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.contact-form{background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:32px;}
+.contact-form h2{font-size:20px;font-weight:700;color:#0c4a6e;margin-bottom:24px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:#0369a1;margin-bottom:6px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:12px 14px;font-size:14px;color:#0c4a6e;outline:none;font-family:inherit;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#0ea5e9;}
+.form-group textarea{height:120px;resize:vertical;}
+.btn-submit{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:14px 32px;font-size:15px;font-weight:700;cursor:pointer;width:100%;}
+.contact-info{display:flex;flex-direction:column;gap:16px;}
+.info-card{background:#fff;border:1px solid #bae6fd;border-radius:14px;padding:20px;display:flex;align-items:flex-start;gap:14px;}
+.info-icon{font-size:24px;flex-shrink:0;}
+.info-card h3{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:4px;}
+.info-card p{font-size:13px;color:#0369a1;line-height:1.5;}
+
+/* ===================== DOWNLOAD SECTION ===================== */
+.download-wrap{background:#0ea5e9;padding:56px 32px;}
+.download-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.dl-text h2{font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;}
+.dl-text p{font-size:15px;color:#bae6fd;line-height:1.7;margin-bottom:24px;}
+.dl-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.dl-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:12px;padding:14px 22px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background 0.15s;}
+.dl-btn:hover{background:rgba(255,255,255,0.25);}
+.dl-btn-icon{font-size:28px;}
+.dl-btn-text small{display:block;font-size:11px;color:#bae6fd;}
+.dl-btn-text span{display:block;font-size:14px;font-weight:600;color:#fff;}
+.dl-phone{display:flex;justify-content:center;}
+.phone-prev{width:160px;height:290px;background:#e0f2fe;border-radius:28px;border:3px solid #7dd3fc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,0.15);}
+.phone-prev img{width:80px;height:80px;border-radius:20px;object-fit:cover;border:2px solid #fff;}
+.phone-prev span{font-size:14px;font-weight:700;color:#0c4a6e;}
+.phone-prev small{font-size:11px;color:#0369a1;text-align:center;padding:0 16px;}
+
+/* FOOTER */
+footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{display:flex;align-items:center;gap:10px;}
+.footer-logo img{width:32px;height:32px;border-radius:8px;object-fit:cover;}
+.footer-logo span{font-size:15px;font-weight:700;color:#0c4a6e;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:#0369a1;text-decoration:none;cursor:pointer;}
+.footer-copy{font-size:12px;color:#7dd3fc;}
+
+/* COUNTRIES */
+.countries-wrap-bg{background:#e0f2fe;padding:56px 32px;}
+.countries-inner{max-width:1100px;margin:0 auto;}
+
+/* PARTNERS */
+.partners-wrap{padding:40px 32px;border-top:1px solid #bae6fd;background:#f0f9ff;}
+.partners-inner{max-width:1100px;margin:0 auto;}
+.partners-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;}
+.partner-chip{background:#fff;border:1px solid #bae6fd;border-radius:10px;padding:10px 20px;font-size:13px;color:#0369a1;display:flex;align-items:center;gap:8px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-illus{display:none;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .modules-grid{grid-template-columns:repeat(2,1fr);}
+  .countries-grid{grid-template-columns:repeat(2,1fr);}
+  .recipes-grid{grid-template-columns:repeat(2,1fr);}
+  .tips-grid{grid-template-columns:repeat(2,1fr);}
+  .glossaire-grid{grid-template-columns:1fr;}
+  .download-inner{grid-template-columns:1fr;}
+  .dl-phone{display:none;}
+  .contact-grid{grid-template-columns:1fr;}
+  nav .nav-links a{font-size:12px;padding:6px 10px;}
+}
+@media(max-width:600px){
+  nav{padding:12px 16px;}
+  .nav-links{display:none;}
+  .hero-text{padding:32px 0;}
+  .hero-inner{padding:0 16px;}
+  .modules-grid{grid-template-columns:1fr;}
+  .countries-grid{grid-template-columns:1fr;}
+  .recipes-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- PWA BANNER -->
+<div id="pwa-banner" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#0ea5e9;color:#fff;border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9999;max-width:380px;width:90%;">
+  <img src="logo_ecoedu.jpeg" style="width:40px;height:40px;border-radius:10px;object-fit:cover;" alt="Eco Edu"/>
+  <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Installer Eco Edu</div><div style="font-size:11px;opacity:0.85;">Ajouter à votre écran d'accueil</div></div>
+  <button id="pwa-install" style="background:#fff;color:#0ea5e9;border:none;border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;">Installer</button>
+  <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer;">×</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('accueil')">
+    <img src="logo_ecoedu.jpeg" alt="Logo Eco Edu"/>
+    <span class="nav-brand">Eco Edu</span>
+  </div>
+  <div class="nav-links">
+    <a onclick="showPage('accueil')" class="active" id="nav-accueil">Accueil</a>
+    <a onclick="showPage('modules')" id="nav-modules">Modules</a>
+    <a onclick="showPage('pays')" id="nav-pays">Pays partenaires</a>
+    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-sel">🌐 FR ▾</div>
+    <button class="btn-dl" onclick="showPage('modules')">Découvrir l'app</button>
+  </div>
+</nav>
+
+<!-- ===================== PAGE ACCUEIL ===================== -->
+<div class="page active" id="page-accueil">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <img src="europe.png" style="width:20px;height:14px;object-fit:cover;border-radius:2px;" alt="EU"/>
+          Projet Erasmus+ · 6 pays partenaires
+        </div>
+        <h1 class="hero-h1">Éduquer pour un avenir <em>durable</em> et culturel</h1>
+        <p class="hero-sub">Une application gratuite pour étudiants, lycéens et collégiens — explorez la durabilité, la culture et l'économie ensemble.</p>
+        <div class="hero-ctas">
+          <button class="btn-primary" onclick="showPage('modules')">Découvrir les modules</button>
+          <button class="btn-secondary" onclick="showPage('pays')">Pays partenaires</button>
+        </div>
+        <div class="hero-flags">
+          <div class="flag-chip">🇫🇷 Martinique</div>
+          <div class="flag-chip">🇮🇹 Italie</div>
+          <div class="flag-chip">🇹🇷 Turquie</div>
+          <div class="flag-chip">🇪🇸 Espagne</div>
+          <div class="flag-chip">🇲🇰 Macédoine</div>
+          <div class="flag-chip">🇸🇪 Suède</div>
+        </div>
+      </div>
+      <div class="hero-illus">
+        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="260" fill="#e0f7fa"/>
+          <ellipse cx="50" cy="40" rx="60" ry="45" fill="#b2dfdb" opacity="0.5"/>
+          <ellipse cx="260" cy="220" rx="65" ry="40" fill="#b3e5fc" opacity="0.5"/>
+          <path d="M15 25 Q26 12 38 24 Q26 36 15 25Z" fill="#66bb6a" opacity="0.9"/>
+          <path d="M6 48 Q18 36 26 50 Q14 56 6 48Z" fill="#81c784" opacity="0.9"/>
+          <path d="M18 70 Q30 56 40 68 Q28 78 18 70Z" fill="#a5d6a7" opacity="0.9"/>
+          <path d="M5 92 Q16 82 22 94 Q10 100 5 92Z" fill="#66bb6a" opacity="0.9"/>
+          <path d="M20 118 Q30 106 40 118 Q30 128 20 118Z" fill="#a5d6a7" opacity="0.9"/>
+          <path d="M8 144 Q20 134 28 146 Q16 152 8 144Z" fill="#81c784" opacity="0.9"/>
+          <path d="M18 170 Q28 158 38 170 Q28 180 18 170Z" fill="#66bb6a" opacity="0.9"/>
+          <path d="M285 18 Q275 6 264 18 Q275 30 285 18Z" fill="#66bb6a" opacity="0.9"/>
+          <path d="M296 42 Q285 30 275 43 Q286 53 296 42Z" fill="#81c784" opacity="0.9"/>
+          <path d="M284 66 Q272 54 262 67 Q274 77 284 66Z" fill="#a5d6a7" opacity="0.9"/>
+          <path d="M298 90 Q286 78 278 91 Q290 101 298 90Z" fill="#66bb6a" opacity="0.9"/>
+          <path d="M282 116 Q270 106 264 119 Q276 129 282 116Z" fill="#81c784" opacity="0.9"/>
+          <path d="M296 142 Q284 132 278 145 Q290 155 296 142Z" fill="#a5d6a7" opacity="0.9"/>
+          <g transform="translate(248,36)"><ellipse cx="0" cy="-5" rx="11" ry="13" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/><rect x="-4" y="7" width="9" height="4" rx="1" fill="#f9a825" opacity="0.8"/><line x1="0" y1="-17" x2="0" y2="-21" stroke="#f9a825" stroke-width="1.5" stroke-linecap="round"/></g>
+          <g transform="translate(80,30)"><rect x="-15" y="-12" width="15" height="24" rx="2" fill="#ef9a9a" opacity="0.9"/><rect x="0" y="-12" width="15" height="24" rx="2" fill="#e57373" opacity="0.9"/><line x1="0" y1="-12" x2="0" y2="12" stroke="#c62828" stroke-width="1.2"/><line x1="-11" y1="-5" x2="-2" y2="-5" stroke="#fff" stroke-width="1" opacity="0.7"/><line x1="-11" y1="0" x2="-2" y2="0" stroke="#fff" stroke-width="1" opacity="0.7"/><line x1="2" y1="-5" x2="11" y2="-5" stroke="#fff" stroke-width="1" opacity="0.7"/><path d="M6 -12 L6 -5 L4 -8 L2 -5 L2 -12Z" fill="#a5d6a7"/></g>
+          <image href="europe.png" x="95" y="55" width="110" height="74" preserveAspectRatio="xMidYMid meet"/>
+          <path d="M138 148 Q128 138 120 143 Q128 153 138 148Z" fill="#ffb74d" opacity="0.9"/>
+          <path d="M138 148 Q148 138 156 143 Q148 153 138 148Z" fill="#ffd54f" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="erasmus-strip">
+    <img src="europe.png" alt="EU"/>
+    <span>Ce projet est cofinancé par le programme Erasmus+ de l'Union Européenne</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Pays partenaires</div></div>
+    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Modules éducatifs</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Langues disponibles</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Gratuit</div></div>
+  </div>
+
+  <div style="background:#f0f9ff;">
+    <div class="content-wrap">
+      <div class="section-label">Modules</div>
+      <h2 class="section-title">Tout pour apprendre et agir</h2>
+      <p class="section-sub">Cliquez sur un module pour en savoir plus.</p>
+      <div class="modules-grid">
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">📖</div><div class="mod-name">Glossaire durabilité</div><div class="mod-desc">Définitions claires des termes économiques et environnementaux</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">♻️</div><div class="mod-name">Carte recyclage</div><div class="mod-desc">Points de collecte modifiables par la communauté</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">💧</div><div class="mod-name">Empreinte hydrique</div><div class="mod-desc">Calculez et réduisez votre consommation d'eau</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">🎮</div><div class="mod-name">Jeux & Quiz</div><div class="mod-desc">Biodiversité, économie, culture — apprendre en jouant</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-wrap">
+    <div class="download-inner">
+      <div class="dl-text">
+        <h2>Installez Eco Edu gratuitement</h2>
+        <p>Disponible sur Android et iOS sans passer par les stores. La langue s'adapte automatiquement à votre géolocalisation.</p>
+        <div class="dl-btns">
+          <div class="dl-btn"><div class="dl-btn-icon">🤖</div><div class="dl-btn-text"><small>Disponible sur</small><span>Google Play</span></div></div>
+          <div class="dl-btn"><div class="dl-btn-icon">🍎</div><div class="dl-btn-text"><small>Télécharger sur</small><span>App Store</span></div></div>
+        </div>
+      </div>
+      <div class="dl-phone">
+        <div class="phone-prev">
+          <img src="logo_ecoedu.jpeg" alt="Eco Edu"/>
+          <span>Eco Edu</span>
+          <small>Éducation durable et culturelle</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="partners-wrap">
+    <div class="partners-inner">
+      <div class="section-label">Soutiens</div>
+      <h2 class="section-title" style="font-size:18px;margin-bottom:12px;">Soutenu par les entreprises et institutions locales</h2>
+      <div class="partners-row">
+        <div class="partner-chip"><span>🏢</span> Entreprises locales</div>
+        <div class="partner-chip"><span>🏫</span> Établissements scolaires</div>
+        <div class="partner-chip"><img src="europe.png" style="width:20px;height:13px;object-fit:cover;border-radius:2px;" alt="EU"/> Erasmus+</div>
+        <div class="partner-chip"><span>🤝</span> Institutions partenaires</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PAGE MODULES ===================== -->
+<div class="page" id="page-modules">
+  <div class="page-header">
+    <h1>Modules éducatifs</h1>
+    <p>Cliquez sur un module pour explorer son contenu interactif</p>
+  </div>
+  <div class="content-wrap">
+
+    <!-- LISTE DES MODULES -->
+    <div id="modules-list">
+      <div class="modules-grid">
+        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name">Glossaire durabilité</div><div class="mod-desc">Définitions claires des termes économiques et environnementaux</div></div>
+        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name">Empreinte hydrique</div><div class="mod-desc">Calculez et réduisez votre consommation d'eau quotidienne</div></div>
+        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name">Quiz Biodiversité</div><div class="mod-desc">Testez vos connaissances sur les espèces locales et mondiales</div></div>
+        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name">Recettes culturelles</div><div class="mod-desc">Cuisine durable et traditionnelle des 6 pays partenaires</div></div>
+        <div class="mod-card"><div class="mod-icon">♻️</div><div class="mod-name">Carte recyclage</div><div class="mod-desc">Points de collecte près de chez vous — modifiables par la communauté</div></div>
+        <div class="mod-card"><div class="mod-icon">🎬</div><div class="mod-name">Vidéos éducatives</div><div class="mod-desc">Contenus visuels sur l'environnement, la biodiversité et la culture</div></div>
+        <div class="mod-card"><div class="mod-icon">👗</div><div class="mod-name">Mode durable</div><div class="mod-desc">Conseils pour changer, échanger et recycler ses vêtements</div></div>
+        <div class="mod-card"><div class="mod-icon">🌱</div><div class="mod-name">Réduire le gaspillage</div><div class="mod-desc">Conseils pratiques pour réduire le gaspillage alimentaire au quotidien</div></div>
+      </div>
+    </div>
+
+    <!-- DETAIL GLOSSAIRE -->
+    <div class="module-detail" id="module-glossaire">
+      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
+      <h2>📖 Glossaire de la durabilité</h2>
+      <div class="glossaire-grid">
+        <div class="term-card"><h3>Économie circulaire</h3><p>Modèle économique visant à réduire les déchets en gardant les ressources en utilisation le plus longtemps possible.</p><span class="term-tag">Économie</span></div>
+        <div class="term-card"><h3>Biodiversité</h3><p>Variété et variabilité de la vie sur Terre — des écosystèmes, espèces et gènes présents dans une région.</p><span class="term-tag">Environnement</span></div>
+        <div class="term-card"><h3>Empreinte hydrique</h3><p>Volume total d'eau douce utilisé pour produire les biens et services consommés par un individu ou une communauté.</p><span class="term-tag">Eau</span></div>
+        <div class="term-card"><h3>Patrimoine culturel</h3><p>Héritage de biens physiques et immatériels transmis par les générations passées, maintenu au présent.</p><span class="term-tag">Culture</span></div>
+        <div class="term-card"><h3>Développement durable</h3><p>Développement qui répond aux besoins du présent sans compromettre la capacité des générations futures.</p><span class="term-tag">Général</span></div>
+        <div class="term-card"><h3>Upcycling (surcyclage)</h3><p>Transformer des déchets ou des vêtements usagés en nouveaux produits de valeur supérieure.</p><span class="term-tag">Mode durable</span></div>
+        <div class="term-card"><h3>Agroforesterie</h3><p>Système qui combine arbres et cultures ou élevage sur la même parcelle pour améliorer la biodiversité.</p><span class="term-tag">Agriculture</span></div>
+        <div class="term-card"><h3>Économie bleue</h3><p>Modèle économique qui s'inspire des écosystèmes naturels pour éliminer les déchets et la pollution.</p><span class="term-tag">Économie</span></div>
+      </div>
+    </div>
+
+    <!-- DETAIL CALCULATEUR -->
+    <div class="module-detail" id="module-calculateur">
+      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
+      <h2>💧 Calculateur d'empreinte hydrique</h2>
+      <div class="calc-box">
+        <h2>Votre empreinte quotidienne</h2>
+        <p>Bougez les curseurs pour estimer votre consommation d'eau virtuelle.</p>
+        <div class="water-result"><div class="water-num" id="wt">3 240</div><div class="water-unit">litres / jour estimés</div></div>
+      </div>
+      <div class="slider-row"><div class="slider-lbl"><span>🍖 Viande (portions/semaine)</span><span class="slider-val" id="vm">4</span></div><input type="range" min="0" max="14" value="4" id="sm"></div>
+      <div class="slider-row"><div class="slider-lbl"><span>🚿 Douche (minutes/jour)</span><span class="slider-val" id="vs">8</span></div><input type="range" min="1" max="30" value="8" id="ss"></div>
+      <div class="slider-row"><div class="slider-lbl"><span>👕 Vêtements neufs (par mois)</span><span class="slider-val" id="vc">3</span></div><input type="range" min="0" max="20" value="3" id="sc"></div>
+      <div class="tips-grid">
+        <div class="tip-card"><div class="tip-icon">🥗</div><p>1 repas végétarien de plus = -500 L/jour</p></div>
+        <div class="tip-card"><div class="tip-icon">👗</div><p>Échanger vos vêtements au lieu d'acheter</p></div>
+        <div class="tip-card"><div class="tip-icon">🚿</div><p>Douche 5 min = -30 L vs 10 min</p></div>
+        <div class="tip-card"><div class="tip-icon">♻️</div><p>1 jean recyclé = 7 000 L économisés</p></div>
+      </div>
+    </div>
+
+    <!-- DETAIL QUIZ -->
+    <div class="module-detail" id="module-quiz">
+      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
+      <h2>🎮 Quiz Biodiversité</h2>
+      <div class="quiz-box">
+        <div class="quiz-num" id="qn">Question 1 / 3</div>
+        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qp" style="width:33%"></div></div>
+        <div class="quiz-q" id="qt">Quel pourcentage des espèces marines vit dans les récifs coralliens, qui ne couvrent que 1% des océans ?</div>
+        <div class="quiz-opts" id="qo">
+          <button class="quiz-opt" onclick="answerQ(0)">A. 10%</button>
+          <button class="quiz-opt" onclick="answerQ(1)">B. 25%</button>
+          <button class="quiz-opt" onclick="answerQ(2)">C. 45%</button>
+          <button class="quiz-opt" onclick="answerQ(3)">D. 60%</button>
+        </div>
+        <div class="quiz-feedback" id="qf"><p id="qe"></p></div>
+        <button class="quiz-next-btn" id="qnb" onclick="nextQ()">Question suivante →</button>
+      </div>
+    </div>
+
+    <!-- DETAIL RECETTES -->
+    <div class="module-detail" id="module-recettes">
+      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
+      <h2>🍽️ Recettes culturelles durables</h2>
+      <div class="recipes-grid">
+        <div class="recipe-card"><div class="recipe-img">🫙<div class="recipe-flag">🇫🇷 Martinique</div></div><div class="recipe-body"><h3>Colombo de poulet</h3><p>Plat traditionnel antillais aux épices et légumes frais locaux</p><div class="recipe-tags"><span class="rtag">🌿 Local</span><span class="rtag">♻️ Zéro déchet</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫒<div class="recipe-flag">🇮🇹 Italie</div></div><div class="recipe-body"><h3>Ribollita toscane</h3><p>Soupe de légumes et pain rassis — anti-gaspillage par excellence</p><div class="recipe-tags"><span class="rtag">🥦 Végétarien</span><span class="rtag">♻️ Anti-gaspillage</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫖<div class="recipe-flag">🇹🇷 Turquie</div></div><div class="recipe-body"><h3>Meze végétalien</h3><p>Assortiment de légumes marinés, houmous et herbes fraîches</p><div class="recipe-tags"><span class="rtag">🌱 Vegan</span><span class="rtag">🌍 Tradition</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🥘<div class="recipe-flag">🇪🇸 Espagne</div></div><div class="recipe-body"><h3>Gazpacho andalou</h3><p>Soupe froide de légumes crus, fraîche et zéro cuisson</p><div class="recipe-tags"><span class="rtag">🌿 Vegan</span><span class="rtag">☀️ Saisonnier</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫐<div class="recipe-flag">🇸🇪 Suède</div></div><div class="recipe-body"><h3>Soppa på rotfrukter</h3><p>Soupe de légumes racines suédoise, locale et de saison</p><div class="recipe-tags"><span class="rtag">🥕 Local</span><span class="rtag">❄️ Nordique</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🥗<div class="recipe-flag">🇲🇰 Macédoine</div></div><div class="recipe-body"><h3>Tavče gravče</h3><p>Haricots cuits au four aux légumes frais et herbes aromatiques</p><div class="recipe-tags"><span class="rtag">🌿 Végétarien</span><span class="rtag">🌍 Tradition</span></div></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== PAGE PAYS ===================== -->
+<div class="page" id="page-pays">
+  <div class="page-header">
+    <h1>Pays partenaires</h1>
+    <p>Six pays unis par l'éducation, la culture et la durabilité dans le cadre du programme Erasmus+</p>
+  </div>
+  <div class="countries-wrap-bg">
+    <div class="countries-inner">
+      <div class="countries-grid">
+        <div class="country-card"><div class="country-flag">🇫🇷</div><div class="country-name">Martinique</div><div class="country-lang">Français</div><div class="country-desc">Île des Caraïbes, département français d'outre-mer, riche en biodiversité tropicale et patrimoine culturel créole.</div></div>
+        <div class="country-card"><div class="country-flag">🇮🇹</div><div class="country-name">Italie</div><div class="country-lang">Italiano</div><div class="country-desc">Patrimoine culturel exceptionnel, cuisine méditerranéenne durable, pionnier de l'économie circulaire en Europe.</div></div>
+        <div class="country-card"><div class="country-flag">🇹🇷</div><div class="country-name">Turquie</div><div class="country-lang">Türkçe</div><div class="country-desc">Carrefour entre l'Europe et l'Asie, biodiversité remarquable, traditions culinaires et artisanales ancestrales.</div></div>
+        <div class="country-card"><div class="country-flag">🇪🇸</div><div class="country-name">Espagne</div><div class="country-lang">Español</div><div class="country-desc">Leader européen des énergies renouvelables, agriculture biologique en pleine croissance, culture gastronomique durable.</div></div>
+        <div class="country-card"><div class="country-flag">🇲🇰</div><div class="country-name">Macédoine du Nord</div><div class="country-lang">Македонски</div><div class="country-desc">Biodiversité balkanique unique, lac Ohrid classé UNESCO, traditions agricoles et artisanales préservées.</div></div>
+        <div class="country-card"><div class="country-flag">🇸🇪</div><div class="country-name">Suède</div><div class="country-lang">Svenska</div><div class="country-desc">Leader mondial du développement durable, modèle d'économie circulaire, forêts et nature préservées.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="erasmus-strip">
+    <img src="europe.png" alt="EU"/>
+    <span>Programme Erasmus+ — Éducation, Formation, Jeunesse et Sport</span>
+  </div>
+</div>
+
+<!-- ===================== PAGE CONTACT ===================== -->
+<div class="page" id="page-contact">
+  <div class="page-header">
+    <h1>Nous contacter</h1>
+    <p>Une question, une suggestion ou souhaitez-vous devenir partenaire ? Écrivez-nous !</p>
+  </div>
+  <div class="content-wrap">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>Envoyer un message</h2>
+        <div class="form-group"><label>Votre nom</label><input type="text" placeholder="Ex: Marie Dupont"/></div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"/></div>
+        <div class="form-group"><label>Pays</label>
+          <select>
+            <option>Martinique 🇫🇷</option>
+            <option>Italie 🇮🇹</option>
+            <option>Turquie 🇹🇷</option>
+            <option>Espagne 🇪🇸</option>
+            <option>Macédoine 🇲🇰</option>
+            <option>Suède 🇸🇪</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Votre message..."></textarea></div>
+        <button class="btn-submit" onclick="alert('Message envoyé ! Nous vous répondrons bientôt.')">Envoyer le message</button>
+      </div>
+      <div class="contact-info">
+        <div class="info-card"><div class="info-icon">🌍</div><div><h3>Projet Erasmus+</h3><p>Eco Edu est cofinancé par le programme Erasmus+ de l'Union Européenne dans le cadre de l'éducation à la durabilité.</p></div></div>
+        <div class="info-card"><div class="info-icon">🏫</div><div><h3>Établissements partenaires</h3><p>Vous êtes un établissement scolaire et souhaitez rejoindre le projet ? Contactez-nous pour devenir partenaire Erasmus+.</p></div></div>
+        <div class="info-card"><div class="info-icon">🏢</div><div><h3>Entreprises locales</h3><p>Vous êtes une entreprise locale en Martinique et souhaitez soutenir le projet ? Nous serions ravis de collaborer.</p></div></div>
+        <div class="info-card"><div class="info-icon">📱</div><div><h3>Support technique</h3><p>Un problème avec l'application ou le site ? Décrivez-le dans le formulaire et notre équipe vous répondra rapidement.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER (commun) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo_ecoedu.jpeg" alt="Logo"/>
+      <span>Eco Edu</span>
+    </div>
+    <div class="footer-links">
+      <a onclick="showPage('accueil')">Accueil</a>
+      <a onclick="showPage('modules')">Modules</a>
+      <a onclick="showPage('pays')">Pays partenaires</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </div>
+    <div class="footer-copy">© 2025 Eco Edu · Projet Erasmus+</div>
+  </div>
+</footer>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if(navEl) navEl.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  hideModule();
+}
+
+function showModule(id) {
+  document.getElementById('modules-list').style.display = 'none';
+  document.querySelectorAll('.module-detail').forEach(m => m.classList.remove('active'));
+  document.getElementById('module-' + id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function hideModule() {
+  document.getElementById('modules-list').style.display = 'block';
+  document.querySelectorAll('.module-detail').forEach(m => m.classList.remove('active'));
+}
+
+const qData = [
+  {q:"Quel pourcentage des espèces marines vit dans les récifs coralliens, qui ne couvrent que 1% des océans ?", opts:["A. 10%","B. 25%","C. 45%","D. 60%"], c:1, e:"✅ Bonne réponse ! Les récifs coralliens abritent environ 25% de toutes les espèces marines malgré leur petite surface."},
+  {q:"Quelle pratique agricole permet de préserver la biodiversité des sols ?", opts:["A. Monoculture intensive","B. Agroforesterie","C. Labour profond","D. Pesticides préventifs"], c:1, e:"✅ L'agroforesterie combine arbres et cultures, favorisant la biodiversité et préservant les sols."},
+  {q:"En Martinique, quel arbre est symbolique de la résistance culturelle et de la biodiversité locale ?", opts:["A. Le bananier","B. Le flamboyant","C. Le cocotier","D. Le manguier"], c:1, e:"✅ Le flamboyant est l'arbre emblématique de la Martinique avec ses fleurs rouge-orangé spectaculaires !"}
+];
+let qi=0, answered=false;
+function answerQ(choice) {
+  if(answered) return;
+  answered = true;
+  const q = qData[qi];
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts[choice].classList.add(choice === q.c ? 'correct' : 'wrong');
+  if(choice !== q.c) opts[q.c].classList.add('correct');
+  document.getElementById('qe').textContent = q.e;
+  document.getElementById('qf').style.display = 'block';
+  document.getElementById('qnb').style.display = 'inline-block';
+}
+function nextQ() {
+  qi = (qi + 1) % qData.length;
+  answered = false;
+  const q = qData[qi];
+  document.getElementById('qt').textContent = q.q;
+  const opts = document.querySelectorAll('.quiz-opt');
+  q.opts.forEach((o,i) => { opts[i].textContent = o; opts[i].className = 'quiz-opt'; opts[i].onclick = () => answerQ(i); });
+  document.getElementById('qf').style.display = 'none';
+  document.getElementById('qnb').style.display = 'none';
+  document.getElementById('qn').textContent = 'Question ' + (qi+1) + ' / ' + qData.length;
+  document.getElementById('qp').style.width = ((qi+1)/qData.length*100) + '%';
+}
+function calcW() {
+  const m = +document.getElementById('sm').value;
+  const s = +document.getElementById('ss').value;
+  const c = +document.getElementById('sc').value;
+  const t = Math.round(m*180 + s*60 + c*220 + 800);
+  document.getElementById('wt').textContent = t.toLocaleString('fr-FR');
+  document.getElementById('vm').textContent = m;
+  document.getElementById('vs').textContent = s;
+  document.getElementById('vc').textContent = c;
+}
+['sm','ss','sc'].forEach(id => {
+  const el = document.getElementById(id);
+  if(el) el.addEventListener('input', calcW);
+});
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const b = document.getElementById('pwa-banner');
+  if(b) b.style.display = 'flex';
+});
+const installBtn = document.getElementById('pwa-install');
+if(installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if(deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      document.getElementById('pwa-banner').style.display = 'none';
+    }
+  });
+}
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(r => console.log('SW ok', r))
+      .catch(e => console.log('SW err', e));
+  });
+}
+</script>
+</body>
+</html>
