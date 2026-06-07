@@ -14,8 +14,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f9ff;color:#0c4a6e;}
-
-/* NAV */
 nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(14,165,233,0.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
 .nav-logo img{width:40px;height:40px;border-radius:10px;object-fit:cover;}
@@ -25,14 +23,16 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .nav-links a:hover{background:#e0f2fe;color:#0c4a6e;}
 .nav-links a.active{background:#0ea5e9;color:#fff;}
 .nav-right{display:flex;align-items:center;gap:12px;}
-.lang-sel{font-size:13px;color:#0369a1;background:#e0f2fe;border:1px solid #bae6fd;border-radius:8px;padding:7px 14px;cursor:pointer;}
+.lang-sel{font-size:13px;color:#0369a1;background:#e0f2fe;border:1px solid #bae6fd;border-radius:8px;padding:7px 14px;cursor:pointer;position:relative;}
+.lang-dropdown{display:none;position:absolute;top:110%;right:0;background:#fff;border:1px solid #bae6fd;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 4px 20px rgba(0,0,0,0.1);z-index:200;}
+.lang-dropdown.open{display:block;}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:#0c4a6e;}
+.lang-option:hover{background:#e0f2fe;}
+.lang-option.active{background:#0ea5e9;color:#fff;}
+.lang-option span{font-size:18px;}
 .btn-dl{background:#0ea5e9;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;}
-
-/* PAGES */
 .page{display:none;}
 .page.active{display:block;}
-
-/* ===================== PAGE ACCUEIL ===================== */
 .hero{background:#e0f7fa;overflow:hidden;}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;min-height:380px;max-width:1100px;margin:0 auto;padding:0 32px;}
 .hero-text{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:48px 32px 48px 0;}
@@ -46,19 +46,14 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .hero-flags{display:flex;gap:8px;flex-wrap:wrap;}
 .flag-chip{background:#fff;border:1px solid #bae6fd;border-radius:16px;padding:5px 12px;font-size:12px;color:#0284c7;display:flex;align-items:center;gap:5px;}
 .hero-illus{display:flex;align-items:center;justify-content:center;padding:32px 0;}
-.hero-illus svg{width:300px;height:260px;}
-
 .erasmus-strip{background:#003399;padding:12px 32px;display:flex;align-items:center;justify-content:center;gap:12px;}
 .erasmus-strip img{width:28px;height:19px;object-fit:cover;border-radius:2px;}
 .erasmus-strip span{font-size:13px;color:#ffcc00;font-weight:500;}
-
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #bae6fd;}
 .stat{background:#fff;padding:24px 16px;text-align:center;border-right:1px solid #bae6fd;}
 .stat:last-child{border-right:none;}
 .stat-num{font-size:28px;font-weight:700;color:#0ea5e9;}
 .stat-label{font-size:12px;color:#0369a1;margin-top:4px;}
-
-/* ===================== PAGE MODULES ===================== */
 .page-header{background:#e0f7fa;padding:48px 32px;text-align:center;}
 .page-header h1{font-size:32px;font-weight:700;color:#0c4a6e;margin-bottom:10px;}
 .page-header p{font-size:16px;color:#0369a1;max-width:560px;margin:0 auto;}
@@ -66,29 +61,22 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .section-label{font-size:11px;color:#0284c7;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
 .section-title{font-size:26px;font-weight:700;color:#0c4a6e;margin-bottom:8px;}
 .section-sub{font-size:15px;color:#0369a1;line-height:1.7;margin-bottom:32px;}
-
 .modules-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .mod-card{background:#fff;border:1px solid #bae6fd;border-radius:14px;padding:22px 18px;cursor:pointer;transition:all 0.15s;}
 .mod-card:hover{border-color:#0ea5e9;transform:translateY(-3px);box-shadow:0 4px 16px rgba(14,165,233,0.12);}
 .mod-icon{font-size:32px;margin-bottom:12px;}
 .mod-name{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:5px;}
 .mod-desc{font-size:12px;color:#0369a1;line-height:1.6;}
-
-/* MODULE DETAIL */
 .module-detail{display:none;background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:32px;margin-top:24px;}
 .module-detail.active{display:block;}
-.module-detail h2{font-size:22px;font-weight:700;color:#0c4a6e;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.module-detail h2{font-size:22px;font-weight:700;color:#0c4a6e;margin-bottom:16px;}
 .back-link{font-size:14px;color:#0ea5e9;cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:20px;width:fit-content;}
 .back-link:hover{text-decoration:underline;}
-
-/* GLOSSAIRE */
 .glossaire-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
 .term-card{background:#f0f9ff;border-radius:12px;padding:16px;border-left:4px solid #0ea5e9;}
 .term-card h3{color:#0c4a6e;font-size:14px;font-weight:700;}
 .term-card p{color:#0369a1;font-size:13px;margin-top:6px;line-height:1.6;}
 .term-tag{display:inline-block;background:#e0f2fe;color:#0284c7;font-size:11px;padding:3px 10px;border-radius:10px;margin-top:8px;}
-
-/* CALCULATEUR */
 .calc-box{background:#0ea5e9;border-radius:16px;padding:24px;margin-bottom:24px;}
 .calc-box h2{color:#fff;font-size:18px;font-weight:700;margin-bottom:8px;}
 .calc-box p{color:#bae6fd;font-size:14px;line-height:1.6;}
@@ -104,8 +92,6 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .tip-card{background:#fff;border-radius:12px;padding:16px;border:1px solid #bae6fd;text-align:center;}
 .tip-icon{font-size:28px;margin-bottom:8px;}
 .tip-card p{color:#0369a1;font-size:13px;line-height:1.5;}
-
-/* QUIZ */
 .quiz-box{background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:28px;max-width:700px;margin:0 auto;}
 .quiz-prog-bar{width:100%;height:6px;background:#bae6fd;border-radius:3px;margin-bottom:24px;}
 .quiz-prog-fill{height:100%;background:#0ea5e9;border-radius:3px;transition:width 0.4s;}
@@ -119,29 +105,23 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .quiz-feedback p{color:#0369a1;font-size:14px;line-height:1.6;}
 .quiz-next-btn{background:#0ea5e9;color:#fff;border:none;border-radius:12px;padding:14px 32px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px;display:none;}
 .quiz-num{font-size:13px;color:#0284c7;font-weight:600;margin-bottom:8px;}
-
-/* RECETTES */
 .recipes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .recipe-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #bae6fd;transition:transform 0.15s;}
 .recipe-card:hover{transform:translateY(-3px);}
 .recipe-img{height:120px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;}
-.recipe-flag{position:absolute;top:10px;right:10px;background:#fff;border-radius:12px;padding:4px 10px;display:flex;align-items:center;gap:5px;border:1px solid #bae6fd;font-size:12px;color:#0284c7;}
+.recipe-flag{position:absolute;top:10px;right:10px;background:#fff;border-radius:12px;padding:4px 10px;font-size:12px;color:#0284c7;border:1px solid #bae6fd;}
 .recipe-body{padding:16px;}
 .recipe-body h3{color:#0c4a6e;font-size:15px;font-weight:700;margin-bottom:6px;}
 .recipe-body p{color:#0369a1;font-size:13px;line-height:1.5;}
 .recipe-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
 .rtag{background:#e0f2fe;color:#0284c7;font-size:11px;padding:3px 10px;border-radius:10px;}
-
-/* ===================== PAGE PAYS ===================== */
 .countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.country-card{background:#fff;border:1px solid #bae6fd;border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.15s;cursor:pointer;}
-.country-card:hover{border-color:#0ea5e9;transform:translateY(-3px);box-shadow:0 4px 16px rgba(14,165,233,0.12);}
+.country-card{background:#fff;border:1px solid #bae6fd;border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.15s;}
+.country-card:hover{border-color:#0ea5e9;transform:translateY(-3px);}
 .country-flag{font-size:48px;margin-bottom:12px;}
 .country-name{font-size:16px;font-weight:700;color:#0c4a6e;margin-bottom:4px;}
 .country-lang{font-size:13px;color:#0369a1;margin-bottom:8px;}
 .country-desc{font-size:12px;color:#7dd3fc;line-height:1.5;}
-
-/* ===================== PAGE CONTACT ===================== */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 .contact-form{background:#fff;border-radius:16px;border:1px solid #bae6fd;padding:32px;}
 .contact-form h2{font-size:20px;font-weight:700;color:#0c4a6e;margin-bottom:24px;}
@@ -156,14 +136,12 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .info-icon{font-size:24px;flex-shrink:0;}
 .info-card h3{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:4px;}
 .info-card p{font-size:13px;color:#0369a1;line-height:1.5;}
-
-/* ===================== DOWNLOAD SECTION ===================== */
 .download-wrap{background:#0ea5e9;padding:56px 32px;}
 .download-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 .dl-text h2{font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;}
 .dl-text p{font-size:15px;color:#bae6fd;line-height:1.7;margin-bottom:24px;}
 .dl-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.dl-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:12px;padding:14px 22px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background 0.15s;}
+.dl-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);border-radius:12px;padding:14px 22px;display:flex;align-items:center;gap:10px;cursor:pointer;}
 .dl-btn:hover{background:rgba(255,255,255,0.25);}
 .dl-btn-icon{font-size:28px;}
 .dl-btn-text small{display:block;font-size:11px;color:#bae6fd;}
@@ -173,8 +151,12 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .phone-prev img{width:80px;height:80px;border-radius:20px;object-fit:cover;border:2px solid #fff;}
 .phone-prev span{font-size:14px;font-weight:700;color:#0c4a6e;}
 .phone-prev small{font-size:11px;color:#0369a1;text-align:center;padding:0 16px;}
-
-/* FOOTER */
+.partners-wrap{padding:40px 32px;border-top:1px solid #bae6fd;background:#f0f9ff;}
+.partners-inner{max-width:1100px;margin:0 auto;}
+.partners-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;}
+.partner-chip{background:#fff;border:1px solid #bae6fd;border-radius:10px;padding:10px 20px;font-size:13px;color:#0369a1;display:flex;align-items:center;gap:8px;}
+.countries-wrap-bg{background:#e0f2fe;padding:56px 32px;}
+.countries-inner{max-width:1100px;margin:0 auto;}
 footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .footer-logo{display:flex;align-items:center;gap:10px;}
@@ -183,85 +165,54 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 .footer-links{display:flex;gap:20px;}
 .footer-links a{font-size:13px;color:#0369a1;text-decoration:none;cursor:pointer;}
 .footer-copy{font-size:12px;color:#7dd3fc;}
-
-/* COUNTRIES */
-.countries-wrap-bg{background:#e0f2fe;padding:56px 32px;}
-.countries-inner{max-width:1100px;margin:0 auto;}
-
-/* PARTNERS */
-.partners-wrap{padding:40px 32px;border-top:1px solid #bae6fd;background:#f0f9ff;}
-.partners-inner{max-width:1100px;margin:0 auto;}
-.partners-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;}
-.partner-chip{background:#fff;border:1px solid #bae6fd;border-radius:10px;padding:10px 20px;font-size:13px;color:#0369a1;display:flex;align-items:center;gap:8px;}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;}
-  .hero-illus{display:none;}
-  .stats{grid-template-columns:repeat(2,1fr);}
-  .modules-grid{grid-template-columns:repeat(2,1fr);}
-  .countries-grid{grid-template-columns:repeat(2,1fr);}
-  .recipes-grid{grid-template-columns:repeat(2,1fr);}
-  .tips-grid{grid-template-columns:repeat(2,1fr);}
-  .glossaire-grid{grid-template-columns:1fr;}
-  .download-inner{grid-template-columns:1fr;}
-  .dl-phone{display:none;}
-  .contact-grid{grid-template-columns:1fr;}
-  nav .nav-links a{font-size:12px;padding:6px 10px;}
-}
-@media(max-width:600px){
-  nav{padding:12px 16px;}
-  .nav-links{display:none;}
-  .hero-text{padding:32px 0;}
-  .hero-inner{padding:0 16px;}
-  .modules-grid{grid-template-columns:1fr;}
-  .countries-grid{grid-template-columns:1fr;}
-  .recipes-grid{grid-template-columns:1fr;}
-}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-illus{display:none;}.stats{grid-template-columns:repeat(2,1fr);}.modules-grid{grid-template-columns:repeat(2,1fr);}.countries-grid{grid-template-columns:repeat(2,1fr);}.recipes-grid{grid-template-columns:repeat(2,1fr);}.tips-grid{grid-template-columns:repeat(2,1fr);}.glossaire-grid{grid-template-columns:1fr;}.download-inner{grid-template-columns:1fr;}.dl-phone{display:none;}.contact-grid{grid-template-columns:1fr;}.nav-links a{font-size:12px;padding:6px 10px;}}
+@media(max-width:600px){nav{padding:12px 16px;}.nav-links{display:none;}.hero-text{padding:32px 0;}.hero-inner{padding:0 16px;}.modules-grid{grid-template-columns:1fr;}.countries-grid{grid-template-columns:1fr;}.recipes-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- PWA BANNER -->
-<div id="pwa-banner" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#0ea5e9;color:#fff;border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9999;max-width:380px;width:90%;">
-  <img src="logo_ecoedu.jpeg" style="width:40px;height:40px;border-radius:10px;object-fit:cover;" alt="Eco Edu"/>
-  <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Installer Eco Edu</div><div style="font-size:11px;opacity:0.85;">Ajouter à votre écran d'accueil</div></div>
-  <button id="pwa-install" style="background:#fff;color:#0ea5e9;border:none;border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;">Installer</button>
-  <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer;">×</button>
-</div>
-
-<!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="showPage('accueil')">
     <img src="logo_ecoedu.jpeg" alt="Logo Eco Edu"/>
     <span class="nav-brand">Eco Edu</span>
   </div>
   <div class="nav-links">
-    <a onclick="showPage('accueil')" class="active" id="nav-accueil">Accueil</a>
-    <a onclick="showPage('modules')" id="nav-modules">Modules</a>
-    <a onclick="showPage('pays')" id="nav-pays">Pays partenaires</a>
-    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+    <a onclick="showPage('accueil')" class="active" id="nav-accueil" data-i18n="nav_home">Accueil</a>
+    <a onclick="showPage('modules')" id="nav-modules" data-i18n="nav_modules">Modules</a>
+    <a onclick="showPage('pays')" id="nav-pays" data-i18n="nav_countries">Pays partenaires</a>
+    <a onclick="showPage('contact')" id="nav-contact" data-i18n="nav_contact">Contact</a>
   </div>
   <div class="nav-right">
-    <div class="lang-sel">🌐 FR ▾</div>
-    <button class="btn-dl" onclick="showPage('modules')">Découvrir l'app</button>
+    <div class="lang-sel" onclick="toggleLang(event)">
+      <span id="current-lang-flag">🇫🇷</span> <span id="current-lang-code">FR</span> ▾
+      <div class="lang-dropdown" id="lang-dropdown">
+        <div class="lang-option active" onclick="setLang('fr','🇫🇷','FR')"><span>🇫🇷</span> Français</div>
+        <div class="lang-option" onclick="setLang('en','🇬🇧','EN')"><span>🇬🇧</span> English</div>
+        <div class="lang-option" onclick="setLang('it','🇮🇹','IT')"><span>🇮🇹</span> Italiano</div>
+        <div class="lang-option" onclick="setLang('es','🇪🇸','ES')"><span>🇪🇸</span> Español</div>
+        <div class="lang-option" onclick="setLang('tr','🇹🇷','TR')"><span>🇹🇷</span> Türkçe</div>
+        <div class="lang-option" onclick="setLang('mk','🇲🇰','MK')"><span>🇲🇰</span> Македонски</div>
+        <div class="lang-option" onclick="setLang('sv','🇸🇪','SV')"><span>🇸🇪</span> Svenska</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="showPage('modules')" data-i18n="nav_discover">Découvrir l'app</button>
   </div>
 </nav>
 
-<!-- ===================== PAGE ACCUEIL ===================== -->
+<!-- PAGE ACCUEIL -->
 <div class="page active" id="page-accueil">
   <div class="hero">
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-badge">
           <img src="europe.png" style="width:20px;height:14px;object-fit:cover;border-radius:2px;" alt="EU"/>
-          Projet Erasmus+ · 6 pays partenaires
+          <span data-i18n="hero_badge">Projet Erasmus+ · 6 pays partenaires</span>
         </div>
-        <h1 class="hero-h1">Éduquer pour un avenir <em>durable</em> et culturel</h1>
-        <p class="hero-sub">Une application gratuite pour étudiants, lycéens et collégiens — explorez la durabilité, la culture et l'économie ensemble.</p>
+        <h1 class="hero-h1" data-i18n="hero_title">Éduquer pour un avenir <em>durable</em> et culturel</h1>
+        <p class="hero-sub" data-i18n="hero_sub">Une application gratuite pour étudiants, lycéens et collégiens — explorez la durabilité, la culture et l'économie ensemble.</p>
         <div class="hero-ctas">
-          <button class="btn-primary" onclick="showPage('modules')">Découvrir les modules</button>
-          <button class="btn-secondary" onclick="showPage('pays')">Pays partenaires</button>
+          <button class="btn-primary" onclick="showPage('modules')" data-i18n="hero_btn1">Découvrir les modules</button>
+          <button class="btn-secondary" onclick="showPage('pays')" data-i18n="hero_btn2">Pays partenaires</button>
         </div>
         <div class="hero-flags">
           <div class="flag-chip">🇫🇷 Martinique</div>
@@ -273,271 +224,739 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="hero-illus">
-        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" width="300" height="260">
           <rect width="300" height="260" fill="#e0f7fa"/>
           <ellipse cx="50" cy="40" rx="60" ry="45" fill="#b2dfdb" opacity="0.5"/>
           <ellipse cx="260" cy="220" rx="65" ry="40" fill="#b3e5fc" opacity="0.5"/>
           <path d="M15 25 Q26 12 38 24 Q26 36 15 25Z" fill="#66bb6a" opacity="0.9"/>
           <path d="M6 48 Q18 36 26 50 Q14 56 6 48Z" fill="#81c784" opacity="0.9"/>
           <path d="M18 70 Q30 56 40 68 Q28 78 18 70Z" fill="#a5d6a7" opacity="0.9"/>
-          <path d="M5 92 Q16 82 22 94 Q10 100 5 92Z" fill="#66bb6a" opacity="0.9"/>
-          <path d="M20 118 Q30 106 40 118 Q30 128 20 118Z" fill="#a5d6a7" opacity="0.9"/>
-          <path d="M8 144 Q20 134 28 146 Q16 152 8 144Z" fill="#81c784" opacity="0.9"/>
-          <path d="M18 170 Q28 158 38 170 Q28 180 18 170Z" fill="#66bb6a" opacity="0.9"/>
           <path d="M285 18 Q275 6 264 18 Q275 30 285 18Z" fill="#66bb6a" opacity="0.9"/>
           <path d="M296 42 Q285 30 275 43 Q286 53 296 42Z" fill="#81c784" opacity="0.9"/>
           <path d="M284 66 Q272 54 262 67 Q274 77 284 66Z" fill="#a5d6a7" opacity="0.9"/>
-          <path d="M298 90 Q286 78 278 91 Q290 101 298 90Z" fill="#66bb6a" opacity="0.9"/>
-          <path d="M282 116 Q270 106 264 119 Q276 129 282 116Z" fill="#81c784" opacity="0.9"/>
-          <path d="M296 142 Q284 132 278 145 Q290 155 296 142Z" fill="#a5d6a7" opacity="0.9"/>
-          <g transform="translate(248,36)"><ellipse cx="0" cy="-5" rx="11" ry="13" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/><rect x="-4" y="7" width="9" height="4" rx="1" fill="#f9a825" opacity="0.8"/><line x1="0" y1="-17" x2="0" y2="-21" stroke="#f9a825" stroke-width="1.5" stroke-linecap="round"/></g>
-          <g transform="translate(80,30)"><rect x="-15" y="-12" width="15" height="24" rx="2" fill="#ef9a9a" opacity="0.9"/><rect x="0" y="-12" width="15" height="24" rx="2" fill="#e57373" opacity="0.9"/><line x1="0" y1="-12" x2="0" y2="12" stroke="#c62828" stroke-width="1.2"/><line x1="-11" y1="-5" x2="-2" y2="-5" stroke="#fff" stroke-width="1" opacity="0.7"/><line x1="-11" y1="0" x2="-2" y2="0" stroke="#fff" stroke-width="1" opacity="0.7"/><line x1="2" y1="-5" x2="11" y2="-5" stroke="#fff" stroke-width="1" opacity="0.7"/><path d="M6 -12 L6 -5 L4 -8 L2 -5 L2 -12Z" fill="#a5d6a7"/></g>
+          <g transform="translate(248,36)"><ellipse cx="0" cy="-5" rx="11" ry="13" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/><rect x="-4" y="7" width="9" height="4" rx="1" fill="#f9a825" opacity="0.8"/></g>
+          <g transform="translate(80,30)"><rect x="-15" y="-12" width="15" height="24" rx="2" fill="#ef9a9a" opacity="0.9"/><rect x="0" y="-12" width="15" height="24" rx="2" fill="#e57373" opacity="0.9"/><line x1="0" y1="-12" x2="0" y2="12" stroke="#c62828" stroke-width="1.2"/></g>
           <image href="europe.png" x="95" y="55" width="110" height="74" preserveAspectRatio="xMidYMid meet"/>
-          <path d="M138 148 Q128 138 120 143 Q128 153 138 148Z" fill="#ffb74d" opacity="0.9"/>
-          <path d="M138 148 Q148 138 156 143 Q148 153 138 148Z" fill="#ffd54f" opacity="0.9"/>
+          <path d="M138 168 Q128 158 120 163 Q128 173 138 168Z" fill="#ffb74d" opacity="0.9"/>
+          <path d="M138 168 Q148 158 156 163 Q148 173 138 168Z" fill="#ffd54f" opacity="0.9"/>
         </svg>
       </div>
     </div>
   </div>
-
   <div class="erasmus-strip">
     <img src="europe.png" alt="EU"/>
-    <span>Ce projet est cofinancé par le programme Erasmus+ de l'Union Européenne</span>
+    <span data-i18n="erasmus_text">Ce projet est cofinancé par le programme Erasmus+ de l'Union Européenne</span>
   </div>
-
   <div class="stats">
-    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Pays partenaires</div></div>
-    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Modules éducatifs</div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Langues disponibles</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Gratuit</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label" data-i18n="stat1">Pays partenaires</div></div>
+    <div class="stat"><div class="stat-num">8+</div><div class="stat-label" data-i18n="stat2">Modules éducatifs</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label" data-i18n="stat3">Langues disponibles</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-i18n="stat4">Gratuit</div></div>
   </div>
-
   <div style="background:#f0f9ff;">
     <div class="content-wrap">
-      <div class="section-label">Modules</div>
-      <h2 class="section-title">Tout pour apprendre et agir</h2>
-      <p class="section-sub">Cliquez sur un module pour en savoir plus.</p>
+      <div class="section-label" data-i18n="sec_modules">Modules</div>
+      <h2 class="section-title" data-i18n="sec_modules_title">Tout pour apprendre et agir</h2>
+      <p class="section-sub" data-i18n="sec_modules_sub">Cliquez sur un module pour en savoir plus.</p>
       <div class="modules-grid">
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">📖</div><div class="mod-name">Glossaire durabilité</div><div class="mod-desc">Définitions claires des termes économiques et environnementaux</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">♻️</div><div class="mod-name">Carte recyclage</div><div class="mod-desc">Points de collecte modifiables par la communauté</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">💧</div><div class="mod-name">Empreinte hydrique</div><div class="mod-desc">Calculez et réduisez votre consommation d'eau</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">🎮</div><div class="mod-name">Jeux & Quiz</div><div class="mod-desc">Biodiversité, économie, culture — apprendre en jouant</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes économiques et environnementaux</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte modifiables par la communauté</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez et réduisez votre consommation d'eau</div></div>
+        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux & Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Biodiversité, économie, culture — apprendre en jouant</div></div>
       </div>
     </div>
   </div>
-
   <div class="download-wrap">
     <div class="download-inner">
       <div class="dl-text">
-        <h2>Installez Eco Edu gratuitement</h2>
-        <p>Disponible sur Android et iOS sans passer par les stores. La langue s'adapte automatiquement à votre géolocalisation.</p>
+        <h2 data-i18n="dl_title">Installez Eco Edu gratuitement</h2>
+        <p data-i18n="dl_sub">Disponible sur Android et iOS sans passer par les stores.</p>
         <div class="dl-btns">
-          <div class="dl-btn"><div class="dl-btn-icon">🤖</div><div class="dl-btn-text"><small>Disponible sur</small><span>Google Play</span></div></div>
-          <div class="dl-btn"><div class="dl-btn-icon">🍎</div><div class="dl-btn-text"><small>Télécharger sur</small><span>App Store</span></div></div>
+          <div class="dl-btn"><div class="dl-btn-icon">🤖</div><div class="dl-btn-text"><small data-i18n="dl_android_small">Disponible sur</small><span>Google Play</span></div></div>
+          <div class="dl-btn"><div class="dl-btn-icon">🍎</div><div class="dl-btn-text"><small data-i18n="dl_ios_small">Télécharger sur</small><span>App Store</span></div></div>
         </div>
       </div>
-      <div class="dl-phone">
-        <div class="phone-prev">
-          <img src="logo_ecoedu.jpeg" alt="Eco Edu"/>
-          <span>Eco Edu</span>
-          <small>Éducation durable et culturelle</small>
-        </div>
-      </div>
+      <div class="dl-phone"><div class="phone-prev"><img src="logo_ecoedu.jpeg" alt="Eco Edu"/><span>Eco Edu</span><small data-i18n="dl_phone_sub">Éducation durable et culturelle</small></div></div>
     </div>
   </div>
-
   <div class="partners-wrap">
     <div class="partners-inner">
-      <div class="section-label">Soutiens</div>
-      <h2 class="section-title" style="font-size:18px;margin-bottom:12px;">Soutenu par les entreprises et institutions locales</h2>
+      <div class="section-label" data-i18n="partners_label">Soutiens</div>
+      <h2 class="section-title" style="font-size:18px;margin-bottom:12px;" data-i18n="partners_title">Soutenu par les entreprises et institutions locales</h2>
       <div class="partners-row">
-        <div class="partner-chip"><span>🏢</span> Entreprises locales</div>
-        <div class="partner-chip"><span>🏫</span> Établissements scolaires</div>
+        <div class="partner-chip"><span>🏢</span> <span data-i18n="partner1">Entreprises locales</span></div>
+        <div class="partner-chip"><span>🏫</span> <span data-i18n="partner2">Établissements scolaires</span></div>
         <div class="partner-chip"><img src="europe.png" style="width:20px;height:13px;object-fit:cover;border-radius:2px;" alt="EU"/> Erasmus+</div>
-        <div class="partner-chip"><span>🤝</span> Institutions partenaires</div>
+        <div class="partner-chip"><span>🤝</span> <span data-i18n="partner3">Institutions partenaires</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===================== PAGE MODULES ===================== -->
+<!-- PAGE MODULES -->
 <div class="page" id="page-modules">
   <div class="page-header">
-    <h1>Modules éducatifs</h1>
-    <p>Cliquez sur un module pour explorer son contenu interactif</p>
+    <h1 data-i18n="modules_title">Modules éducatifs</h1>
+    <p data-i18n="modules_sub">Cliquez sur un module pour explorer son contenu interactif</p>
   </div>
   <div class="content-wrap">
-
-    <!-- LISTE DES MODULES -->
     <div id="modules-list">
       <div class="modules-grid">
-        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name">Glossaire durabilité</div><div class="mod-desc">Définitions claires des termes économiques et environnementaux</div></div>
-        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name">Empreinte hydrique</div><div class="mod-desc">Calculez et réduisez votre consommation d'eau quotidienne</div></div>
-        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name">Quiz Biodiversité</div><div class="mod-desc">Testez vos connaissances sur les espèces locales et mondiales</div></div>
-        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name">Recettes culturelles</div><div class="mod-desc">Cuisine durable et traditionnelle des 6 pays partenaires</div></div>
-        <div class="mod-card"><div class="mod-icon">♻️</div><div class="mod-name">Carte recyclage</div><div class="mod-desc">Points de collecte près de chez vous — modifiables par la communauté</div></div>
-        <div class="mod-card"><div class="mod-icon">🎬</div><div class="mod-name">Vidéos éducatives</div><div class="mod-desc">Contenus visuels sur l'environnement, la biodiversité et la culture</div></div>
-        <div class="mod-card"><div class="mod-icon">👗</div><div class="mod-name">Mode durable</div><div class="mod-desc">Conseils pour changer, échanger et recycler ses vêtements</div></div>
-        <div class="mod-card"><div class="mod-icon">🌱</div><div class="mod-name">Réduire le gaspillage</div><div class="mod-desc">Conseils pratiques pour réduire le gaspillage alimentaire au quotidien</div></div>
+        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes économiques et environnementaux</div></div>
+        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez et réduisez votre consommation d'eau quotidienne</div></div>
+        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux & Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Testez vos connaissances sur les espèces locales et mondiales</div></div>
+        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name" data-i18n="mod5_name">Recettes culturelles</div><div class="mod-desc" data-i18n="mod5_desc">Cuisine durable et traditionnelle des 6 pays partenaires</div></div>
+        <div class="mod-card"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte près de chez vous</div></div>
+        <div class="mod-card"><div class="mod-icon">🎬</div><div class="mod-name" data-i18n="mod6_name">Vidéos éducatives</div><div class="mod-desc" data-i18n="mod6_desc">Contenus visuels sur l'environnement et la culture</div></div>
+        <div class="mod-card"><div class="mod-icon">👗</div><div class="mod-name" data-i18n="mod7_name">Mode durable</div><div class="mod-desc" data-i18n="mod7_desc">Conseils pour changer, échanger et recycler ses vêtements</div></div>
+        <div class="mod-card"><div class="mod-icon">🌱</div><div class="mod-name" data-i18n="mod8_name">Réduire le gaspillage</div><div class="mod-desc" data-i18n="mod8_desc">Conseils pratiques pour réduire le gaspillage alimentaire</div></div>
       </div>
     </div>
-
-    <!-- DETAIL GLOSSAIRE -->
     <div class="module-detail" id="module-glossaire">
-      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
-      <h2>📖 Glossaire de la durabilité</h2>
+      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
+      <h2>📖 <span data-i18n="mod1_name">Glossaire de la durabilité</span></h2>
       <div class="glossaire-grid">
-        <div class="term-card"><h3>Économie circulaire</h3><p>Modèle économique visant à réduire les déchets en gardant les ressources en utilisation le plus longtemps possible.</p><span class="term-tag">Économie</span></div>
-        <div class="term-card"><h3>Biodiversité</h3><p>Variété et variabilité de la vie sur Terre — des écosystèmes, espèces et gènes présents dans une région.</p><span class="term-tag">Environnement</span></div>
-        <div class="term-card"><h3>Empreinte hydrique</h3><p>Volume total d'eau douce utilisé pour produire les biens et services consommés par un individu ou une communauté.</p><span class="term-tag">Eau</span></div>
-        <div class="term-card"><h3>Patrimoine culturel</h3><p>Héritage de biens physiques et immatériels transmis par les générations passées, maintenu au présent.</p><span class="term-tag">Culture</span></div>
-        <div class="term-card"><h3>Développement durable</h3><p>Développement qui répond aux besoins du présent sans compromettre la capacité des générations futures.</p><span class="term-tag">Général</span></div>
-        <div class="term-card"><h3>Upcycling (surcyclage)</h3><p>Transformer des déchets ou des vêtements usagés en nouveaux produits de valeur supérieure.</p><span class="term-tag">Mode durable</span></div>
-        <div class="term-card"><h3>Agroforesterie</h3><p>Système qui combine arbres et cultures ou élevage sur la même parcelle pour améliorer la biodiversité.</p><span class="term-tag">Agriculture</span></div>
-        <div class="term-card"><h3>Économie bleue</h3><p>Modèle économique qui s'inspire des écosystèmes naturels pour éliminer les déchets et la pollution.</p><span class="term-tag">Économie</span></div>
+        <div class="term-card"><h3 data-i18n="term1_name">Économie circulaire</h3><p data-i18n="term1_def">Modèle économique visant à réduire les déchets en gardant les ressources en utilisation le plus longtemps possible.</p><span class="term-tag" data-i18n="term1_tag">Économie</span></div>
+        <div class="term-card"><h3 data-i18n="term2_name">Biodiversité</h3><p data-i18n="term2_def">Variété et variabilité de la vie sur Terre — des écosystèmes, espèces et gènes présents dans une région.</p><span class="term-tag" data-i18n="term2_tag">Environnement</span></div>
+        <div class="term-card"><h3 data-i18n="term3_name">Empreinte hydrique</h3><p data-i18n="term3_def">Volume total d'eau douce utilisé pour produire les biens et services consommés par un individu ou une communauté.</p><span class="term-tag" data-i18n="term3_tag">Eau</span></div>
+        <div class="term-card"><h3 data-i18n="term4_name">Patrimoine culturel</h3><p data-i18n="term4_def">Héritage de biens physiques et immatériels transmis par les générations passées, maintenu au présent.</p><span class="term-tag" data-i18n="term4_tag">Culture</span></div>
+        <div class="term-card"><h3 data-i18n="term5_name">Développement durable</h3><p data-i18n="term5_def">Développement qui répond aux besoins du présent sans compromettre la capacité des générations futures.</p><span class="term-tag" data-i18n="term5_tag">Général</span></div>
+        <div class="term-card"><h3 data-i18n="term6_name">Upcycling</h3><p data-i18n="term6_def">Transformer des déchets ou des vêtements usagés en nouveaux produits de valeur supérieure.</p><span class="term-tag" data-i18n="term6_tag">Mode durable</span></div>
       </div>
     </div>
-
-    <!-- DETAIL CALCULATEUR -->
     <div class="module-detail" id="module-calculateur">
-      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
-      <h2>💧 Calculateur d'empreinte hydrique</h2>
+      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
+      <h2>💧 <span data-i18n="mod3_name">Empreinte hydrique</span></h2>
       <div class="calc-box">
-        <h2>Votre empreinte quotidienne</h2>
-        <p>Bougez les curseurs pour estimer votre consommation d'eau virtuelle.</p>
-        <div class="water-result"><div class="water-num" id="wt">3 240</div><div class="water-unit">litres / jour estimés</div></div>
+        <h2 data-i18n="calc_title">Votre empreinte quotidienne</h2>
+        <p data-i18n="calc_sub">Bougez les curseurs pour estimer votre consommation d'eau virtuelle.</p>
+        <div class="water-result"><div class="water-num" id="wt">3 240</div><div class="water-unit" data-i18n="calc_unit">litres / jour estimés</div></div>
       </div>
-      <div class="slider-row"><div class="slider-lbl"><span>🍖 Viande (portions/semaine)</span><span class="slider-val" id="vm">4</span></div><input type="range" min="0" max="14" value="4" id="sm"></div>
-      <div class="slider-row"><div class="slider-lbl"><span>🚿 Douche (minutes/jour)</span><span class="slider-val" id="vs">8</span></div><input type="range" min="1" max="30" value="8" id="ss"></div>
-      <div class="slider-row"><div class="slider-lbl"><span>👕 Vêtements neufs (par mois)</span><span class="slider-val" id="vc">3</span></div><input type="range" min="0" max="20" value="3" id="sc"></div>
+      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider1">🍖 Viande (portions/semaine)</span><span class="slider-val" id="vm">4</span></div><input type="range" min="0" max="14" value="4" id="sm"></div>
+      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider2">🚿 Douche (minutes/jour)</span><span class="slider-val" id="vs">8</span></div><input type="range" min="1" max="30" value="8" id="ss"></div>
+      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider3">👕 Vêtements neufs (par mois)</span><span class="slider-val" id="vc">3</span></div><input type="range" min="0" max="20" value="3" id="sc"></div>
       <div class="tips-grid">
-        <div class="tip-card"><div class="tip-icon">🥗</div><p>1 repas végétarien de plus = -500 L/jour</p></div>
-        <div class="tip-card"><div class="tip-icon">👗</div><p>Échanger vos vêtements au lieu d'acheter</p></div>
-        <div class="tip-card"><div class="tip-icon">🚿</div><p>Douche 5 min = -30 L vs 10 min</p></div>
-        <div class="tip-card"><div class="tip-icon">♻️</div><p>1 jean recyclé = 7 000 L économisés</p></div>
+        <div class="tip-card"><div class="tip-icon">🥗</div><p data-i18n="tip1">1 repas végétarien de plus = -500 L/jour</p></div>
+        <div class="tip-card"><div class="tip-icon">👗</div><p data-i18n="tip2">Échanger vos vêtements au lieu d'acheter</p></div>
+        <div class="tip-card"><div class="tip-icon">🚿</div><p data-i18n="tip3">Douche 5 min = -30 L vs 10 min</p></div>
+        <div class="tip-card"><div class="tip-icon">♻️</div><p data-i18n="tip4">1 jean recyclé = 7 000 L économisés</p></div>
       </div>
     </div>
-
-    <!-- DETAIL QUIZ -->
     <div class="module-detail" id="module-quiz">
-      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
-      <h2>🎮 Quiz Biodiversité</h2>
+      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
+      <h2>🎮 <span data-i18n="mod4_name">Quiz Biodiversité</span></h2>
       <div class="quiz-box">
         <div class="quiz-num" id="qn">Question 1 / 3</div>
         <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qp" style="width:33%"></div></div>
-        <div class="quiz-q" id="qt">Quel pourcentage des espèces marines vit dans les récifs coralliens, qui ne couvrent que 1% des océans ?</div>
-        <div class="quiz-opts" id="qo">
-          <button class="quiz-opt" onclick="answerQ(0)">A. 10%</button>
-          <button class="quiz-opt" onclick="answerQ(1)">B. 25%</button>
-          <button class="quiz-opt" onclick="answerQ(2)">C. 45%</button>
-          <button class="quiz-opt" onclick="answerQ(3)">D. 60%</button>
-        </div>
+        <div class="quiz-q" id="qt"></div>
+        <div class="quiz-opts" id="qo"></div>
         <div class="quiz-feedback" id="qf"><p id="qe"></p></div>
-        <button class="quiz-next-btn" id="qnb" onclick="nextQ()">Question suivante →</button>
+        <button class="quiz-next-btn" id="qnb" onclick="nextQ()" data-i18n="quiz_next">Question suivante →</button>
       </div>
     </div>
-
-    <!-- DETAIL RECETTES -->
     <div class="module-detail" id="module-recettes">
-      <div class="back-link" onclick="hideModule()">← Retour aux modules</div>
-      <h2>🍽️ Recettes culturelles durables</h2>
+      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
+      <h2>🍽️ <span data-i18n="mod5_name">Recettes culturelles durables</span></h2>
       <div class="recipes-grid">
-        <div class="recipe-card"><div class="recipe-img">🫙<div class="recipe-flag">🇫🇷 Martinique</div></div><div class="recipe-body"><h3>Colombo de poulet</h3><p>Plat traditionnel antillais aux épices et légumes frais locaux</p><div class="recipe-tags"><span class="rtag">🌿 Local</span><span class="rtag">♻️ Zéro déchet</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫒<div class="recipe-flag">🇮🇹 Italie</div></div><div class="recipe-body"><h3>Ribollita toscane</h3><p>Soupe de légumes et pain rassis — anti-gaspillage par excellence</p><div class="recipe-tags"><span class="rtag">🥦 Végétarien</span><span class="rtag">♻️ Anti-gaspillage</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫖<div class="recipe-flag">🇹🇷 Turquie</div></div><div class="recipe-body"><h3>Meze végétalien</h3><p>Assortiment de légumes marinés, houmous et herbes fraîches</p><div class="recipe-tags"><span class="rtag">🌱 Vegan</span><span class="rtag">🌍 Tradition</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🥘<div class="recipe-flag">🇪🇸 Espagne</div></div><div class="recipe-body"><h3>Gazpacho andalou</h3><p>Soupe froide de légumes crus, fraîche et zéro cuisson</p><div class="recipe-tags"><span class="rtag">🌿 Vegan</span><span class="rtag">☀️ Saisonnier</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫐<div class="recipe-flag">🇸🇪 Suède</div></div><div class="recipe-body"><h3>Soppa på rotfrukter</h3><p>Soupe de légumes racines suédoise, locale et de saison</p><div class="recipe-tags"><span class="rtag">🥕 Local</span><span class="rtag">❄️ Nordique</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🥗<div class="recipe-flag">🇲🇰 Macédoine</div></div><div class="recipe-body"><h3>Tavče gravče</h3><p>Haricots cuits au four aux légumes frais et herbes aromatiques</p><div class="recipe-tags"><span class="rtag">🌿 Végétarien</span><span class="rtag">🌍 Tradition</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫙<div class="recipe-flag">🇫🇷 Martinique</div></div><div class="recipe-body"><h3>Colombo de poulet</h3><p data-i18n="recipe1_desc">Plat traditionnel antillais aux épices et légumes frais locaux</p><div class="recipe-tags"><span class="rtag">🌿 Local</span><span class="rtag">♻️ Zéro déchet</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫒<div class="recipe-flag">🇮🇹 Italie</div></div><div class="recipe-body"><h3>Ribollita toscane</h3><p data-i18n="recipe2_desc">Soupe de légumes et pain rassis — anti-gaspillage par excellence</p><div class="recipe-tags"><span class="rtag">🥦 Végétarien</span><span class="rtag">♻️ Anti-gaspillage</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫖<div class="recipe-flag">🇹🇷 Turquie</div></div><div class="recipe-body"><h3>Meze végétalien</h3><p data-i18n="recipe3_desc">Assortiment de légumes marinés, houmous et herbes fraîches</p><div class="recipe-tags"><span class="rtag">🌱 Vegan</span><span class="rtag">🌍 Tradition</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🥘<div class="recipe-flag">🇪🇸 Espagne</div></div><div class="recipe-body"><h3>Gazpacho andalou</h3><p data-i18n="recipe4_desc">Soupe froide de légumes crus, fraîche et zéro cuisson</p><div class="recipe-tags"><span class="rtag">🌿 Vegan</span><span class="rtag">☀️ Saisonnier</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🫐<div class="recipe-flag">🇸🇪 Suède</div></div><div class="recipe-body"><h3>Soppa på rotfrukter</h3><p data-i18n="recipe5_desc">Soupe de légumes racines suédoise, locale et de saison</p><div class="recipe-tags"><span class="rtag">🥕 Local</span><span class="rtag">❄️ Nordique</span></div></div></div>
+        <div class="recipe-card"><div class="recipe-img">🥗<div class="recipe-flag">🇲🇰 Macédoine</div></div><div class="recipe-body"><h3>Tavče gravče</h3><p data-i18n="recipe6_desc">Haricots cuits au four aux légumes frais et herbes aromatiques</p><div class="recipe-tags"><span class="rtag">🌿 Végétarien</span><span class="rtag">🌍 Tradition</span></div></div></div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- ===================== PAGE PAYS ===================== -->
+<!-- PAGE PAYS -->
 <div class="page" id="page-pays">
   <div class="page-header">
-    <h1>Pays partenaires</h1>
-    <p>Six pays unis par l'éducation, la culture et la durabilité dans le cadre du programme Erasmus+</p>
+    <h1 data-i18n="countries_title">Pays partenaires</h1>
+    <p data-i18n="countries_sub">Six pays unis par l'éducation, la culture et la durabilité dans le cadre du programme Erasmus+</p>
   </div>
   <div class="countries-wrap-bg">
     <div class="countries-inner">
       <div class="countries-grid">
-        <div class="country-card"><div class="country-flag">🇫🇷</div><div class="country-name">Martinique</div><div class="country-lang">Français</div><div class="country-desc">Île des Caraïbes, département français d'outre-mer, riche en biodiversité tropicale et patrimoine culturel créole.</div></div>
-        <div class="country-card"><div class="country-flag">🇮🇹</div><div class="country-name">Italie</div><div class="country-lang">Italiano</div><div class="country-desc">Patrimoine culturel exceptionnel, cuisine méditerranéenne durable, pionnier de l'économie circulaire en Europe.</div></div>
-        <div class="country-card"><div class="country-flag">🇹🇷</div><div class="country-name">Turquie</div><div class="country-lang">Türkçe</div><div class="country-desc">Carrefour entre l'Europe et l'Asie, biodiversité remarquable, traditions culinaires et artisanales ancestrales.</div></div>
-        <div class="country-card"><div class="country-flag">🇪🇸</div><div class="country-name">Espagne</div><div class="country-lang">Español</div><div class="country-desc">Leader européen des énergies renouvelables, agriculture biologique en pleine croissance, culture gastronomique durable.</div></div>
-        <div class="country-card"><div class="country-flag">🇲🇰</div><div class="country-name">Macédoine du Nord</div><div class="country-lang">Македонски</div><div class="country-desc">Biodiversité balkanique unique, lac Ohrid classé UNESCO, traditions agricoles et artisanales préservées.</div></div>
-        <div class="country-card"><div class="country-flag">🇸🇪</div><div class="country-name">Suède</div><div class="country-lang">Svenska</div><div class="country-desc">Leader mondial du développement durable, modèle d'économie circulaire, forêts et nature préservées.</div></div>
+        <div class="country-card"><div class="country-flag">🇫🇷</div><div class="country-name">Martinique</div><div class="country-lang">Français</div><div class="country-desc" data-i18n="country1_desc">Île des Caraïbes, département français d'outre-mer, riche en biodiversité tropicale et patrimoine culturel créole.</div></div>
+        <div class="country-card"><div class="country-flag">🇮🇹</div><div class="country-name">Italie</div><div class="country-lang">Italiano</div><div class="country-desc" data-i18n="country2_desc">Patrimoine culturel exceptionnel, cuisine méditerranéenne durable, pionnier de l'économie circulaire en Europe.</div></div>
+        <div class="country-card"><div class="country-flag">🇹🇷</div><div class="country-name">Turquie</div><div class="country-lang">Türkçe</div><div class="country-desc" data-i18n="country3_desc">Carrefour entre l'Europe et l'Asie, biodiversité remarquable, traditions culinaires et artisanales ancestrales.</div></div>
+        <div class="country-card"><div class="country-flag">🇪🇸</div><div class="country-name">Espagne</div><div class="country-lang">Español</div><div class="country-desc" data-i18n="country4_desc">Leader européen des énergies renouvelables, agriculture biologique en pleine croissance, culture gastronomique durable.</div></div>
+        <div class="country-card"><div class="country-flag">🇲🇰</div><div class="country-name">Macédoine du Nord</div><div class="country-lang">Македонски</div><div class="country-desc" data-i18n="country5_desc">Biodiversité balkanique unique, lac Ohrid classé UNESCO, traditions agricoles et artisanales préservées.</div></div>
+        <div class="country-card"><div class="country-flag">🇸🇪</div><div class="country-name">Suède</div><div class="country-lang">Svenska</div><div class="country-desc" data-i18n="country6_desc">Leader mondial du développement durable, modèle d'économie circulaire, forêts et nature préservées.</div></div>
       </div>
     </div>
   </div>
-  <div class="erasmus-strip">
-    <img src="europe.png" alt="EU"/>
-    <span>Programme Erasmus+ — Éducation, Formation, Jeunesse et Sport</span>
-  </div>
+  <div class="erasmus-strip"><img src="europe.png" alt="EU"/><span data-i18n="erasmus_text">Ce projet est cofinancé par le programme Erasmus+ de l'Union Européenne</span></div>
 </div>
 
-<!-- ===================== PAGE CONTACT ===================== -->
+<!-- PAGE CONTACT -->
 <div class="page" id="page-contact">
   <div class="page-header">
-    <h1>Nous contacter</h1>
-    <p>Une question, une suggestion ou souhaitez-vous devenir partenaire ? Écrivez-nous !</p>
+    <h1 data-i18n="contact_title">Nous contacter</h1>
+    <p data-i18n="contact_sub">Une question, une suggestion ou souhaitez-vous devenir partenaire ?</p>
   </div>
   <div class="content-wrap">
     <div class="contact-grid">
       <div class="contact-form">
-        <h2>Envoyer un message</h2>
-        <div class="form-group"><label>Votre nom</label><input type="text" placeholder="Ex: Marie Dupont"/></div>
+        <h2 data-i18n="contact_form_title">Envoyer un message</h2>
+        <div class="form-group"><label data-i18n="contact_name">Votre nom</label><input type="text" data-i18n-placeholder="contact_name_ph" placeholder="Ex: Marie Dupont"/></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"/></div>
-        <div class="form-group"><label>Pays</label>
+        <div class="form-group"><label data-i18n="contact_country">Pays</label>
           <select>
-            <option>Martinique 🇫🇷</option>
-            <option>Italie 🇮🇹</option>
-            <option>Turquie 🇹🇷</option>
-            <option>Espagne 🇪🇸</option>
-            <option>Macédoine 🇲🇰</option>
-            <option>Suède 🇸🇪</option>
-            <option>Autre</option>
+            <option>Martinique 🇫🇷</option><option>Italie 🇮🇹</option><option>Turquie 🇹🇷</option>
+            <option>Espagne 🇪🇸</option><option>Macédoine 🇲🇰</option><option>Suède 🇸🇪</option><option data-i18n="contact_other">Autre</option>
           </select>
         </div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Votre message..."></textarea></div>
-        <button class="btn-submit" onclick="alert('Message envoyé ! Nous vous répondrons bientôt.')">Envoyer le message</button>
+        <div class="form-group"><label data-i18n="contact_message">Message</label><textarea data-i18n-placeholder="contact_message_ph" placeholder="Votre message..."></textarea></div>
+        <button class="btn-submit" onclick="alert(translations[currentLang]['contact_sent'] || 'Message envoyé !')" data-i18n="contact_send">Envoyer le message</button>
       </div>
       <div class="contact-info">
-        <div class="info-card"><div class="info-icon">🌍</div><div><h3>Projet Erasmus+</h3><p>Eco Edu est cofinancé par le programme Erasmus+ de l'Union Européenne dans le cadre de l'éducation à la durabilité.</p></div></div>
-        <div class="info-card"><div class="info-icon">🏫</div><div><h3>Établissements partenaires</h3><p>Vous êtes un établissement scolaire et souhaitez rejoindre le projet ? Contactez-nous pour devenir partenaire Erasmus+.</p></div></div>
-        <div class="info-card"><div class="info-icon">🏢</div><div><h3>Entreprises locales</h3><p>Vous êtes une entreprise locale en Martinique et souhaitez soutenir le projet ? Nous serions ravis de collaborer.</p></div></div>
-        <div class="info-card"><div class="info-icon">📱</div><div><h3>Support technique</h3><p>Un problème avec l'application ou le site ? Décrivez-le dans le formulaire et notre équipe vous répondra rapidement.</p></div></div>
+        <div class="info-card"><div class="info-icon">🌍</div><div><h3>Projet Erasmus+</h3><p data-i18n="info1">Eco Edu est cofinancé par le programme Erasmus+ de l'Union Européenne dans le cadre de l'éducation à la durabilité.</p></div></div>
+        <div class="info-card"><div class="info-icon">🏫</div><div><h3 data-i18n="info2_title">Établissements partenaires</h3><p data-i18n="info2">Vous êtes un établissement scolaire et souhaitez rejoindre le projet ? Contactez-nous pour devenir partenaire Erasmus+.</p></div></div>
+        <div class="info-card"><div class="info-icon">🏢</div><div><h3 data-i18n="info3_title">Entreprises locales</h3><p data-i18n="info3">Vous êtes une entreprise locale et souhaitez soutenir le projet ? Nous serions ravis de collaborer.</p></div></div>
+        <div class="info-card"><div class="info-icon">📱</div><div><h3 data-i18n="info4_title">Support technique</h3><p data-i18n="info4">Un problème avec l'application ou le site ? Décrivez-le dans le formulaire et notre équipe vous répondra rapidement.</p></div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER (commun) -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="logo_ecoedu.jpeg" alt="Logo"/>
-      <span>Eco Edu</span>
-    </div>
+    <div class="footer-logo"><img src="logo_ecoedu.jpeg" alt="Logo"/><span>Eco Edu</span></div>
     <div class="footer-links">
-      <a onclick="showPage('accueil')">Accueil</a>
-      <a onclick="showPage('modules')">Modules</a>
-      <a onclick="showPage('pays')">Pays partenaires</a>
-      <a onclick="showPage('contact')">Contact</a>
+      <a onclick="showPage('accueil')" data-i18n="nav_home">Accueil</a>
+      <a onclick="showPage('modules')" data-i18n="nav_modules">Modules</a>
+      <a onclick="showPage('pays')" data-i18n="nav_countries">Pays partenaires</a>
+      <a onclick="showPage('contact')" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="footer-copy">© 2025 Eco Edu · Projet Erasmus+</div>
   </div>
 </footer>
 
 <script>
+const translations = {
+  fr: {
+    nav_home:"Accueil", nav_modules:"Modules", nav_countries:"Pays partenaires", nav_contact:"Contact", nav_discover:"Découvrir l'app",
+    hero_badge:"Projet Erasmus+ · 6 pays partenaires", hero_title:"Éduquer pour un avenir durable et culturel",
+    hero_sub:"Une application gratuite pour étudiants, lycéens et collégiens — explorez la durabilité, la culture et l'économie ensemble.",
+    hero_btn1:"Découvrir les modules", hero_btn2:"Pays partenaires",
+    erasmus_text:"Ce projet est cofinancé par le programme Erasmus+ de l'Union Européenne",
+    stat1:"Pays partenaires", stat2:"Modules éducatifs", stat3:"Langues disponibles", stat4:"Gratuit",
+    sec_modules:"Modules", sec_modules_title:"Tout pour apprendre et agir", sec_modules_sub:"Cliquez sur un module pour en savoir plus.",
+    mod1_name:"Glossaire durabilité", mod1_desc:"Définitions claires des termes économiques et environnementaux",
+    mod2_name:"Carte recyclage", mod2_desc:"Points de collecte modifiables par la communauté",
+    mod3_name:"Empreinte hydrique", mod3_desc:"Calculez et réduisez votre consommation d'eau",
+    mod4_name:"Jeux & Quiz", mod4_desc:"Biodiversité, économie, culture — apprendre en jouant",
+    mod5_name:"Recettes culturelles", mod5_desc:"Cuisine durable et traditionnelle des 6 pays partenaires",
+    mod6_name:"Vidéos éducatives", mod6_desc:"Contenus visuels sur l'environnement et la culture",
+    mod7_name:"Mode durable", mod7_desc:"Conseils pour changer, échanger et recycler ses vêtements",
+    mod8_name:"Réduire le gaspillage", mod8_desc:"Conseils pratiques pour réduire le gaspillage alimentaire",
+    dl_title:"Installez Eco Edu gratuitement", dl_sub:"Disponible sur Android et iOS sans passer par les stores.",
+    dl_android_small:"Disponible sur", dl_ios_small:"Télécharger sur", dl_phone_sub:"Éducation durable et culturelle",
+    partners_label:"Soutiens", partners_title:"Soutenu par les entreprises et institutions locales",
+    partner1:"Entreprises locales", partner2:"Établissements scolaires", partner3:"Institutions partenaires",
+    modules_title:"Modules éducatifs", modules_sub:"Cliquez sur un module pour explorer son contenu interactif",
+    back:"Retour aux modules",
+    term1_name:"Économie circulaire", term1_def:"Modèle économique visant à réduire les déchets en gardant les ressources en utilisation le plus longtemps possible.", term1_tag:"Économie",
+    term2_name:"Biodiversité", term2_def:"Variété et variabilité de la vie sur Terre.", term2_tag:"Environnement",
+    term3_name:"Empreinte hydrique", term3_def:"Volume total d'eau douce utilisé pour produire les biens et services consommés.", term3_tag:"Eau",
+    term4_name:"Patrimoine culturel", term4_def:"Héritage de biens physiques et immatériels transmis par les générations passées.", term4_tag:"Culture",
+    term5_name:"Développement durable", term5_def:"Développement qui répond aux besoins du présent sans compromettre les générations futures.", term5_tag:"Général",
+    term6_name:"Upcycling", term6_def:"Transformer des déchets ou vêtements usagés en nouveaux produits de valeur supérieure.", term6_tag:"Mode durable",
+    calc_title:"Votre empreinte quotidienne", calc_sub:"Bougez les curseurs pour estimer votre consommation d'eau virtuelle.", calc_unit:"litres / jour estimés",
+    slider1:"🍖 Viande (portions/semaine)", slider2:"🚿 Douche (minutes/jour)", slider3:"👕 Vêtements neufs (par mois)",
+    tip1:"1 repas végétarien de plus = -500 L/jour", tip2:"Échanger vos vêtements au lieu d'acheter", tip3:"Douche 5 min = -30 L vs 10 min", tip4:"1 jean recyclé = 7 000 L économisés",
+    quiz_next:"Question suivante →",
+    recipe1_desc:"Plat traditionnel antillais aux épices et légumes frais locaux",
+    recipe2_desc:"Soupe de légumes et pain rassis — anti-gaspillage par excellence",
+    recipe3_desc:"Assortiment de légumes marinés, houmous et herbes fraîches",
+    recipe4_desc:"Soupe froide de légumes crus, fraîche et zéro cuisson",
+    recipe5_desc:"Soupe de légumes racines suédoise, locale et de saison",
+    recipe6_desc:"Haricots cuits au four aux légumes frais et herbes aromatiques",
+    countries_title:"Pays partenaires", countries_sub:"Six pays unis par l'éducation, la culture et la durabilité dans le cadre du programme Erasmus+",
+    country1_desc:"Île des Caraïbes, département français d'outre-mer, riche en biodiversité tropicale et patrimoine culturel créole.",
+    country2_desc:"Patrimoine culturel exceptionnel, cuisine méditerranéenne durable, pionnier de l'économie circulaire en Europe.",
+    country3_desc:"Carrefour entre l'Europe et l'Asie, biodiversité remarquable, traditions culinaires et artisanales ancestrales.",
+    country4_desc:"Leader européen des énergies renouvelables, agriculture biologique en pleine croissance.",
+    country5_desc:"Biodiversité balkanique unique, lac Ohrid classé UNESCO, traditions agricoles préservées.",
+    country6_desc:"Leader mondial du développement durable, modèle d'économie circulaire, forêts et nature préservées.",
+    contact_title:"Nous contacter", contact_sub:"Une question, une suggestion ou souhaitez-vous devenir partenaire ?",
+    contact_form_title:"Envoyer un message", contact_name:"Votre nom", contact_name_ph:"Ex: Marie Dupont",
+    contact_country:"Pays", contact_message:"Message", contact_message_ph:"Votre message...",
+    contact_send:"Envoyer le message", contact_sent:"Message envoyé ! Nous vous répondrons bientôt.", contact_other:"Autre",
+    info1:"Eco Edu est cofinancé par le programme Erasmus+ de l'Union Européenne dans le cadre de l'éducation à la durabilité.",
+    info2_title:"Établissements partenaires", info2:"Vous êtes un établissement scolaire et souhaitez rejoindre le projet ? Contactez-nous.",
+    info3_title:"Entreprises locales", info3:"Vous êtes une entreprise locale et souhaitez soutenir le projet ? Nous serions ravis de collaborer.",
+    info4_title:"Support technique", info4:"Un problème avec l'application ou le site ? Décrivez-le dans le formulaire.",
+    quiz_questions:[
+      {q:"Quel pourcentage des espèces marines vit dans les récifs coralliens ?",opts:["A. 10%","B. 25%","C. 45%","D. 60%"],c:1,e:"✅ Les récifs coralliens abritent environ 25% de toutes les espèces marines."},
+      {q:"Quelle pratique agricole permet de préserver la biodiversité des sols ?",opts:["A. Monoculture","B. Agroforesterie","C. Labour profond","D. Pesticides"],c:1,e:"✅ L'agroforesterie combine arbres et cultures, favorisant la biodiversité."},
+      {q:"En Martinique, quel arbre est symbolique de la résistance culturelle ?",opts:["A. Le bananier","B. Le flamboyant","C. Le cocotier","D. Le manguier"],c:1,e:"✅ Le flamboyant est l'arbre emblématique de la Martinique !"}
+    ]
+  },
+  en: {
+    nav_home:"Home", nav_modules:"Modules", nav_countries:"Partner countries", nav_contact:"Contact", nav_discover:"Discover the app",
+    hero_badge:"Erasmus+ Project · 6 partner countries", hero_title:"Educate for a sustainable and cultural future",
+    hero_sub:"A free application for students — explore sustainability, culture and economics together.",
+    hero_btn1:"Explore modules", hero_btn2:"Partner countries",
+    erasmus_text:"This project is co-funded by the Erasmus+ programme of the European Union",
+    stat1:"Partner countries", stat2:"Educational modules", stat3:"Languages available", stat4:"Free",
+    sec_modules:"Modules", sec_modules_title:"Everything to learn and act", sec_modules_sub:"Click on a module to learn more.",
+    mod1_name:"Sustainability glossary", mod1_desc:"Clear definitions of economic and environmental terms",
+    mod2_name:"Recycling map", mod2_desc:"Community-editable collection points",
+    mod3_name:"Water footprint", mod3_desc:"Calculate and reduce your water consumption",
+    mod4_name:"Games & Quiz", mod4_desc:"Biodiversity, economy, culture — learn by playing",
+    mod5_name:"Cultural recipes", mod5_desc:"Sustainable and traditional cuisine from 6 countries",
+    mod6_name:"Educational videos", mod6_desc:"Visual content on the environment and culture",
+    mod7_name:"Sustainable fashion", mod7_desc:"Tips for swapping and recycling clothing",
+    mod8_name:"Reduce waste", mod8_desc:"Practical tips to reduce food waste",
+    dl_title:"Install Eco Edu for free", dl_sub:"Available on Android and iOS without going through the stores.",
+    dl_android_small:"Available on", dl_ios_small:"Download on", dl_phone_sub:"Sustainable and cultural education",
+    partners_label:"Support", partners_title:"Supported by local businesses and institutions",
+    partner1:"Local businesses", partner2:"Schools", partner3:"Partner institutions",
+    modules_title:"Educational modules", modules_sub:"Click on a module to explore its interactive content",
+    back:"Back to modules",
+    term1_name:"Circular economy", term1_def:"Economic model aimed at reducing waste by keeping resources in use as long as possible.", term1_tag:"Economy",
+    term2_name:"Biodiversity", term2_def:"The variety and variability of life on Earth.", term2_tag:"Environment",
+    term3_name:"Water footprint", term3_def:"Total volume of freshwater used to produce goods and services consumed.", term3_tag:"Water",
+    term4_name:"Cultural heritage", term4_def:"Legacy of physical and intangible assets passed down from past generations.", term4_tag:"Culture",
+    term5_name:"Sustainable development", term5_def:"Development that meets the needs of the present without compromising future generations.", term5_tag:"General",
+    term6_name:"Upcycling", term6_def:"Transforming waste or used clothing into new higher-value products.", term6_tag:"Sustainable fashion",
+    calc_title:"Your daily footprint", calc_sub:"Move the sliders to estimate your virtual water consumption.", calc_unit:"estimated litres / day",
+    slider1:"🍖 Meat (portions/week)", slider2:"🚿 Shower (minutes/day)", slider3:"👕 New clothes (per month)",
+    tip1:"1 more vegetarian meal = -500 L/day", tip2:"Swap your clothes instead of buying", tip3:"5 min shower = -30 L vs 10 min", tip4:"1 recycled jean = 7,000 L saved",
+    quiz_next:"Next question →",
+    recipe1_desc:"Traditional Antillean dish with spices and fresh local vegetables",
+    recipe2_desc:"Vegetable and stale bread soup — zero waste excellence",
+    recipe3_desc:"Selection of marinated vegetables, hummus and fresh herbs",
+    recipe4_desc:"Cold raw vegetable soup, fresh and zero cooking",
+    recipe5_desc:"Swedish root vegetable soup, local and seasonal",
+    recipe6_desc:"Oven-baked beans with fresh vegetables and aromatic herbs",
+    countries_title:"Partner countries", countries_sub:"Six countries united by education, culture and sustainability through the Erasmus+ programme",
+    country1_desc:"Caribbean island, French overseas department, rich in tropical biodiversity and Creole cultural heritage.",
+    country2_desc:"Exceptional cultural heritage, sustainable Mediterranean cuisine, pioneer of circular economy in Europe.",
+    country3_desc:"Crossroads between Europe and Asia, remarkable biodiversity, ancestral culinary and craft traditions.",
+    country4_desc:"European leader in renewable energy, growing organic farming, sustainable gastronomic culture.",
+    country5_desc:"Unique Balkan biodiversity, UNESCO-listed Lake Ohrid, preserved agricultural traditions.",
+    country6_desc:"World leader in sustainable development, circular economy model, preserved forests and nature.",
+    contact_title:"Contact us", contact_sub:"A question, suggestion or would you like to become a partner?",
+    contact_form_title:"Send a message", contact_name:"Your name", contact_name_ph:"E.g. John Smith",
+    contact_country:"Country", contact_message:"Message", contact_message_ph:"Your message...",
+    contact_send:"Send message", contact_sent:"Message sent! We will reply soon.", contact_other:"Other",
+    info1:"Eco Edu is co-funded by the Erasmus+ programme of the European Union.",
+    info2_title:"Partner schools", info2:"Are you a school and want to join the project? Contact us to become an Erasmus+ partner.",
+    info3_title:"Local businesses", info3:"Are you a local business and want to support the project? We would love to collaborate.",
+    info4_title:"Technical support", info4:"A problem with the app or website? Describe it in the form.",
+    quiz_questions:[
+      {q:"What percentage of marine species live in coral reefs, which cover only 1% of oceans?",opts:["A. 10%","B. 25%","C. 45%","D. 60%"],c:1,e:"✅ Coral reefs are home to about 25% of all marine species despite their small area."},
+      {q:"Which farming practice helps preserve soil biodiversity?",opts:["A. Monoculture","B. Agroforestry","C. Deep plowing","D. Preventive pesticides"],c:1,e:"✅ Agroforestry combines trees and crops, promoting biodiversity and preserving soils."},
+      {q:"In Martinique, which tree is symbolic of cultural resistance?",opts:["A. The banana tree","B. The flamboyant","C. The coconut tree","D. The mango tree"],c:1,e:"✅ The flamboyant is the emblematic tree of Martinique!"}
+    ]
+  },
+  it: {
+    nav_home:"Home", nav_modules:"Moduli", nav_countries:"Paesi partner", nav_contact:"Contatto", nav_discover:"Scopri l'app",
+    hero_badge:"Progetto Erasmus+ · 6 paesi partner", hero_title:"Educare per un futuro sostenibile e culturale",
+    hero_sub:"Un'applicazione gratuita per studenti — esplora la sostenibilità, la cultura e l'economia insieme.",
+    hero_btn1:"Esplora i moduli", hero_btn2:"Paesi partner",
+    erasmus_text:"Questo progetto è cofinanziato dal programma Erasmus+ dell'Unione Europea",
+    stat1:"Paesi partner", stat2:"Moduli educativi", stat3:"Lingue disponibili", stat4:"Gratuito",
+    sec_modules:"Moduli", sec_modules_title:"Tutto per imparare e agire", sec_modules_sub:"Clicca su un modulo per saperne di più.",
+    mod1_name:"Glossario sostenibilità", mod1_desc:"Definizioni chiare dei termini economici e ambientali",
+    mod2_name:"Mappa riciclaggio", mod2_desc:"Punti di raccolta modificabili dalla comunità",
+    mod3_name:"Impronta idrica", mod3_desc:"Calcola e riduci il tuo consumo d'acqua",
+    mod4_name:"Giochi & Quiz", mod4_desc:"Biodiversità, economia, cultura — imparare giocando",
+    mod5_name:"Ricette culturali", mod5_desc:"Cucina sostenibile e tradizionale dei 6 paesi",
+    mod6_name:"Video educativi", mod6_desc:"Contenuti visivi sull'ambiente e la cultura",
+    mod7_name:"Moda sostenibile", mod7_desc:"Consigli per scambiare e riciclare i vestiti",
+    mod8_name:"Ridurre gli sprechi", mod8_desc:"Consigli pratici per ridurre gli sprechi alimentari",
+    dl_title:"Installa Eco Edu gratuitamente", dl_sub:"Disponibile su Android e iOS senza passare dagli store.",
+    dl_android_small:"Disponibile su", dl_ios_small:"Scarica su", dl_phone_sub:"Educazione sostenibile e culturale",
+    partners_label:"Sostenitori", partners_title:"Supportato da aziende e istituzioni locali",
+    partner1:"Aziende locali", partner2:"Istituti scolastici", partner3:"Istituzioni partner",
+    modules_title:"Moduli educativi", modules_sub:"Clicca su un modulo per esplorarne il contenuto interattivo",
+    back:"Torna ai moduli", calc_title:"La tua impronta giornaliera", calc_sub:"Muovi i cursori per stimare il tuo consumo d'acqua virtuale.", calc_unit:"litri / giorno stimati",
+    slider1:"🍖 Carne (porzioni/settimana)", slider2:"🚿 Doccia (minuti/giorno)", slider3:"👕 Vestiti nuovi (al mese)",
+    tip1:"1 pasto vegetariano in più = -500 L/giorno", tip2:"Scambia i vestiti invece di comprare", tip3:"Doccia 5 min = -30 L vs 10 min", tip4:"1 jeans riciclato = 7.000 L risparmiati",
+    quiz_next:"Prossima domanda →", term1_name:"Economia circolare", term1_def:"Modello economico volto a ridurre i rifiuti mantenendo le risorse in uso il più a lungo possibile.", term1_tag:"Economia",
+    term2_name:"Biodiversità", term2_def:"La varietà e la variabilità della vita sulla Terra.", term2_tag:"Ambiente",
+    term3_name:"Impronta idrica", term3_def:"Volume totale di acqua dolce utilizzato per produrre beni e servizi consumati.", term3_tag:"Acqua",
+    term4_name:"Patrimonio culturale", term4_def:"Eredità di beni fisici e immateriali trasmessa dalle generazioni passate.", term4_tag:"Cultura",
+    term5_name:"Sviluppo sostenibile", term5_def:"Sviluppo che soddisfa i bisogni del presente senza compromettere le generazioni future.", term5_tag:"Generale",
+    term6_name:"Upcycling", term6_def:"Trasformare rifiuti o vestiti usati in nuovi prodotti di valore superiore.", term6_tag:"Moda sostenibile",
+    recipe1_desc:"Piatto tradizionale delle Antille con spezie e verdure fresche locali",
+    recipe2_desc:"Zuppa di verdure e pane raffermo — eccellenza anti-spreco",
+    recipe3_desc:"Assortimento di verdure marinate, hummus ed erbe fresche",
+    recipe4_desc:"Zuppa fredda di verdure crude, fresca e senza cottura",
+    recipe5_desc:"Zuppa svedese di verdure a radice, locale e stagionale",
+    recipe6_desc:"Fagioli al forno con verdure fresche ed erbe aromatiche",
+    countries_title:"Paesi partner", countries_sub:"Sei paesi uniti dall'istruzione, dalla cultura e dalla sostenibilità",
+    country1_desc:"Isola dei Caraibi, dipartimento francese d'oltremare, ricca di biodiversità tropicale.",
+    country2_desc:"Straordinario patrimonio culturale, cucina mediterranea sostenibile, pioniere dell'economia circolare.",
+    country3_desc:"Crocevia tra Europa e Asia, notevole biodiversità, tradizioni culinarie ancestrali.",
+    country4_desc:"Leader europeo nelle energie rinnovabili, agricoltura biologica in crescita.",
+    country5_desc:"Biodiversità balcanica unica, lago Ohrid patrimonio UNESCO.",
+    country6_desc:"Leader mondiale nello sviluppo sostenibile, modello di economia circolare.",
+    contact_title:"Contattaci", contact_sub:"Una domanda, un suggerimento o vuoi diventare partner?",
+    contact_form_title:"Invia un messaggio", contact_name:"Il tuo nome", contact_name_ph:"Es. Mario Rossi",
+    contact_country:"Paese", contact_message:"Messaggio", contact_message_ph:"Il tuo messaggio...",
+    contact_send:"Invia messaggio", contact_sent:"Messaggio inviato! Ti risponderemo presto.", contact_other:"Altro",
+    info1:"Eco Edu è cofinanziato dal programma Erasmus+ dell'Unione Europea.",
+    info2_title:"Istituti scolastici partner", info2:"Sei una scuola e vuoi unirti al progetto? Contattaci.",
+    info3_title:"Aziende locali", info3:"Sei un'azienda locale e vuoi supportare il progetto? Saremo lieti di collaborare.",
+    info4_title:"Supporto tecnico", info4:"Un problema con l'app o il sito? Descrivilo nel modulo.",
+    quiz_questions:[
+      {q:"Quale percentuale delle specie marine vive nelle barriere coralline che coprono solo l'1% degli oceani?",opts:["A. 10%","B. 25%","C. 45%","D. 60%"],c:1,e:"✅ Le barriere coralline ospitano circa il 25% di tutte le specie marine."},
+      {q:"Quale pratica agricola aiuta a preservare la biodiversità del suolo?",opts:["A. Monocoltura","B. Agroforestazione","C. Aratura profonda","D. Pesticidi"],c:1,e:"✅ L'agroforestazione combina alberi e colture, favorendo la biodiversità."},
+      {q:"In Martinica, quale albero è simbolo della resistenza culturale?",opts:["A. Il banano","B. Il flamboyant","C. La palma da cocco","D. Il mango"],c:1,e:"✅ Il flamboyant è l'albero emblematico della Martinica!"}
+    ]
+  },
+  es: {
+    nav_home:"Inicio", nav_modules:"Módulos", nav_countries:"Países socios", nav_contact:"Contacto", nav_discover:"Descubrir la app",
+    hero_badge:"Proyecto Erasmus+ · 6 países socios", hero_title:"Educar para un futuro sostenible y cultural",
+    hero_sub:"Una aplicación gratuita para estudiantes — explora la sostenibilidad, la cultura y la economía juntos.",
+    hero_btn1:"Explorar módulos", hero_btn2:"Países socios",
+    erasmus_text:"Este proyecto está cofinanciado por el programa Erasmus+ de la Unión Europea",
+    stat1:"Países socios", stat2:"Módulos educativos", stat3:"Idiomas disponibles", stat4:"Gratis",
+    sec_modules:"Módulos", sec_modules_title:"Todo para aprender y actuar", sec_modules_sub:"Haz clic en un módulo para saber más.",
+    mod1_name:"Glosario sostenibilidad", mod1_desc:"Definiciones claras de términos económicos y ambientales",
+    mod2_name:"Mapa reciclaje", mod2_desc:"Puntos de recogida modificables por la comunidad",
+    mod3_name:"Huella hídrica", mod3_desc:"Calcula y reduce tu consumo de agua",
+    mod4_name:"Juegos & Quiz", mod4_desc:"Biodiversidad, economía, cultura — aprender jugando",
+    mod5_name:"Recetas culturales", mod5_desc:"Cocina sostenible y tradicional de los 6 países",
+    mod6_name:"Vídeos educativos", mod6_desc:"Contenidos visuales sobre el medio ambiente y la cultura",
+    mod7_name:"Moda sostenible", mod7_desc:"Consejos para intercambiar y reciclar ropa",
+    mod8_name:"Reducir el desperdicio", mod8_desc:"Consejos prácticos para reducir el desperdicio alimentario",
+    dl_title:"Instala Eco Edu gratis", dl_sub:"Disponible en Android e iOS sin pasar por las tiendas.",
+    dl_android_small:"Disponible en", dl_ios_small:"Descargar en", dl_phone_sub:"Educación sostenible y cultural",
+    partners_label:"Apoyos", partners_title:"Apoyado por empresas e instituciones locales",
+    partner1:"Empresas locales", partner2:"Centros escolares", partner3:"Instituciones socias",
+    modules_title:"Módulos educativos", modules_sub:"Haz clic en un módulo para explorar su contenido interactivo",
+    back:"Volver a módulos", calc_title:"Tu huella diaria", calc_sub:"Mueve los controles para estimar tu consumo virtual de agua.", calc_unit:"litros / día estimados",
+    slider1:"🍖 Carne (porciones/semana)", slider2:"🚿 Ducha (minutos/día)", slider3:"👕 Ropa nueva (por mes)",
+    tip1:"1 comida vegetariana más = -500 L/día", tip2:"Intercambia ropa en lugar de comprar", tip3:"Ducha 5 min = -30 L vs 10 min", tip4:"1 vaquero reciclado = 7.000 L ahorrados",
+    quiz_next:"Siguiente pregunta →", term1_name:"Economía circular", term1_def:"Modelo económico que busca reducir los residuos manteniendo los recursos en uso el mayor tiempo posible.", term1_tag:"Economía",
+    term2_name:"Biodiversidad", term2_def:"La variedad y variabilidad de la vida en la Tierra.", term2_tag:"Medioambiente",
+    term3_name:"Huella hídrica", term3_def:"Volumen total de agua dulce utilizado para producir bienes y servicios consumidos.", term3_tag:"Agua",
+    term4_name:"Patrimonio cultural", term4_def:"Herencia de bienes físicos e inmateriales transmitidos por generaciones pasadas.", term4_tag:"Cultura",
+    term5_name:"Desarrollo sostenible", term5_def:"Desarrollo que satisface las necesidades del presente sin comprometer a las generaciones futuras.", term5_tag:"General",
+    term6_name:"Upcycling", term6_def:"Transformar residuos o ropa usada en nuevos productos de mayor valor.", term6_tag:"Moda sostenible",
+    recipe1_desc:"Plato tradicional antillano con especias y verduras frescas locales",
+    recipe2_desc:"Sopa de verduras y pan duro — excelencia antidespilfarro",
+    recipe3_desc:"Surtido de verduras marinadas, hummus y hierbas frescas",
+    recipe4_desc:"Sopa fría de verduras crudas, fresca y sin cocción",
+    recipe5_desc:"Sopa sueca de verduras de raíz, local y de temporada",
+    recipe6_desc:"Judías al horno con verduras frescas y hierbas aromáticas",
+    countries_title:"Países socios", countries_sub:"Seis países unidos por la educación, la cultura y la sostenibilidad",
+    country1_desc:"Isla del Caribe, departamento francés de ultramar, rica en biodiversidad tropical.",
+    country2_desc:"Patrimonio cultural excepcional, cocina mediterránea sostenible, pionero de la economía circular.",
+    country3_desc:"Encrucijada entre Europa y Asia, notable biodiversidad, tradiciones culinarias ancestrales.",
+    country4_desc:"Líder europeo en energías renovables, agricultura ecológica en crecimiento.",
+    country5_desc:"Biodiversidad balcánica única, lago Ohrid Patrimonio UNESCO.",
+    country6_desc:"Líder mundial en desarrollo sostenible, modelo de economía circular.",
+    contact_title:"Contáctanos", contact_sub:"¿Una pregunta, sugerencia o quieres ser socio?",
+    contact_form_title:"Enviar un mensaje", contact_name:"Tu nombre", contact_name_ph:"Ej. María García",
+    contact_country:"País", contact_message:"Mensaje", contact_message_ph:"Tu mensaje...",
+    contact_send:"Enviar mensaje", contact_sent:"¡Mensaje enviado! Te responderemos pronto.", contact_other:"Otro",
+    info1:"Eco Edu está cofinanciado por el programa Erasmus+ de la Unión Europea.",
+    info2_title:"Centros escolares socios", info2:"¿Eres un centro escolar y quieres unirte al proyecto? Contáctanos.",
+    info3_title:"Empresas locales", info3:"¿Eres una empresa local y quieres apoyar el proyecto? Estaremos encantados de colaborar.",
+    info4_title:"Soporte técnico", info4:"¿Un problema con la app o el sitio? Descríbelo en el formulario.",
+    quiz_questions:[
+      {q:"¿Qué porcentaje de las especies marinas vive en los arrecifes de coral que cubren solo el 1% de los océanos?",opts:["A. 10%","B. 25%","C. 45%","D. 60%"],c:1,e:"✅ Los arrecifes de coral albergan aproximadamente el 25% de todas las especies marinas."},
+      {q:"¿Qué práctica agrícola ayuda a preservar la biodiversidad del suelo?",opts:["A. Monocultivo","B. Agroforestería","C. Labranza profunda","D. Pesticidas"],c:1,e:"✅ La agroforestería combina árboles y cultivos, favoreciendo la biodiversidad."},
+      {q:"En Martinica, ¿qué árbol es símbolo de la resistencia cultural?",opts:["A. El banano","B. El flamboyán","C. El cocotero","D. El mango"],c:1,e:"✅ ¡El flamboyán es el árbol emblemático de Martinica!"}
+    ]
+  },
+  tr: {
+    nav_home:"Ana Sayfa", nav_modules:"Modüller", nav_countries:"Ortak Ülkeler", nav_contact:"İletişim", nav_discover:"Uygulamayı Keşfet",
+    hero_badge:"Erasmus+ Projesi · 6 ortak ülke", hero_title:"Sürdürülebilir ve kültürel bir gelecek için eğitim",
+    hero_sub:"Öğrenciler için ücretsiz bir uygulama — sürdürülebilirliği, kültürü ve ekonomiyi birlikte keşfedin.",
+    hero_btn1:"Modülleri Keşfet", hero_btn2:"Ortak Ülkeler",
+    erasmus_text:"Bu proje Avrupa Birliği Erasmus+ programı tarafından ortak finanse edilmektedir",
+    stat1:"Ortak ülkeler", stat2:"Eğitim modülleri", stat3:"Mevcut diller", stat4:"Ücretsiz",
+    sec_modules:"Modüller", sec_modules_title:"Öğrenmek ve harekete geçmek için her şey", sec_modules_sub:"Daha fazla bilgi için bir modüle tıklayın.",
+    mod1_name:"Sürdürülebilirlik sözlüğü", mod1_desc:"Ekonomik ve çevresel terimlerin net tanımları",
+    mod2_name:"Geri dönüşüm haritası", mod2_desc:"Topluluk tarafından düzenlenebilir toplama noktaları",
+    mod3_name:"Su ayak izi", mod3_desc:"Su tüketiminizi hesaplayın ve azaltın",
+    mod4_name:"Oyunlar & Quiz", mod4_desc:"Biyoçeşitlilik, ekonomi, kültür — oynayarak öğrenin",
+    mod5_name:"Kültürel tarifler", mod5_desc:"6 ülkeden sürdürülebilir ve geleneksel mutfak",
+    mod6_name:"Eğitim videoları", mod6_desc:"Çevre ve kültür hakkında görsel içerikler",
+    mod7_name:"Sürdürülebilir moda", mod7_desc:"Kıyafet takas ve geri dönüştürme ipuçları",
+    mod8_name:"İsrafı azaltın", mod8_desc:"Gıda israfını azaltmak için pratik ipuçları",
+    dl_title:"Eco Edu'yu ücretsiz kurun", dl_sub:"Mağazalara gerek kalmadan Android ve iOS'ta mevcut.",
+    dl_android_small:"Şuradan edinin", dl_ios_small:"Şuradan indirin", dl_phone_sub:"Sürdürülebilir ve kültürel eğitim",
+    partners_label:"Destekçiler", partners_title:"Yerel işletmeler ve kurumlar tarafından desteklenmektedir",
+    partner1:"Yerel işletmeler", partner2:"Okullar", partner3:"Ortak kurumlar",
+    modules_title:"Eğitim modülleri", modules_sub:"Etkileşimli içeriği keşfetmek için bir modüle tıklayın",
+    back:"Modüllere dön", calc_title:"Günlük ayak iziniz", calc_sub:"Sanal su tüketiminizi tahmin etmek için kaydırıcıları hareket ettirin.", calc_unit:"tahmini litre / gün",
+    slider1:"🍖 Et (porsiyon/hafta)", slider2:"🚿 Duş (dakika/gün)", slider3:"👕 Yeni kıyafet (aylık)",
+    tip1:"1 vejetaryen öğün daha = günde -500 L", tip2:"Satın almak yerine kıyafet takas edin", tip3:"5 dk duş = 10 dk'ya karşı -30 L", tip4:"1 geri dönüştürülmüş kot = 7.000 L tasarruf",
+    quiz_next:"Sonraki soru →", term1_name:"Döngüsel ekonomi", term1_def:"Kaynakları mümkün olduğunca uzun süre kullanımda tutarak atıkları azaltmayı amaçlayan ekonomik model.", term1_tag:"Ekonomi",
+    term2_name:"Biyoçeşitlilik", term2_def:"Dünya'daki yaşamın çeşitliliği ve değişkenliği.", term2_tag:"Çevre",
+    term3_name:"Su ayak izi", term3_def:"Tüketilen mal ve hizmetleri üretmek için kullanılan toplam tatlı su hacmi.", term3_tag:"Su",
+    term4_name:"Kültürel miras", term4_def:"Geçmiş nesillerin aktardığı fiziksel ve maddi olmayan varlıkların mirası.", term4_tag:"Kültür",
+    term5_name:"Sürdürülebilir kalkınma", term5_def:"Gelecek nesillerin ihtiyaçlarını tehlikeye atmadan günümüzün ihtiyaçlarını karşılayan kalkınma.", term5_tag:"Genel",
+    term6_name:"Upcycling", term6_def:"Atıkları veya kullanılmış kıyafetleri daha yüksek değerli yeni ürünlere dönüştürmek.", term6_tag:"Sürdürülebilir moda",
+    recipe1_desc:"Baharatlar ve taze yerel sebzelerle geleneksel Antil yemeği",
+    recipe2_desc:"Sebze ve bayat ekmek çorbası — israfı sıfır mükemmeliyeti",
+    recipe3_desc:"Marine edilmiş sebzeler, humus ve taze otlar karışımı",
+    recipe4_desc:"Soğuk çiğ sebze çorbası, taze ve pişirme gerektirmez",
+    recipe5_desc:"İsveç kök sebze çorbası, yerel ve mevsimlik",
+    recipe6_desc:"Taze sebzeler ve aromatik bitkilerle fırında fasulye",
+    countries_title:"Ortak Ülkeler", countries_sub:"Erasmus+ programı çerçevesinde eğitim, kültür ve sürdürülebilirlikle birleşen altı ülke",
+    country1_desc:"Karayip adası, tropikal biyoçeşitlilik ve Creol kültürel mirasıyla zengin Fransız denizaşırı departmanı.",
+    country2_desc:"Olağanüstü kültürel miras, sürdürülebilir Akdeniz mutfağı, Avrupa'da döngüsel ekonominin öncüsü.",
+    country3_desc:"Avrupa ve Asya arasında kavşak, dikkat çekici biyoçeşitlilik, köklü mutfak ve zanaat gelenekleri.",
+    country4_desc:"Yenilenebilir enerjide Avrupa lideri, büyüyen organik tarım.",
+    country5_desc:"Eşsiz Balkan biyoçeşitliliği, UNESCO mirası Ohri Gölü.",
+    country6_desc:"Sürdürülebilir kalkınmada dünya lideri, döngüsel ekonomi modeli.",
+    contact_title:"Bize Ulaşın", contact_sub:"Bir sorunuz mu var, öneri mi, yoksa ortak olmak mı istiyorsunuz?",
+    contact_form_title:"Mesaj Gönder", contact_name:"Adınız", contact_name_ph:"Örn. Ahmet Yılmaz",
+    contact_country:"Ülke", contact_message:"Mesaj", contact_message_ph:"Mesajınız...",
+    contact_send:"Mesaj gönder", contact_sent:"Mesaj gönderildi! En kısa sürede yanıt vereceğiz.", contact_other:"Diğer",
+    info1:"Eco Edu, Avrupa Birliği Erasmus+ programı tarafından ortak finanse edilmektedir.",
+    info2_title:"Ortak okullar", info2:"Bir okul musunuz ve projeye katılmak mı istiyorsunuz? Erasmus+ ortağı olmak için bizimle iletişime geçin.",
+    info3_title:"Yerel işletmeler", info3:"Yerel bir işletme misiniz ve projeyi desteklemek mi istiyorsunuz? İşbirliği yapmaktan memnuniyet duyarız.",
+    info4_title:"Teknik destek", info4:"Uygulama veya site ile ilgili bir sorun mu var? Formdaki açıklayın.",
+    quiz_questions:[
+      {q:"Okyanus yüzeyinin yalnızca %1'ini kaplayan mercan resiflerinde deniz türlerinin yüzde kaçı yaşamaktadır?",opts:["A. %10","B. %25","C. %45","D. %60"],c:1,e:"✅ Mercan resifleri, tüm deniz türlerinin yaklaşık %25'ine ev sahipliği yapar."},
+      {q:"Toprak biyoçeşitliliğini korumaya yardımcı olan tarım uygulaması hangisidir?",opts:["A. Monokültür","B. Agroormancılık","C. Derin sürme","D. Pestisitler"],c:1,e:"✅ Agroormancılık, ağaçları ve tarım alanlarını birleştirerek biyoçeşitliliği destekler."},
+      {q:"Martinik'te kültürel direnişin simgesi olan ağaç hangisidir?",opts:["A. Muz ağacı","B. Flamboyant","C. Hindistan cevizi","D. Mango"],c:1,e:"✅ Flamboyant, Martinik'in simge ağacıdır!"}
+    ]
+  },
+  mk: {
+    nav_home:"Почетна", nav_modules:"Модули", nav_countries:"Земји партнери", nav_contact:"Контакт", nav_discover:"Откријте ја апликацијата",
+    hero_badge:"Проект Erasmus+ · 6 земји партнери", hero_title:"Образование за одржлива и културна иднина",
+    hero_sub:"Бесплатна апликација за ученици — истражувајте одржливост, култура и економија заедно.",
+    hero_btn1:"Истражи модули", hero_btn2:"Земји партнери",
+    erasmus_text:"Овој проект е кофинансиран од програмата Erasmus+ на Европската Унија",
+    stat1:"Земји партнери", stat2:"Образовни модули", stat3:"Достапни јазици", stat4:"Бесплатно",
+    sec_modules:"Модули", sec_modules_title:"Сè за учење и дејствување", sec_modules_sub:"Кликнете на модул за повеќе информации.",
+    mod1_name:"Речник одржливост", mod1_desc:"Јасни дефиниции на економски и еколошки термини",
+    mod2_name:"Карта рециклирање", mod2_desc:"Места за собирање изменливи од заедницата",
+    mod3_name:"Водна отпечаток", mod3_desc:"Пресметајте и намалете ја потрошувачката на вода",
+    mod4_name:"Игри и Квиз", mod4_desc:"Биодиверзитет, економија, култура — учење преку игра",
+    mod5_name:"Културни рецепти", mod5_desc:"Одржлива и традиционална кујна од 6 земји",
+    mod6_name:"Образовни видеа", mod6_desc:"Визуелни содржини за животната средина и культурата",
+    mod7_name:"Одржлива мода", mod7_desc:"Совети за размена и рециклирање облека",
+    mod8_name:"Намали отпад", mod8_desc:"Практични совети за намалување на отпадот од храна",
+    dl_title:"Инсталирајте Eco Edu бесплатно", dl_sub:"Достапно на Android и iOS без продавници.",
+    dl_android_small:"Достапно на", dl_ios_small:"Преземи на", dl_phone_sub:"Одржливо и културно образование",
+    partners_label:"Поддршка", partners_title:"Поддржано од локални претпријатија и институции",
+    partner1:"Локални претпријатија", partner2:"Образовни институции", partner3:"Партнерски институции",
+    modules_title:"Образовни модули", modules_sub:"Кликнете на модул за да го истражите неговата интерактивна содржина",
+    back:"Назад кон модулите", calc_title:"Вашиот дневен отпечаток", calc_sub:"Поместете лизгачите за да ја процените вашата виртуелна потрошувачка на вода.", calc_unit:"проценети литри / ден",
+    slider1:"🍖 Месо (порции/недела)", slider2:"🚿 Туш (минути/ден)", slider3:"👕 Нова облека (месечно)",
+    tip1:"1 вегетаријански оброк повеќе = -500 Л/ден", tip2:"Разменувајте облека наместо да купувате", tip3:"Туш 5 мин = -30 Л наспроти 10 мин", tip4:"1 рециклирани фармерки = 7.000 Л заштеда",
+    quiz_next:"Следно прашање →", term1_name:"Циркуларна економија", term1_def:"Економски модел насочен кон намалување на отпадот со задржување на ресурсите во употреба.", term1_tag:"Економија",
+    term2_name:"Биодиверзитет", term2_def:"Разновидноста и променливоста на животот на Земјата.", term2_tag:"Животна средина",
+    term3_name:"Водна отпечаток", term3_def:"Вкупна количина на слатка вода употребена за производство на добра и услуги.", term3_tag:"Вода",
+    term4_name:"Културно наследство", term4_def:"Наследство на физички и нематеријални добра пренесени од минатите генерации.", term4_tag:"Култура",
+    term5_name:"Одржлив развој", term5_def:"Развој кој ги задоволува потребите на сегашноста без да ги загрозува идните генерации.", term5_tag:"Општо",
+    term6_name:"Апсициклирање", term6_def:"Трансформирање на отпад или употребена облека во нови производи со поголема вредност.", term6_tag:"Одржлива мода",
+    recipe1_desc:"Традиционално антилско јадење со зачини и свеж локален зеленчук",
+    recipe2_desc:"Супа од зеленчук и стар леб — совршенство без отпад",
+    recipe3_desc:"Асортиман маринован зеленчук, хумус и свежи билки",
+    recipe4_desc:"Ладна супа од суров зеленчук, свежа и без варење",
+    recipe5_desc:"Шведска супа од коренест зеленчук, локална и сезонска",
+    recipe6_desc:"Гравче тавче со свеж зеленчук и ароматични билки",
+    countries_title:"Земји партнери", countries_sub:"Шест земји обединети со образование, култура и одржливост",
+    country1_desc:"Карипски остров, богат со тропски биодиверзитет и креолско културно наследство.",
+    country2_desc:"Исклучително културно наследство, одржлива медитеранска кујна, пионер на циркуларната економија.",
+    country3_desc:"Раскрсница меѓу Европа и Азија, забележителен биодиверзитет, вековни кулинарски традиции.",
+    country4_desc:"Европски лидер во обновливи извори на енергија, растечко органско земјоделство.",
+    country5_desc:"Единствен балкански биодиверзитет, Охридско Езеро на UNESCO, зачувани земјоделски традиции.",
+    country6_desc:"Светски лидер во одржлив развој, модел на циркуларна економија.",
+    contact_title:"Контактирајте нè", contact_sub:"Прашање, предлог или сакате да станете партнер?",
+    contact_form_title:"Испратете порака", contact_name:"Вашето име", contact_name_ph:"Пр. Марија Петрова",
+    contact_country:"Земја", contact_message:"Порака", contact_message_ph:"Вашата порака...",
+    contact_send:"Испрати порака", contact_sent:"Пораката е испратена! Наскоро ќе ви одговориме.", contact_other:"Друго",
+    info1:"Eco Edu е кофинансиран од програмата Erasmus+ на Европската Унија.",
+    info2_title:"Партнерски училишта", info2:"Сте училиште и сакате да се придружите на проектот? Контактирајте нè.",
+    info3_title:"Локални претпријатија", info3:"Сте локално претпријатие и сакате да го поддржите проектот? Со задоволство ќе соработуваме.",
+    info4_title:"Техничка поддршка", info4:"Проблем со апликацијата или страницата? Опишете го во формуларот.",
+    quiz_questions:[
+      {q:"Колку проценти од морските видови живеат во коралните гребени кои покриваат само 1% од океаните?",opts:["А. 10%","Б. 25%","В. 45%","Г. 60%"],c:1,e:"✅ Коралните гребени се дом на околу 25% од сите морски видови."},
+      {q:"Која земјоделска практика помага да се зачува биодиверзитетот на почвата?",opts:["А. Монокултура","Б. Агрошумарство","В. Длабоко орање","Г. Пестициди"],c:1,e:"✅ Агрошумарството комбинира дрвја и насади, поттикнувајќи биодиверзитет."},
+      {q:"На Мартиник, кое дрво е симбол на културниот отпор?",opts:["А. Бананата","Б. Флабојант","В. Кокосовата палма","Г. Мангото"],c:1,e:"✅ Флабојантот е симболичното дрво на Мартиник!"}
+    ]
+  },
+  sv: {
+    nav_home:"Hem", nav_modules:"Moduler", nav_countries:"Partnerländer", nav_contact:"Kontakt", nav_discover:"Utforska appen",
+    hero_badge:"Erasmus+-projekt · 6 partnerländer", hero_title:"Utbilda för en hållbar och kulturell framtid",
+    hero_sub:"En gratis app för studenter — utforska hållbarhet, kultur och ekonomi tillsammans.",
+    hero_btn1:"Utforska moduler", hero_btn2:"Partnerländer",
+    erasmus_text:"Detta projekt medfinansieras av Europeiska unionens Erasmus+-program",
+    stat1:"Partnerländer", stat2:"Utbildningsmoduler", stat3:"Tillgängliga språk", stat4:"Gratis",
+    sec_modules:"Moduler", sec_modules_title:"Allt för att lära och agera", sec_modules_sub:"Klicka på en modul för att lära dig mer.",
+    mod1_name:"Hållbarhetsordlista", mod1_desc:"Tydliga definitioner av ekonomiska och miljömässiga termer",
+    mod2_name:"Återvinningskarta", mod2_desc:"Insamlingsplatser som kan redigeras av gemenskapen",
+    mod3_name:"Vattenavtryck", mod3_desc:"Beräkna och minska din vattenförbrukning",
+    mod4_name:"Spel & Quiz", mod4_desc:"Biologisk mångfald, ekonomi, kultur — lär dig genom att spela",
+    mod5_name:"Kulturella recept", mod5_desc:"Hållbar och traditionell mat från 6 länder",
+    mod6_name:"Utbildningsvideor", mod6_desc:"Visuellt innehåll om miljö och kultur",
+    mod7_name:"Hållbart mode", mod7_desc:"Tips för att byta och återvinna kläder",
+    mod8_name:"Minska matsvinn", mod8_desc:"Praktiska tips för att minska matsvinnet",
+    dl_title:"Installera Eco Edu gratis", dl_sub:"Tillgänglig på Android och iOS utan appbutiker.",
+    dl_android_small:"Tillgänglig på", dl_ios_small:"Ladda ner på", dl_phone_sub:"Hållbar och kulturell utbildning",
+    partners_label:"Stöd", partners_title:"Stöds av lokala företag och institutioner",
+    partner1:"Lokala företag", partner2:"Skolor", partner3:"Partnerinstitutioner",
+    modules_title:"Utbildningsmoduler", modules_sub:"Klicka på en modul för att utforska dess interaktiva innehåll",
+    back:"Tillbaka till moduler", calc_title:"Ditt dagliga avtryck", calc_sub:"Flytta reglagen för att uppskatta din virtuella vattenförbrukning.", calc_unit:"uppskattade liter / dag",
+    slider1:"🍖 Kött (portioner/vecka)", slider2:"🚿 Dusch (minuter/dag)", slider3:"👕 Nya kläder (per månad)",
+    tip1:"1 vegetarisk måltid till = -500 L/dag", tip2:"Byt kläder istället för att köpa", tip3:"5 min dusch = -30 L vs 10 min", tip4:"1 återvunna jeans = 7 000 L sparade",
+    quiz_next:"Nästa fråga →", term1_name:"Cirkulär ekonomi", term1_def:"Ekonomisk modell som syftar till att minska avfall genom att hålla resurser i bruk så länge som möjligt.", term1_tag:"Ekonomi",
+    term2_name:"Biologisk mångfald", term2_def:"Mångfalden och variabiliteten hos livet på jorden.", term2_tag:"Miljö",
+    term3_name:"Vattenavtryck", term3_def:"Total volym sötvatten som används för att producera varor och tjänster.", term3_tag:"Vatten",
+    term4_name:"Kulturarv", term4_def:"Arv av fysiska och immateriella tillgångar som överförts från tidigare generationer.", term4_tag:"Kultur",
+    term5_name:"Hållbar utveckling", term5_def:"Utveckling som tillgodoser nutidens behov utan att äventyra framtida generationers möjligheter.", term5_tag:"Allmänt",
+    term6_name:"Upcycling", term6_def:"Omvandla avfall eller använda kläder till nya produkter med högre värde.", term6_tag:"Hållbart mode",
+    recipe1_desc:"Traditionell antillansk rätt med kryddor och färska lokala grönsaker",
+    recipe2_desc:"Soppa på grönsaker och gammalt bröd — noll svinn i sin finaste form",
+    recipe3_desc:"Sortiment av marinerade grönsaker, hummus och färska örter",
+    recipe4_desc:"Kall soppa på råa grönsaker, fräsch och utan matlagning",
+    recipe5_desc:"Svensk rotsoppa, lokal och säsongsbetonad",
+    recipe6_desc:"Ugnsrostade bönor med färska grönsaker och aromatiska örter",
+    countries_title:"Partnerländer", countries_sub:"Sex länder förenade av utbildning, kultur och hållbarhet inom Erasmus+-programmet",
+    country1_desc:"Karibisk ö, franskt utomeuropeiskt departement, rikt på tropisk biologisk mångfald.",
+    country2_desc:"Exceptionellt kulturarv, hållbar medelhavskost, pionjär inom cirkulär ekonomi i Europa.",
+    country3_desc:"Korsväg mellan Europa och Asien, anmärkningsvärd biologisk mångfald, urfaderliga kulinariska traditioner.",
+    country4_desc:"Europeisk ledare inom förnybar energi, växande ekologiskt jordbruk.",
+    country5_desc:"Unik balkanisk biologisk mångfald, Ohridsjön på UNESCO:s världsarvslista.",
+    country6_desc:"Världsledare inom hållbar utveckling, modell för cirkulär ekonomi.",
+    contact_title:"Kontakta oss", contact_sub:"En fråga, ett förslag eller vill du bli partner?",
+    contact_form_title:"Skicka ett meddelande", contact_name:"Ditt namn", contact_name_ph:"T.ex. Anna Svensson",
+    contact_country:"Land", contact_message:"Meddelande", contact_message_ph:"Ditt meddelande...",
+    contact_send:"Skicka meddelande", contact_sent:"Meddelande skickat! Vi svarar snart.", contact_other:"Annat",
+    info1:"Eco Edu medfinansieras av Europeiska unionens Erasmus+-program.",
+    info2_title:"Partnerskolor", info2:"Är du en skola och vill gå med i projektet? Kontakta oss för att bli Erasmus+-partner.",
+    info3_title:"Lokala företag", info3:"Är du ett lokalt företag och vill stödja projektet? Vi samarbetar gärna.",
+    info4_title:"Teknisk support", info4:"Problem med appen eller webbplatsen? Beskriv det i formuläret.",
+    quiz_questions:[
+      {q:"Hur stor andel av de marina arterna lever i korallrev som täcker bara 1% av haven?",opts:["A. 10%","B. 25%","C. 45%","D. 60%"],c:1,e:"✅ Korallrev är hem för ungefär 25% av alla marina arter trots sin lilla yta."},
+      {q:"Vilket jordbrukssätt hjälper till att bevara markens biologiska mångfald?",opts:["A. Monokulturer","B. Agroforestry","C. Djupplöjning","D. Bekämpningsmedel"],c:1,e:"✅ Agroforestry kombinerar träd och grödor och främjar biologisk mångfald."},
+      {q:"På Martinique, vilket träd är symbol för kulturellt motstånd?",opts:["A. Bananträdet","B. Flamboyant","C. Kokospalmen","D. Mangoträdet"],c:1,e:"✅ Flamboyant är Martiniques emblematiska träd!"}
+    ]
+  }
+};
+
+let currentLang = 'fr';
+let qi = 0, answered = false;
+
+function toggleLang(e) {
+  e.stopPropagation();
+  document.getElementById('lang-dropdown').classList.toggle('open');
+}
+document.addEventListener('click', () => {
+  document.getElementById('lang-dropdown').classList.remove('open');
+});
+
+function setLang(lang, flag, code) {
+  currentLang = lang;
+  document.getElementById('current-lang-flag').textContent = flag;
+  document.getElementById('current-lang-code').textContent = code;
+  document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
+  event.target.closest('.lang-option').classList.add('active');
+  document.getElementById('lang-dropdown').classList.remove('open');
+  applyTranslations();
+  loadQuiz();
+}
+
+function applyTranslations() {
+  const t = translations[currentLang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else {
+        if (key === 'hero_title' && el.classList.contains('hero-h1')) {
+          el.innerHTML = t[key].replace('durable', '<em>durable</em>').replace('sustainable','<em>sustainable</em>').replace('sostenible','<em>sostenible</em>').replace('sürdürülebilir','<em>sürdürülebilir</em>').replace('odржлива','<em>odржлива</em>').replace('hållbar','<em>hållbar</em>').replace('sostenibile','<em>sostenibile</em>');
+        } else {
+          el.textContent = t[key];
+        }
+      }
+    }
+  });
+}
+
+function loadQuiz() {
+  const t = translations[currentLang];
+  if (!t || !t.quiz_questions) return;
+  qi = 0; answered = false;
+  const q = t.quiz_questions[qi];
+  document.getElementById('qt').textContent = q.q;
+  document.getElementById('qn').textContent = (currentLang === 'fr' ? 'Question' : 'Question') + ' ' + (qi+1) + ' / ' + t.quiz_questions.length;
+  const optsEl = document.getElementById('qo');
+  optsEl.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = o;
+    btn.onclick = () => answerQ(i);
+    optsEl.appendChild(btn);
+  });
+  document.getElementById('qf').style.display = 'none';
+  document.getElementById('qnb').style.display = 'none';
+  document.getElementById('qp').style.width = '33%';
+}
+
+function answerQ(choice) {
+  if (answered) return;
+  answered = true;
+  const q = translations[currentLang].quiz_questions[qi];
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts[choice].classList.add(choice === q.c ? 'correct' : 'wrong');
+  if (choice !== q.c) opts[q.c].classList.add('correct');
+  document.getElementById('qe').textContent = q.e;
+  document.getElementById('qf').style.display = 'block';
+  document.getElementById('qnb').style.display = 'inline-block';
+}
+
+function nextQ() {
+  const qs = translations[currentLang].quiz_questions;
+  qi = (qi + 1) % qs.length;
+  answered = false;
+  const q = qs[qi];
+  document.getElementById('qt').textContent = q.q;
+  document.getElementById('qn').textContent = 'Question ' + (qi+1) + ' / ' + qs.length;
+  document.getElementById('qp').style.width = ((qi+1)/qs.length*100) + '%';
+  const optsEl = document.getElementById('qo');
+  optsEl.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = o;
+    btn.onclick = () => answerQ(i);
+    optsEl.appendChild(btn);
+  });
+  document.getElementById('qf').style.display = 'none';
+  document.getElementById('qnb').style.display = 'none';
+}
+
+function calcW() {
+  const m = +document.getElementById('sm').value;
+  const s = +document.getElementById('ss').value;
+  const c = +document.getElementById('sc').value;
+  const total = Math.round(m*180 + s*60 + c*220 + 800);
+  document.getElementById('wt').textContent = total.toLocaleString('fr-FR');
+  document.getElementById('vm').textContent = m;
+  document.getElementById('vs').textContent = s;
+  document.getElementById('vc').textContent = c;
+}
+['sm','ss','sc'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', calcW);
+});
+
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   const navEl = document.getElementById('nav-' + id);
-  if(navEl) navEl.classList.add('active');
+  if (navEl) navEl.classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
   hideModule();
 }
@@ -546,81 +965,21 @@ function showModule(id) {
   document.getElementById('modules-list').style.display = 'none';
   document.querySelectorAll('.module-detail').forEach(m => m.classList.remove('active'));
   document.getElementById('module-' + id).classList.add('active');
+  if (id === 'quiz') loadQuiz();
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function hideModule() {
-  document.getElementById('modules-list').style.display = 'block';
+  const ml = document.getElementById('modules-list');
+  if (ml) ml.style.display = 'block';
   document.querySelectorAll('.module-detail').forEach(m => m.classList.remove('active'));
 }
 
-const qData = [
-  {q:"Quel pourcentage des espèces marines vit dans les récifs coralliens, qui ne couvrent que 1% des océans ?", opts:["A. 10%","B. 25%","C. 45%","D. 60%"], c:1, e:"✅ Bonne réponse ! Les récifs coralliens abritent environ 25% de toutes les espèces marines malgré leur petite surface."},
-  {q:"Quelle pratique agricole permet de préserver la biodiversité des sols ?", opts:["A. Monoculture intensive","B. Agroforesterie","C. Labour profond","D. Pesticides préventifs"], c:1, e:"✅ L'agroforesterie combine arbres et cultures, favorisant la biodiversité et préservant les sols."},
-  {q:"En Martinique, quel arbre est symbolique de la résistance culturelle et de la biodiversité locale ?", opts:["A. Le bananier","B. Le flamboyant","C. Le cocotier","D. Le manguier"], c:1, e:"✅ Le flamboyant est l'arbre emblématique de la Martinique avec ses fleurs rouge-orangé spectaculaires !"}
-];
-let qi=0, answered=false;
-function answerQ(choice) {
-  if(answered) return;
-  answered = true;
-  const q = qData[qi];
-  const opts = document.querySelectorAll('.quiz-opt');
-  opts[choice].classList.add(choice === q.c ? 'correct' : 'wrong');
-  if(choice !== q.c) opts[q.c].classList.add('correct');
-  document.getElementById('qe').textContent = q.e;
-  document.getElementById('qf').style.display = 'block';
-  document.getElementById('qnb').style.display = 'inline-block';
-}
-function nextQ() {
-  qi = (qi + 1) % qData.length;
-  answered = false;
-  const q = qData[qi];
-  document.getElementById('qt').textContent = q.q;
-  const opts = document.querySelectorAll('.quiz-opt');
-  q.opts.forEach((o,i) => { opts[i].textContent = o; opts[i].className = 'quiz-opt'; opts[i].onclick = () => answerQ(i); });
-  document.getElementById('qf').style.display = 'none';
-  document.getElementById('qnb').style.display = 'none';
-  document.getElementById('qn').textContent = 'Question ' + (qi+1) + ' / ' + qData.length;
-  document.getElementById('qp').style.width = ((qi+1)/qData.length*100) + '%';
-}
-function calcW() {
-  const m = +document.getElementById('sm').value;
-  const s = +document.getElementById('ss').value;
-  const c = +document.getElementById('sc').value;
-  const t = Math.round(m*180 + s*60 + c*220 + 800);
-  document.getElementById('wt').textContent = t.toLocaleString('fr-FR');
-  document.getElementById('vm').textContent = m;
-  document.getElementById('vs').textContent = s;
-  document.getElementById('vc').textContent = c;
-}
-['sm','ss','sc'].forEach(id => {
-  const el = document.getElementById(id);
-  if(el) el.addEventListener('input', calcW);
-});
+loadQuiz();
 
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  const b = document.getElementById('pwa-banner');
-  if(b) b.style.display = 'flex';
-});
-const installBtn = document.getElementById('pwa-install');
-if(installBtn) {
-  installBtn.addEventListener('click', async () => {
-    if(deferredPrompt) {
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      document.getElementById('pwa-banner').style.display = 'none';
-    }
-  });
-}
-if('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(r => console.log('SW ok', r))
-      .catch(e => console.log('SW err', e));
+    navigator.serviceWorker.register('/sw.js').catch(e => console.log('SW err', e));
   });
 }
 </script>
