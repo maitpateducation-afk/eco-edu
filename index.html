@@ -349,13 +349,648 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
     <div class="module-detail" id="module-recettes">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
       <h2>🍽️ <span data-i18n="mod5_name">Recettes culturelles durables</span></h2>
-      <div class="recipes-grid">
-        <div class="recipe-card"><div class="recipe-img">🫙<div class="recipe-flag">🇫🇷 Martinique</div></div><div class="recipe-body"><h3>Colombo de poulet</h3><p data-i18n="recipe1_desc">Plat traditionnel antillais aux épices et légumes frais locaux</p><div class="recipe-tags"><span class="rtag">🌿 Local</span><span class="rtag">♻️ Zéro déchet</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫒<div class="recipe-flag">🇮🇹 Italie</div></div><div class="recipe-body"><h3>Ribollita toscane</h3><p data-i18n="recipe2_desc">Soupe de légumes et pain rassis — anti-gaspillage par excellence</p><div class="recipe-tags"><span class="rtag">🥦 Végétarien</span><span class="rtag">♻️ Anti-gaspillage</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫖<div class="recipe-flag">🇹🇷 Turquie</div></div><div class="recipe-body"><h3>Meze végétalien</h3><p data-i18n="recipe3_desc">Assortiment de légumes marinés, houmous et herbes fraîches</p><div class="recipe-tags"><span class="rtag">🌱 Vegan</span><span class="rtag">🌍 Tradition</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🥘<div class="recipe-flag">🇪🇸 Espagne</div></div><div class="recipe-body"><h3>Gazpacho andalou</h3><p data-i18n="recipe4_desc">Soupe froide de légumes crus, fraîche et zéro cuisson</p><div class="recipe-tags"><span class="rtag">🌿 Vegan</span><span class="rtag">☀️ Saisonnier</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🫐<div class="recipe-flag">🇸🇪 Suède</div></div><div class="recipe-body"><h3>Soppa på rotfrukter</h3><p data-i18n="recipe5_desc">Soupe de légumes racines suédoise, locale et de saison</p><div class="recipe-tags"><span class="rtag">🥕 Local</span><span class="rtag">❄️ Nordique</span></div></div></div>
-        <div class="recipe-card"><div class="recipe-img">🥗<div class="recipe-flag">🇲🇰 Macédoine</div></div><div class="recipe-body"><h3>Tavče gravče</h3><p data-i18n="recipe6_desc">Haricots cuits au four aux légumes frais et herbes aromatiques</p><div class="recipe-tags"><span class="rtag">🌿 Végétarien</span><span class="rtag">🌍 Tradition</span></div></div></div>
+
+      <!-- MARTINIQUE SECTION -->
+      <div style="background:#e0f2fe;border-radius:12px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇫🇷</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Martinique — 4 recettes locales authentiques</div>
+          <div style="font-size:12px;color:#0369a1;">Cuisine créole traditionnelle, transmise de génération en génération</div>
+        </div>
+      </div>
+
+      <div class="recipes-grid" style="margin-bottom:32px;">
+
+        <!-- RECETTE 1 : ACCRAS DE MORUE -->
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🐟
+            <div class="recipe-flag">🇫🇷 Martinique</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Accras de morue</h3>
+            <p>Beignets croustillants de morue dessalée, ail, piment et cives — l'apéro créole par excellence</p>
+            <div class="recipe-tags"><span class="rtag">🌶️ Épicé</span><span class="rtag">🐟 Poisson</span><span class="rtag">⏱️ 30 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>300g de morue salée (dessalée 24h)</li>
+                <li>200g de farine de blé</li>
+                <li>1 œuf · 25cl d'eau</li>
+                <li>2 gousses d'ail · 1 oignon</li>
+                <li>2 cives (oignons verts) · persil</li>
+                <li>1 piment végétarien · jus de citron vert</li>
+                <li>½ sachet de levure chimique · sel, poivre</li>
+                <li>Huile de friture</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Dessaler la morue 24h en changeant l'eau régulièrement</li>
+                <li>Émietter finement la morue, retirer arêtes et peau</li>
+                <li>Mélanger farine, œuf, eau pour obtenir une pâte lisse</li>
+                <li>Ajouter morue, ail, oignon, cives, piment, persil hachés</li>
+                <li>Incorporer la levure et le jus de citron vert</li>
+                <li>Frire des cuillerées de pâte dans l'huile chaude 3 min</li>
+                <li>Égoutter sur du papier absorbant. Servir chaud !</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Astuce : la morue ne doit pas être trop salée — goûter avant d'assaisonner</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+
+        <!-- RECETTE 2 : COLOMBO DE POULET -->
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🍗
+            <div class="recipe-flag">🇫🇷 Martinique</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Colombo de poulet</h3>
+            <p>Plat mijoté aux épices colombo, aubergine, courgette et citron vert — le plat dominical martiniquais</p>
+            <div class="recipe-tags"><span class="rtag">🌿 Local</span><span class="rtag">🍗 Poulet</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>1 poulet entier découpé en morceaux</li>
+                <li>2 c.s. de poudre à colombo</li>
+                <li>1 aubergine · 1 courgette · 2 pommes de terre</li>
+                <li>3 gousses d'ail · 1 oignon · 2 cives</li>
+                <li>1 citron vert · thym · persil · piment végétarien</li>
+                <li>Huile · sel · poivre</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Mariner le poulet avec ail, cives, citron, sel, poivre 1h</li>
+                <li>Faire revenir l'oignon dans l'huile à feu vif</li>
+                <li>Ajouter le poulet et faire dorer de tous côtés</li>
+                <li>Incorporer la poudre à colombo, bien mélanger</li>
+                <li>Ajouter les légumes coupés en dés et couvrir d'eau</li>
+                <li>Laisser mijoter 40 min à feu doux en remuant</li>
+                <li>Servir avec du riz blanc et du piment frais</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La poudre à colombo est l'épice signature de la Martinique — originaire des immigrants indiens</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+
+        <!-- RECETTE 3 : FÉROCE D'AVOCAT -->
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥑
+            <div class="recipe-flag">🇫🇷 Martinique</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Féroce d'avocat</h3>
+            <p>Avocat écrasé, morue, farine de manioc et piment fort — une entrée créole relevée et authentique</p>
+            <div class="recipe-tags"><span class="rtag">🥑 Avocat</span><span class="rtag">🌶️ Pimenté</span><span class="rtag">⏱️ 20 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>3 avocats mûrs</li>
+                <li>200g de morue dessalée et émiettée</li>
+                <li>4 c.s. de farine de manioc (ou de cassave)</li>
+                <li>1 citron vert · 2 gousses d'ail</li>
+                <li>1 piment fort (BondaManjak) · sel</li>
+                <li>Huile · cives fraîches</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Dessaler la morue, la cuire 10 min puis émietter</li>
+                <li>Écraser les avocats à la fourchette grossièrement</li>
+                <li>Mélanger avocat, morue, ail écrasé et cives hachées</li>
+                <li>Ajouter la farine de manioc progressivement</li>
+                <li>Assaisonner avec piment, citron vert, sel et huile</li>
+                <li>Réfrigérer 30 min. Servir frais en entrée ou apéro</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La farine de manioc absorbe l'excès d'humidité et donne cette texture unique et "féroce" !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+
+        <!-- RECETTE 4 : BLANC MANGER COCO -->
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🥥
+            <div class="recipe-flag">🇫🇷 Martinique</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Blanc manger coco</h3>
+            <p>Flan créole à base de lait de coco et de vanille de Martinique — le dessert traditionnel de l'île</p>
+            <div class="recipe-tags"><span class="rtag">🥥 Coco</span><span class="rtag">🍮 Dessert</span><span class="rtag">⏱️ 15 min + 2h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (6 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400ml de lait de coco</li>
+                <li>200ml de lait entier</li>
+                <li>80g de sucre de canne</li>
+                <li>1 gousse de vanille de Martinique</li>
+                <li>6 feuilles de gélatine (ou 2 sachets agar-agar)</li>
+                <li>Zeste de citron vert · noix de coco râpée</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Ramollir la gélatine dans l'eau froide 5 min</li>
+                <li>Chauffer lait de coco, lait, sucre et vanille fendue</li>
+                <li>Hors du feu, incorporer la gélatine égouttée</li>
+                <li>Ajouter le zeste de citron vert</li>
+                <li>Verser dans des ramequins et laisser refroidir</li>
+                <li>Réfrigérer au moins 2h avant de démouler</li>
+                <li>Décorer de noix de coco râpée et rondelles d'ananas</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La vanille de Martinique est une des meilleures au monde — son arôme floral est incomparable !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- AUTRES PAYS PARTENAIRES -->
+
+      <!-- ITALIE -->
+      <div style="background:#fff8e1;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇮🇹</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Italie — 4 recettes authentiques</div>
+        </div>
+      </div>
+      <div class="recipes-grid" style="margin-bottom:28px;">
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍝
+            <div class="recipe-flag">🇮🇹 Italie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Pasta alla Carbonara</h3>
+            <p>Pâtes romaines aux œufs, guanciale, pecorino et poivre — sans crème, c'est la règle !</p>
+            <div class="recipe-tags"><span class="rtag">🥚 Authentique</span><span class="rtag">🧀 Fromage</span><span class="rtag">⏱️ 25 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400g de spaghetti ou rigatoni</li><li>200g de guanciale (ou pancetta)</li><li>4 jaunes d'œufs + 1 œuf entier</li><li>100g de pecorino romano râpé</li><li>50g de parmesan râpé</li><li>Poivre noir fraîchement moulu · Sel</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir le guanciale en dés dans une poêle sans huile jusqu'à ce qu'il soit doré et croustillant</li><li>Mélanger les jaunes, l'œuf entier, le pecorino et beaucoup de poivre noir</li><li>Cuire les pâtes al dente — garder une tasse d'eau de cuisson</li><li>Éteindre le feu, mélanger pâtes + guanciale, ajouter le mélange œufs-fromage</li><li>Incorporer l'eau de cuisson petit à petit pour obtenir une sauce crémeuse</li><li>Servir immédiatement avec du pecorino et du poivre supplémentaires</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Jamais de crème ! La texture crémeuse vient uniquement des œufs et de l'amidon des pâtes — c'est la vraie carbonara romaine</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🫘
+            <div class="recipe-flag">🇮🇹 Italie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Ribollita toscane</h3>
+            <p>Soupe paysanne toscane aux haricots, légumes et pain rassis — zéro gaspillage depuis le Moyen Âge</p>
+            <div class="recipe-tags"><span class="rtag">🥦 Végétarien</span><span class="rtag">♻️ Anti-gaspillage</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400g de haricots cannellini cuits</li><li>200g de chou noir (cavolo nero)</li><li>1 carotte · 1 branche céleri · 1 oignon</li><li>2 tomates · 3 gousses d'ail</li><li>4 tranches de pain rassis toscan</li><li>Huile d'olive · sel · poivre · thym</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir oignon, carotte, céleri hachés dans l'huile d'olive 10 min</li><li>Ajouter ail, tomates concassées et haricots écrasés grossièrement</li><li>Couvrir d'eau et laisser mijoter 30 min</li><li>Ajouter le chou noir en lanières et cuire encore 15 min</li><li>Incorporer le pain rassis coupé en morceaux et laisser absorber</li><li>Le lendemain, "ribollire" (refaire bouillir) — le plat est encore meilleur réchauffé !</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le nom "Ribollita" signifie "re-bouillie" — la recette originale était faite avec les restes de soupe réchauffés plusieurs fois</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍚
+            <div class="recipe-flag">🇮🇹 Italie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Risotto alla Milanese</h3>
+            <p>Risotto crémeux au safran de Milan — sa couleur dorée est la signature de la cuisine lombarde</p>
+            <div class="recipe-tags"><span class="rtag">🌼 Safran</span><span class="rtag">🧀 Parmesan</span><span class="rtag">⏱️ 35 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>320g de riz Arborio ou Carnaroli</li><li>1L de bouillon de bœuf chaud</li><li>1 oignon · 80g de beurre</li><li>1 verre de vin blanc sec</li><li>2 pincées de safran · 80g de parmesan</li><li>Sel · poivre</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir l'oignon finement haché dans 40g de beurre à feu doux</li><li>Ajouter le riz et le faire nacrer 2 min en remuant</li><li>Déglacer avec le vin blanc et laisser absorber complètement</li><li>Ajouter le safran dilué dans 1 louche de bouillon chaud</li><li>Incorporer le bouillon louche par louche en remuant constamment</li><li>Après 18 min, ajouter le reste du beurre froid et le parmesan — la "mantecatura"</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La mantecatura (incorporation du beurre froid hors du feu) est le secret de la texture crémeuse — ne jamais couvrir le risotto en fin de cuisson</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#efebe9;font-size:52px;">☕
+            <div class="recipe-flag">🇮🇹 Italie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Tiramisu</h3>
+            <p>Le dessert italien le plus célèbre au monde — mascarpone, café, biscuits et cacao</p>
+            <div class="recipe-tags"><span class="rtag">☕ Café</span><span class="rtag">🍮 Dessert</span><span class="rtag">⏱️ 20 min + 4h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (6 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>500g de mascarpone</li><li>4 œufs (jaunes + blancs séparés)</li><li>100g de sucre</li><li>250ml de café espresso refroidi</li><li>30 biscuits savoiardi (boudoirs)</li><li>3 c.s. de Marsala ou rhum</li><li>Cacao en poudre non sucré</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Fouetter les jaunes d'œufs avec le sucre jusqu'à blanchiment</li><li>Incorporer le mascarpone et mélanger jusqu'à texture lisse</li><li>Monter les blancs en neige ferme et les incorporer délicatement</li><li>Tremper rapidement les biscuits dans le café + Marsala</li><li>Alterner une couche de biscuits et une couche de crème mascarpone</li><li>Saupoudrer de cacao, couvrir et réfrigérer au moins 4h</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Tirami su" signifie "remonte-moi le moral" en italien — né à Trévise dans les années 1960, c'est le dessert le plus copié au monde</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+      </div>
+      <!-- TURQUIE -->
+      <div style="background:#fce4ec;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇹🇷</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Turquie — 4 recettes authentiques</div>
+        </div>
+      </div>
+      <div class="recipes-grid" style="margin-bottom:28px;">
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥩
+            <div class="recipe-flag">🇹🇷 Turquie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Köfte (Boulettes turques)</h3>
+            <p>Boulettes de viande épicées à l'agneau et au bœuf — la recette de rue la plus populaire de Turquie</p>
+            <div class="recipe-tags"><span class="rtag">🥩 Viande</span><span class="rtag">🌿 Épicé</span><span class="rtag">⏱️ 30 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>500g de viande hachée (agneau + bœuf)</li><li>1 oignon râpé · 2 gousses d'ail</li><li>1 œuf · 3 c.s. de chapelure</li><li>1 c.c. de cumin · 1 c.c. de paprika</li><li>½ c.c. de cannelle · sel · poivre</li><li>Persil frais haché · huile d'olive</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Mélanger viande, oignon râpé, ail écrasé et œuf</li><li>Ajouter la chapelure, le cumin, le paprika, la cannelle, sel et poivre</li><li>Incorporer le persil haché et malaxer 5 min pour tout amalgamer</li><li>Former des boulettes ovales de 4-5 cm en humidifiant les mains</li><li>Faire griller à la poêle ou au barbecue 3-4 min par côté</li><li>Servir avec salade de tomates, pain pide et yaourt à l'ail</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Il existe 291 variétés de köfte en Turquie ! La clé est de laisser reposer la préparation 30 min au frais avant de former les boulettes</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥐
+            <div class="recipe-flag">🇹🇷 Turquie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Börek (Feuilleté turc)</h3>
+            <p>Feuilleté croustillant aux épinards et fromage feta en pâte yufka — incontournable du petit-déjeuner turc</p>
+            <div class="recipe-tags"><span class="rtag">🧀 Feta</span><span class="rtag">🌿 Épinards</span><span class="rtag">⏱️ 45 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>6 feuilles de pâte yufka (ou filo)</li><li>300g d'épinards frais · 200g de feta</li><li>2 œufs · 100ml de lait · 100ml d'huile d'olive</li><li>1 oignon · graines de sésame · sel · poivre</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir l'oignon et les épinards hachés 5 min, laisser refroidir</li><li>Émietter la feta et mélanger avec les épinards, sel et poivre</li><li>Mélanger œufs, lait et huile pour la sauce</li><li>Badigeonner une feuille yufka de sauce, ajouter la farce, rouler ou plier</li><li>Disposer dans un moule, badigeonner le dessus de sauce</li><li>Saupoudrer de sésame et cuire 35 min à 180°C jusqu'à dorure</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le börek est le plat du vendredi matin dans beaucoup de familles turques — chaque région a sa forme : roulé, carré ou en triangles</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🫙
+            <div class="recipe-flag">🇹🇷 Turquie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Dolma (Feuilles farcies)</h3>
+            <p>Feuilles de vigne farcies au riz, pignons et herbes aromatiques — héritage de la cuisine ottomane</p>
+            <div class="recipe-tags"><span class="rtag">🌿 Végétarien</span><span class="rtag">🍋 Citron</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>30 feuilles de vigne en saumure</li><li>200g de riz à grain rond</li><li>1 oignon · 50g de pignons de pin</li><li>50g de raisins secs · jus de 2 citrons</li><li>Menthe fraîche · aneth · persil · huile d'olive</li><li>1 c.c. de cannelle · 1 c.c. de sucre · sel</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir oignon et pignons dans l'huile jusqu'à dorure</li><li>Ajouter le riz, les épices, raisins secs, herbes et mélanger</li><li>Rincer les feuilles de vigne, enlever les tiges</li><li>Déposer 1 c.c. de farce sur chaque feuille et rouler fermement</li><li>Disposer en couches dans une casserole, couvrir de jus de citron + eau</li><li>Cuire à couvert à feu doux 45 min avec un poids dessus</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Dolma" vient du turc "doldurmak" (remplir) — le plat est meilleur froid le lendemain, arrosé d'huile d'olive et servi avec du yaourt</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🍯
+            <div class="recipe-flag">🇹🇷 Turquie</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Baklava</h3>
+            <p>Pâtisserie ottomane aux pistaches de Gaziantep, pâte filo et sirop de miel — symbole de fête</p>
+            <div class="recipe-tags"><span class="rtag">🍯 Miel</span><span class="rtag">🌰 Pistaches</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (20 pièces)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400g de pâte filo</li><li>300g de pistaches non salées moulues</li><li>200g de beurre clarifié fondu</li><li>300g de sucre · 200ml d'eau</li><li>2 c.s. de miel · jus d'½ citron</li><li>1 c.c. d'eau de rose (optionnel)</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Préparer le sirop : cuire sucre + eau + miel + citron 15 min, laisser refroidir</li><li>Beurrer un moule rectangulaire et y déposer 8 feuilles filo beurrées</li><li>Étaler une couche de pistaches moulues</li><li>Couvrir de 4 feuilles filo beurrées, pistaches, puis 8 feuilles finales</li><li>Couper en losanges ou carrés avant cuisson</li><li>Cuire 35-40 min à 180°C — verser immédiatement le sirop FROID sur le baklava CHAUD</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le secret : sirop froid sur baklava chaud (ou l'inverse). Les pistaches de Gaziantep (IGP) sont les meilleures — leur couleur verte intense est inégalée</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+      </div>
+      <!-- ESPAGNE -->
+      <div style="background:#fff9c4;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇪🇸</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Espagne — 4 recettes authentiques</div>
+        </div>
+      </div>
+      <div class="recipes-grid" style="margin-bottom:28px;">
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🥘
+            <div class="recipe-flag">🇪🇸 Espagne</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Paella Valenciana</h3>
+            <p>Le plat emblématique d'Espagne au riz safran, poulet, lapin et haricots verts — né à Valence</p>
+            <div class="recipe-tags"><span class="rtag">🌼 Safran</span><span class="rtag">🍗 Poulet</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400g de riz à paella (type Bomba)</li><li>1 poulet découpé · 300g de lapin</li><li>200g de haricots verts · 100g de haricots blancs</li><li>4 tomates · 3 gousses d'ail</li><li>1 c.c. de paprika fumé · 2 pincées de safran</li><li>Huile d'olive · 1.2L de bouillon · sel</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Faire revenir poulet et lapin dans l'huile dans la paellera jusqu'à dorure</li><li>Ajouter tomates râpées, ail et paprika, faire revenir 5 min</li><li>Incorporer les haricots et le safran infusé dans le bouillon chaud</li><li>Verser le bouillon, porter à ébullition, ajuster le sel</li><li>Ajouter le riz en croix et répartir uniformément sans remuer</li><li>Cuire 18 min à feu vif puis 5 min à feu doux — laisser reposer 5 min</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le "socarrat" est la croûte de riz dorée au fond de la paellera — signe d'une vraie paella réussie ! Ne jamais remuer après avoir ajouté le riz</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#ffebee;font-size:52px;">🍅
+            <div class="recipe-flag">🇪🇸 Espagne</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Gazpacho andalou</h3>
+            <p>Soupe froide de tomates, concombre, poivron et ail — le rafraîchissement de l'Andalousie</p>
+            <div class="recipe-tags"><span class="rtag">🍅 Tomate</span><span class="rtag">🌿 Vegan</span><span class="rtag">⏱️ 15 min + 2h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>1kg de tomates mûres bien rouges</li><li>1 concombre · 1 poivron vert</li><li>2 gousses d'ail · 1 oignon</li><li>100ml d'huile d'olive extra-vierge</li><li>3 c.s. de vinaigre de Xérès</li><li>1 tranche de pain rassis · sel</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Tremper le pain rassis dans l'eau 5 min puis essorer</li><li>Couper tous les légumes grossièrement et les placer dans le mixeur</li><li>Ajouter l'ail, le pain, l'huile et le vinaigre</li><li>Mixer à pleine puissance jusqu'à texture très lisse</li><li>Passer au tamis fin pour une texture parfaitement lisse</li><li>Réfrigérer au moins 2h. Servir très froid avec tomates, concombre et croûtons</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le vinaigre de Xérès (Sherry) est essentiel pour l'authenticité — utiliser uniquement des tomates bien mûres et savoureuses pour un résultat parfait</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍳
+            <div class="recipe-flag">🇪🇸 Espagne</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Tortilla de Patatas</h3>
+            <p>Omelette épaisse aux pommes de terre et oignons — le plat préféré des Espagnols, servi en tapas</p>
+            <div class="recipe-tags"><span class="rtag">🥚 Œufs</span><span class="rtag">🥔 Pommes de terre</span><span class="rtag">⏱️ 40 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>6 œufs frais</li><li>500g de pommes de terre à chair ferme</li><li>2 oignons doux</li><li>200ml d'huile d'olive</li><li>Sel · poivre</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Éplucher et trancher finement les pommes de terre et oignons</li><li>Frire doucement dans l'huile d'olive 20 min (confire, pas frire)</li><li>Égoutter, saler et mélanger avec les œufs battus</li><li>Verser dans une poêle antiadhésive huilée à feu moyen</li><li>Cuire 5 min jusqu'à ce que les bords se décollent</li><li>Retourner avec une assiette et cuire encore 3 min — le centre doit rester légèrement coulant</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le débat sur les oignons divise l'Espagne ! Les puristes madrilènes disent "sin cebolla" (sans oignon), mais la version avec oignon est plus moelleuse</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#efebe9;font-size:52px;">🍫
+            <div class="recipe-flag">🇪🇸 Espagne</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Churros con Chocolate</h3>
+            <p>Beignets croustillants trempés dans un chocolat chaud épais — le petit-déjeuner du dimanche espagnol</p>
+            <div class="recipe-tags"><span class="rtag">🍫 Chocolat</span><span class="rtag">🍩 Dessert</span><span class="rtag">⏱️ 25 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>250ml d'eau · 200g de farine · 1 c.c. de sel</li><li>Huile de friture · sucre + cannelle pour enrober</li><li>Pour le chocolat : 200g de chocolat noir 70%</li><li>400ml de lait entier · 1 c.s. de sucre</li><li>1 c.s. de fécule de maïs</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Porter l'eau à ébullition avec le sel, verser sur la farine</li><li>Mélanger énergiquement jusqu'à pâte lisse qui se décolle du bol</li><li>Remplir une poche à douille étoilée et faire des bâtons de 15 cm</li><li>Frire dans l'huile à 180°C, 3-4 min par côté jusqu'à dorure</li><li>Égoutter et rouler dans le mélange sucre-cannelle</li><li>Chocolat chaud : fondre chocolat + lait + sucre + fécule en remuant jusqu'à épaississement</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Les vraies churrerías espagnoles ouvrent tôt le matin pour servir les fêtards qui rentrent — à Madrid, San Ginés sert des churros depuis 1894 !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+      </div>
+      <!-- SUÈDE -->
+      <div style="background:#e8f5e9;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇸🇪</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Suède — 4 recettes authentiques</div>
+        </div>
+      </div>
+      <div class="recipes-grid" style="margin-bottom:28px;">
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥩
+            <div class="recipe-flag">🇸🇪 Suède</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Köttbullar (Boulettes suédoises)</h3>
+            <p>Les vraies boulettes suédoises au bœuf et porc, sauce crémeuse aux airelles — bien différentes de l'IKEA !</p>
+            <div class="recipe-tags"><span class="rtag">🥩 Bœuf-Porc</span><span class="rtag">🍷 Sauce crémeuse</span><span class="rtag">⏱️ 45 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>300g bœuf haché · 200g porc haché</li><li>1 oignon râpé · 1 œuf · 3 c.s. chapelure</li><li>50ml de lait · sel · poivre · muscade</li><li>Pour la sauce : 300ml crème · 200ml bouillon</li><li>1 c.s. sauce soja · 1 c.s. farine · beurre</li><li>Confiture d'airelles (lingonsylt) pour servir</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Tremper la chapelure dans le lait 5 min</li><li>Mélanger les viandes, oignon, œuf, chapelure imbibée, épices</li><li>Former des boulettes de 3 cm en roulant entre les paumes humides</li><li>Faire dorer les boulettes dans le beurre 8-10 min, réserver</li><li>Dans la même poêle : farine + beurre, ajouter bouillon + crème + sauce soja</li><li>Remettre les boulettes dans la sauce 10 min. Servir avec purée et airelles</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La muscade est l'épice secrète des vraies köttbullar — servir obligatoirement avec de la confiture d'airelles (lingonsylt) et des cornichons marinés</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🐟
+            <div class="recipe-flag">🇸🇪 Suède</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Gravlax (Saumon mariné)</h3>
+            <p>Saumon cru mariné au sel, sucre et aneth frais — technique ancestrale viking de conservation</p>
+            <div class="recipe-tags"><span class="rtag">🐟 Saumon</span><span class="rtag">🌿 Aneth</span><span class="rtag">⏱️ 15 min + 48h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (6 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>1kg de filet de saumon très frais (avec peau)</li><li>3 c.s. de gros sel de mer</li><li>2 c.s. de sucre · 1 c.c. de poivre blanc moulu</li><li>1 gros bouquet d'aneth frais</li><li>Sauce : moutarde de Dijon · miel · vinaigre · aneth</li><li>Pain de seigle pour servir</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Mélanger sel, sucre et poivre blanc</li><li>Couvrir le saumon du mélange sel-sucre sur toutes les faces</li><li>Déposer généreusement l'aneth frais sur le saumon</li><li>Envelopper dans du film plastique et placer au réfrigérateur</li><li>Retourner toutes les 12h pendant 48h</li><li>Rincer, sécher et trancher très finement en biais. Servir avec sauce moutarde-miel-aneth</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Gravlax" vient du suédois "grav" (enterré) — les pêcheurs vikings enterraient le saumon dans le sol pour le fermenter. Aujourd'hui on le réfrigère !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🌀
+            <div class="recipe-flag">🇸🇪 Suède</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Kanelbullar (Brioches à la cannelle)</h3>
+            <p>Brioches spiralées à la cannelle et cardamome — la star du "fika", la pause café suédoise</p>
+            <div class="recipe-tags"><span class="rtag">🥐 Brioche</span><span class="rtag">☕ Fika</span><span class="rtag">⏱️ 2h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (16 pièces)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>500g de farine · 25g de levure fraîche</li><li>300ml de lait tiède · 75g de beurre fondu</li><li>75g de sucre · 1 œuf · 1 c.c. de cardamome moulue</li><li>Garniture : 75g beurre mou · 75g sucre · 2 c.s. cannelle</li><li>Glace : 1 œuf battu · sucre en grains</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Dissoudre la levure dans le lait tiède avec le sucre</li><li>Mélanger farine, cardamome, ajouter levure + beurre + œuf, pétrir 10 min</li><li>Laisser lever 45 min à couvert dans un endroit chaud</li><li>Étaler en rectangle, tartiner de beurre mou + sucre + cannelle</li><li>Rouler serré, couper en 16 tranches, torsader chaque tranche</li><li>Lever 20 min, dorer à l'œuf battu, saupoudrer de sucre en grains, cuire 12 min à 200°C</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le 4 octobre est le "Kanelbullens dag" (Journée de la brioche à la cannelle) en Suède — les Suédois en mangent en moyenne 300 par an !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥔
+            <div class="recipe-flag">🇸🇪 Suède</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Janssons frestelse (Gratin de Jansson)</h3>
+            <p>Gratin de pommes de terre aux anchois et crème — le plat de Noël incontournable des tables suédoises</p>
+            <div class="recipe-tags"><span class="rtag">🥔 Pomme de terre</span><span class="rtag">🎄 Noël</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>1kg de pommes de terre à chair ferme</li><li>2 boîtes d'anchois marinés (120g)</li><li>2 oignons · 400ml de crème fraîche épaisse</li><li>50g de chapelure · 30g de beurre · sel · poivre</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Éplucher et tailler les pommes de terre en fines juliennes</li><li>Émincer les oignons et les faire revenir dans le beurre 5 min</li><li>Beurrer un plat à gratin et alterner couches de pommes de terre, oignons, anchois</li><li>Finir par une couche de pommes de terre</li><li>Verser la crème en deux fois (début + mi-cuisson) sur l'ensemble</li><li>Saupoudrer de chapelure + noisettes de beurre, cuire 50 min à 200°C</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Janssons frestelse" signifie "la tentation de Jansson" — la légende dit qu'un prédicateur prêchant l'austérité ne put résister à ce gratin lors d'un repas !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+      </div>
+      <!-- MACÉDOINE DU NORD -->
+      <div style="background:#e0f7fa;border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:28px;">🇲🇰</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0c4a6e;">Macédoine du Nord — 4 recettes authentiques</div>
+        </div>
+      </div>
+      <div class="recipes-grid" style="margin-bottom:28px;">
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🫘
+            <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Tavče Gravče</h3>
+            <p>Haricots blancs mijotés au four avec poivrons, tomates et épices — le plat national de Macédoine</p>
+            <div class="recipe-tags"><span class="rtag">🫘 Haricots</span><span class="rtag">🌿 Végétarien</span><span class="rtag">⏱️ 2h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>500g de haricots blancs secs (trempés une nuit)</li><li>2 oignons · 3 poivrons rouges</li><li>2 tomates · 3 gousses d'ail</li><li>1 c.s. de paprika fumé · 1 piment sec</li><li>Huile de tournesol · sel · persil frais</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Égoutter et cuire les haricots 1h dans de l'eau fraîche</li><li>Faire revenir oignons et poivrons dans l'huile 10 min</li><li>Ajouter tomates, ail, paprika et piment, cuire 5 min</li><li>Mélanger haricots et sauce dans une terrine en terre cuite</li><li>Cuire au four à 180°C pendant 45 min sans couvercle</li><li>Servir chaud avec du pain maison et du fromage sirene</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La terrine en terre cuite (tava) est indispensable pour l'authenticité — elle donne une croûte légère sur le dessus tout en gardant la chaleur. Plat du dimanche par excellence !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#ffebee;font-size:52px;">🫑
+            <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Ajvar (Caviar de poivrons)</h3>
+            <p>Condiment traditionnel aux poivrons rouges grillés et aubergines — la confiture des Balkans</p>
+            <div class="recipe-tags"><span class="rtag">🫑 Poivrons</span><span class="rtag">🍆 Aubergine</span><span class="rtag">⏱️ 1h30</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pots)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>2kg de poivrons rouges charnus</li><li>500g d'aubergines</li><li>100ml d'huile de tournesol</li><li>4 gousses d'ail · jus de 1 citron</li><li>Sel · piment rouge (optionnel)</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Griller les poivrons entiers sur une flamme vive ou au four 200°C jusqu'à noircissement</li><li>Faire de même avec les aubergines piquées</li><li>Laisser refroidir dans un sac plastique fermé 20 min</li><li>Peler, épépiner poivrons et aubergines, laisser égoutter 30 min</li><li>Hacher finement ou mixer grossièrement avec ail, huile et citron</li><li>Cuire à feu doux 30 min en remuant. Mettre en pots stérilisés</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 En Macédoine, la saison de l'ajvar en automne est un événement familial — toute la famille se réunit pour préparer des dizaines de pots pour l'hiver !</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥗
+            <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Shopska Salata</h3>
+            <p>Salade fraîche aux tomates, concombres, poivrons et fromage sirene blanc — les couleurs du drapeau balkanique</p>
+            <div class="recipe-tags"><span class="rtag">🍅 Frais</span><span class="rtag">🧀 Sirene</span><span class="rtag">⏱️ 10 min</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>4 tomates bien mûres</li><li>2 concombres · 2 poivrons (1 rouge, 1 vert)</li><li>1 oignon rouge · 200g de fromage sirene (ou feta)</li><li>Huile de tournesol · vinaigre de vin blanc</li><li>Sel · persil frais haché</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Couper les tomates, concombres et poivrons en petits dés de 1cm</li><li>Émincer l'oignon rouge très finement</li><li>Mélanger tous les légumes dans un saladier</li><li>Assaisonner d'huile, vinaigre, sel et parsemer de persil</li><li>Émietter généreusement le fromage sirene par-dessus (ne pas mélanger)</li><li>Servir immédiatement bien fraîche</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La shopska est la salade la plus populaire des Balkans — le fromage blanc émiettée sur le dessus sans mélanger est la règle absolue ! Accompagne tous les plats grillés</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
+        <div class="recipe-card" onclick="toggleRecipe(this)">
+          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍯
+            <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
+          </div>
+          <div class="recipe-body">
+            <h3>Baklava macédonienne</h3>
+            <p>Pâtisserie en pâte filo aux noix et au miel — héritée de la tradition ottomane et adaptée aux Balkans</p>
+            <div class="recipe-tags"><span class="rtag">🍯 Miel</span><span class="rtag">🌰 Noix</span><span class="rtag">⏱️ 1h</span></div>
+            <div class="recipe-detail" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (20 pièces)</div>
+              <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
+                <li>400g de pâte filo · 200g de beurre clarifié</li><li>400g de noix concassées grossièrement</li><li>1 c.c. de cannelle · 1 c.c. de clous de girofle</li><li>Pour le sirop : 300g sucre · 200ml eau</li><li>3 c.s. de miel · zeste de citron</li><li>1 bâton de cannelle · 3 clous de girofle entiers</li>
+              </ul>
+              <div style="font-size:12px;font-weight:700;color:#0284c7;margin:10px 0 6px;">👨‍🍳 Préparation</div>
+              <ol style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.9;">
+                <li>Préparer le sirop : bouillir tous les ingrédients 15 min, laisser refroidir</li><li>Mélanger noix concassées, cannelle et clous de girofle moulus</li><li>Beurrer un grand moule et déposer 6 feuilles filo beurrées une à une</li><li>Étaler une couche de noix épicées · 4 feuilles filo · noix · 6 feuilles filo</li><li>Couper en losanges ou carrés avant cuisson</li><li>Cuire 40 min à 170°C jusqu'à dorée · verser immédiatement le sirop froid</li>
+              </ol>
+              <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La baklava macédonienne utilise des noix (pas des pistaches) et un sirop aux épices entières — chaque famille a sa recette secrète transmise de génération en génération</div>
+            </div>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -942,6 +1577,19 @@ function calcW() {
   const el = document.getElementById(id);
   if (el) el.addEventListener('input', calcW);
 });
+
+function toggleRecipe(card) {
+  const detail = card.querySelector('.recipe-detail');
+  const btn = card.querySelector('.toggle-btn');
+  if (!detail) return;
+  if (detail.style.display === 'none') {
+    detail.style.display = 'block';
+    if (btn) btn.textContent = '📕 Fermer la recette';
+  } else {
+    detail.style.display = 'none';
+    if (btn) btn.textContent = '📖 Voir la recette';
+  }
+}
 
 function goToModule(id) {
   showPage('modules');
