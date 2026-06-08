@@ -270,10 +270,7 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
     </div>
   </div>
   
-      </div>
-      <div class="dl-phone"><div class="phone-prev"><img src="logo_ecoedu.jpeg" alt="Eco Edu" style="width:80px;height:80px;border-radius:20px;object-fit:cover;border:2px solid #fff;"/><span>Eco Edu</span><small data-i18n="dl_phone_sub">Éducation durable et culturelle</small></div></div>
-    </div>
-  </div>
+
   <div class="partners-wrap">
     <div class="partners-inner">
       <div class="section-label" data-i18n="partners_label">Soutiens</div>
@@ -1225,8 +1222,6 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
         </div>
       </div>
     </div>
-
-  </div>
 </div>
 
 <!-- PAGE PAYS -->
@@ -1924,80 +1919,7 @@ function showModule(id) {
   document.getElementById('module-' + id).classList.add('active');
   if (id === 'quiz') 
 // ===== QUIZ 2 — Culture & Économie =====
-const quiz2Data = [
-  {
-    q: "Quelle ville est la capitale de la Macédoine du Nord ?",
-    opts: ["A. Ohrid","B. Bitola","C. Skopje","D. Tetovo"],
-    c: 2,
-    e: "✅ Skopje est la capitale de la Macédoine du Nord. Elle est connue pour ses monuments néoclassiques et ses bazars ottomans."
-  },
-  {
-    q: "Le lac Ohrid en Macédoine est classé par l'UNESCO. Pour quelle raison principale ?",
-    opts: ["A. Sa taille (le plus grand lac des Balkans)","B. Sa biodiversité unique et son patrimoine culturel","C. Sa profondeur record en Europe","D. Ses eaux thermales"],
-    c: 1,
-    e: "✅ Le lac Ohrid est classé UNESCO pour sa biodiversité unique (200 espèces endémiques) et son riche patrimoine culturel remontant à 3500 ans."
-  },
-  {
-    q: "Quel pays européen recycle le plus de déchets ménagers ?",
-    opts: ["A. L'Allemagne","B. La Suède","C. La France","D. L'Italie"],
-    c: 0,
-    e: "✅ L'Allemagne recycle environ 67% de ses déchets ménagers, un record mondial ! La Suède est connue pour incinérer ses déchets pour produire de l'énergie."
-  },
-  {
-    q: "La Martinique est connue pour sa production d'un rhum très particulier. Lequel ?",
-    opts: ["A. Rhum de mélasse","B. Rhum agricole AOC","C. Rhum vieux ordinaire","D. Cachaça"],
-    c: 1,
-    e: "✅ Le rhum agricole de Martinique a une Appellation d'Origine Contrôlée (AOC) — il est fait directement à partir du jus de canne fraîche, contrairement au rhum de mélasse."
-  },
-  {
-    q: "Qu'est-ce que l'économie circulaire ?",
-    opts: ["A. Une économie basée sur le tourisme","B. Un modèle qui élimine les déchets en gardant les ressources en usage","C. Le commerce entre pays voisins","D. La production locale et artisanale"],
-    c: 1,
-    e: "✅ L'économie circulaire vise à éliminer les déchets en maintenant les produits, matériaux et ressources en usage le plus longtemps possible, inspirée des cycles naturels."
-  }
-];
-let qi2 = 0, answered2 = false;
 
-function loadQuiz2() {
-  qi2 = 0; answered2 = false;
-  const q = quiz2Data[qi2];
-  document.getElementById('qt2').textContent = q.q;
-  document.getElementById('qn2').textContent = 'Question ' + (qi2+1) + ' / ' + quiz2Data.length;
-  document.getElementById('qp2').style.width = ((qi2+1)/quiz2Data.length*100) + '%';
-  const optsEl = document.getElementById('qo2');
-  optsEl.innerHTML = '';
-  q.opts.forEach((o,i) => {
-    const btn = document.createElement('button');
-    btn.style.cssText = 'background:#f0f9ff;border:2px solid #bae6fd;border-radius:12px;padding:14px 16px;font-size:14px;color:#0c4a6e;cursor:pointer;text-align:left;width:100%;';
-    btn.textContent = o;
-    btn.onclick = () => answerQ2(i);
-    optsEl.appendChild(btn);
-  });
-  document.getElementById('qf2').style.display = 'none';
-  document.getElementById('qnb2').style.display = 'none';
-}
-
-function answerQ2(choice) {
-  if (answered2) return;
-  answered2 = true;
-  const q = quiz2Data[qi2];
-  const opts = document.getElementById('qo2').querySelectorAll('button');
-  opts[choice].style.background = choice === q.c ? '#dcfce7' : '#fef2f2';
-  opts[choice].style.borderColor = choice === q.c ? '#22c55e' : '#ef4444';
-  if (choice !== q.c) {
-    opts[q.c].style.background = '#dcfce7';
-    opts[q.c].style.borderColor = '#22c55e';
-  }
-  document.getElementById('qe2').textContent = q.e;
-  document.getElementById('qf2').style.display = 'block';
-  document.getElementById('qnb2').style.display = 'block';
-}
-
-function nextQ2() {
-  qi2 = (qi2 + 1) % quiz2Data.length;
-  answered2 = false;
-  loadQuiz2();
-}
 
 loadQuiz();
   if (id === 'quiz2') loadQuiz2();
@@ -2012,80 +1934,7 @@ function hideModule() {
 
 
 // ===== QUIZ 2 — Culture & Économie =====
-const quiz2Data = [
-  {
-    q: "Quelle ville est la capitale de la Macédoine du Nord ?",
-    opts: ["A. Ohrid","B. Bitola","C. Skopje","D. Tetovo"],
-    c: 2,
-    e: "✅ Skopje est la capitale de la Macédoine du Nord. Elle est connue pour ses monuments néoclassiques et ses bazars ottomans."
-  },
-  {
-    q: "Le lac Ohrid en Macédoine est classé par l'UNESCO. Pour quelle raison principale ?",
-    opts: ["A. Sa taille (le plus grand lac des Balkans)","B. Sa biodiversité unique et son patrimoine culturel","C. Sa profondeur record en Europe","D. Ses eaux thermales"],
-    c: 1,
-    e: "✅ Le lac Ohrid est classé UNESCO pour sa biodiversité unique (200 espèces endémiques) et son riche patrimoine culturel remontant à 3500 ans."
-  },
-  {
-    q: "Quel pays européen recycle le plus de déchets ménagers ?",
-    opts: ["A. L'Allemagne","B. La Suède","C. La France","D. L'Italie"],
-    c: 0,
-    e: "✅ L'Allemagne recycle environ 67% de ses déchets ménagers, un record mondial ! La Suède est connue pour incinérer ses déchets pour produire de l'énergie."
-  },
-  {
-    q: "La Martinique est connue pour sa production d'un rhum très particulier. Lequel ?",
-    opts: ["A. Rhum de mélasse","B. Rhum agricole AOC","C. Rhum vieux ordinaire","D. Cachaça"],
-    c: 1,
-    e: "✅ Le rhum agricole de Martinique a une Appellation d'Origine Contrôlée (AOC) — il est fait directement à partir du jus de canne fraîche, contrairement au rhum de mélasse."
-  },
-  {
-    q: "Qu'est-ce que l'économie circulaire ?",
-    opts: ["A. Une économie basée sur le tourisme","B. Un modèle qui élimine les déchets en gardant les ressources en usage","C. Le commerce entre pays voisins","D. La production locale et artisanale"],
-    c: 1,
-    e: "✅ L'économie circulaire vise à éliminer les déchets en maintenant les produits, matériaux et ressources en usage le plus longtemps possible, inspirée des cycles naturels."
-  }
-];
-let qi2 = 0, answered2 = false;
 
-function loadQuiz2() {
-  qi2 = 0; answered2 = false;
-  const q = quiz2Data[qi2];
-  document.getElementById('qt2').textContent = q.q;
-  document.getElementById('qn2').textContent = 'Question ' + (qi2+1) + ' / ' + quiz2Data.length;
-  document.getElementById('qp2').style.width = ((qi2+1)/quiz2Data.length*100) + '%';
-  const optsEl = document.getElementById('qo2');
-  optsEl.innerHTML = '';
-  q.opts.forEach((o,i) => {
-    const btn = document.createElement('button');
-    btn.style.cssText = 'background:#f0f9ff;border:2px solid #bae6fd;border-radius:12px;padding:14px 16px;font-size:14px;color:#0c4a6e;cursor:pointer;text-align:left;width:100%;';
-    btn.textContent = o;
-    btn.onclick = () => answerQ2(i);
-    optsEl.appendChild(btn);
-  });
-  document.getElementById('qf2').style.display = 'none';
-  document.getElementById('qnb2').style.display = 'none';
-}
-
-function answerQ2(choice) {
-  if (answered2) return;
-  answered2 = true;
-  const q = quiz2Data[qi2];
-  const opts = document.getElementById('qo2').querySelectorAll('button');
-  opts[choice].style.background = choice === q.c ? '#dcfce7' : '#fef2f2';
-  opts[choice].style.borderColor = choice === q.c ? '#22c55e' : '#ef4444';
-  if (choice !== q.c) {
-    opts[q.c].style.background = '#dcfce7';
-    opts[q.c].style.borderColor = '#22c55e';
-  }
-  document.getElementById('qe2').textContent = q.e;
-  document.getElementById('qf2').style.display = 'block';
-  document.getElementById('qnb2').style.display = 'block';
-}
-
-function nextQ2() {
-  qi2 = (qi2 + 1) % quiz2Data.length;
-  answered2 = false;
-  loadQuiz2();
-}
 
 loadQuiz();
 
