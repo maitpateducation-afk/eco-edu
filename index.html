@@ -68,7 +68,7 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .mod-icon{font-size:32px;margin-bottom:12px;}
 .mod-name{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:5px;}
 .mod-desc{font-size:12px;color:#0369a1;line-height:1.6;}
-.module-detail{display:none;background:#f8fafc;border-radius:16px;border:1px solid #bae6fd;padding:16px;margin-top:0;}
+.module-detail{display:none;background:#f8fafc;border-radius:16px;border:1px solid #bae6fd;padding:16px;margin-top:0;overflow:visible;}
 .module-detail.active{display:block;}
 .module-detail h2{font-size:22px;font-weight:700;color:#0c4a6e;margin-bottom:16px;}
 .back-link{font-size:14px;color:#0ea5e9;cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:20px;width:fit-content;}
@@ -334,24 +334,24 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
       <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider1">🍖 Viande (portions/semaine)</span><span class="slider-val" id="vm">4</span></div><input type="range" min="0" max="14" value="4" id="sm"></div>
       <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider2">🚿 Douche (minutes/jour)</span><span class="slider-val" id="vs">8</span></div><input type="range" min="1" max="30" value="8" id="ss"></div>
       <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider3">👕 Vêtements neufs (par mois)</span><span class="slider-val" id="vc">3</span></div><input type="range" min="0" max="20" value="3" id="sc"></div>
+      <!-- LIEN EXTERNE — affiché en premier pour visibilité -->
+      <div style="background:#0ea5e9;border-radius:14px;padding:16px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div style="font-size:28px;flex-shrink:0;">💧</div>
+        <div style="flex:1;min-width:200px;">
+          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">Calculez votre empreinte eau complète</div>
+          <div style="font-size:12px;color:#bae6fd;margin-bottom:10px;">Découvrez votre empreinte eau personnelle détaillée sur le site officiel</div>
+          <a href="https://mon-empreinte-eau.fr/" target="_blank" rel="noopener noreferrer"
+             style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0ea5e9;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;white-space:nowrap;">
+            🌐 Ouvrir mon-empreinte-eau.fr
+          </a>
+        </div>
+      </div>
+
       <div class="tips-grid">
         <div class="tip-card"><div class="tip-icon">🥗</div><p data-i18n="tip1">1 repas végétarien de plus = -500 L/jour</p></div>
         <div class="tip-card"><div class="tip-icon">👗</div><p data-i18n="tip2">Échanger vos vêtements au lieu d'acheter</p></div>
         <div class="tip-card"><div class="tip-icon">🚿</div><p data-i18n="tip3">Douche 5 min = -30 L vs 10 min</p></div>
         <div class="tip-card"><div class="tip-icon">♻️</div><p data-i18n="tip4">1 jean recyclé = 7 000 L économisés</p></div>
-      </div>
-
-      <!-- LIEN EXTERNE -->
-      <div style="background:#0ea5e9;border-radius:14px;padding:18px 20px;margin-top:16px;display:flex;align-items:center;gap:14px;">
-        <div style="font-size:32px;flex-shrink:0;">💧</div>
-        <div style="flex:1;">
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">Calculez votre empreinte eau complète</div>
-          <div style="font-size:12px;color:#bae6fd;margin-bottom:10px;">Découvrez votre empreinte eau personnelle détaillée sur le site officiel</div>
-          <a href="https://mon-empreinte-eau.fr/" target="_blank" rel="noopener noreferrer"
-             style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0ea5e9;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;">
-            🌐 Ouvrir mon-empreinte-eau.fr
-          </a>
-        </div>
       </div>
     </div>
     <div class="module-detail" id="module-quiz">
