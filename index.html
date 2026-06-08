@@ -259,10 +259,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       <h2 class="section-title" data-i18n="sec_modules_title">Tout pour apprendre et agir</h2>
       <p class="section-sub" data-i18n="sec_modules_sub">Cliquez sur un module pour en savoir plus.</p>
       <div class="modules-grid">
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes économiques et environnementaux</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte modifiables par la communauté</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez et réduisez votre consommation d'eau</div></div>
-        <div class="mod-card" onclick="showPage('modules')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux & Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Biodiversité, économie, culture — apprendre en jouant</div></div>
+        <div class="mod-card" onclick="goToModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes économiques et environnementaux</div></div>
+        <div class="mod-card" onclick="goToModule('carte')"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte modifiables par la communauté</div></div>
+        <div class="mod-card" onclick="goToModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez et réduisez votre consommation d'eau</div></div>
+        <div class="mod-card" onclick="goToModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux & Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Biodiversité, économie, culture — apprendre en jouant</div></div>
       </div>
     </div>
   </div>
@@ -287,9 +287,9 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
 <!-- PAGE MODULES -->
 <div class="page" id="page-modules">
-  <div class="page-header">
-    <h1 data-i18n="modules_title">Modules éducatifs</h1>
-    <p data-i18n="modules_sub">Cliquez sur un module pour explorer son contenu interactif</p>
+  <div style="background:#e0f2fe;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #bae6fd;">
+    <img src="logo_ecoedu.jpeg" style="width:36px;height:36px;border-radius:8px;object-fit:cover;" alt="Eco Edu"/>
+    <span style="font-size:16px;font-weight:700;color:#0c4a6e;" data-i18n="modules_title">Modules éducatifs</span>
   </div>
   <div class="content-wrap">
     <div id="modules-list">
@@ -363,9 +363,9 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
 <!-- PAGE PAYS -->
 <div class="page" id="page-pays">
-  <div class="page-header">
-    <h1 data-i18n="countries_title">Pays partenaires</h1>
-    <p data-i18n="countries_sub">Six pays unis par l'éducation, la culture et la durabilité dans le cadre du programme Erasmus+</p>
+  <div style="background:#e0f2fe;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #bae6fd;">
+    <img src="logo_ecoedu.jpeg" style="width:36px;height:36px;border-radius:8px;object-fit:cover;" alt="Eco Edu"/>
+    <span style="font-size:16px;font-weight:700;color:#0c4a6e;" data-i18n="countries_title">Pays partenaires</span>
   </div>
   <div class="countries-wrap-bg">
     <div class="countries-inner">
@@ -384,9 +384,9 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
 <!-- PAGE CONTACT -->
 <div class="page" id="page-contact">
-  <div class="page-header">
-    <h1 data-i18n="contact_title">Nous contacter</h1>
-    <p data-i18n="contact_sub">Une question, une suggestion ou souhaitez-vous devenir partenaire ?</p>
+  <div style="background:#e0f2fe;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #bae6fd;">
+    <img src="logo_ecoedu.jpeg" style="width:36px;height:36px;border-radius:8px;object-fit:cover;" alt="Eco Edu"/>
+    <span style="font-size:16px;font-weight:700;color:#0c4a6e;" data-i18n="contact_title">Nous contacter</span>
   </div>
   <div class="content-wrap">
     <div class="contact-grid">
@@ -942,6 +942,11 @@ function calcW() {
   const el = document.getElementById(id);
   if (el) el.addEventListener('input', calcW);
 });
+
+function goToModule(id) {
+  showPage('modules');
+  setTimeout(() => showModule(id), 50);
+}
 
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
