@@ -58,7 +58,7 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .page-header{background:#e0f7fa;padding:48px 32px;text-align:center;}
 .page-header h1{font-size:32px;font-weight:700;color:#0c4a6e;margin-bottom:10px;}
 .page-header p{font-size:16px;color:#0369a1;max-width:560px;margin:0 auto;}
-.content-wrap{max-width:1100px;margin:0 auto;padding:48px 32px;}
+.content-wrap{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .section-label{font-size:11px;color:#0284c7;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
 .section-title{font-size:26px;font-weight:700;color:#0c4a6e;margin-bottom:8px;}
 .section-sub{font-size:15px;color:#0369a1;line-height:1.7;margin-bottom:32px;}
@@ -68,7 +68,7 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .mod-icon{font-size:32px;margin-bottom:12px;}
 .mod-name{font-size:14px;font-weight:700;color:#0c4a6e;margin-bottom:5px;}
 .mod-desc{font-size:12px;color:#0369a1;line-height:1.6;}
-.module-detail{display:none;background:#f8fafc;border-radius:16px;border:1px solid #bae6fd;padding:16px;margin-top:0;overflow:visible;}
+.module-detail{display:none;background:#f8fafc;border-radius:12px;border:1px solid #bae6fd;padding:16px;}
 .module-detail.active{display:block;}
 .module-detail h2{font-size:22px;font-weight:700;color:#0c4a6e;margin-bottom:16px;}
 .back-link{font-size:14px;color:#0ea5e9;cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:20px;width:fit-content;}
@@ -84,10 +84,6 @@ nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:fl
 .water-result{background:rgba(255,255,255,0.2);border-radius:12px;padding:16px;margin-top:16px;text-align:center;}
 .water-num{font-size:40px;font-weight:700;color:#fff;}
 .water-unit{font-size:14px;color:#e0f2fe;}
-.slider-row{margin-bottom:20px;}
-.slider-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-.slider-lbl span{color:#0c4a6e;font-size:14px;font-weight:500;}
-.slider-val{color:#0ea5e9;font-size:14px;font-weight:700;background:#e0f2fe;padding:4px 12px;border-radius:10px;}
 input[type=range]{width:100%;accent-color:#0ea5e9;}
 .tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
 .tip-card{background:#fff;border-radius:12px;padding:16px;border:1px solid #bae6fd;text-align:center;}
@@ -106,7 +102,7 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .quiz-feedback p{color:#0369a1;font-size:14px;line-height:1.6;}
 .quiz-next-btn{background:#0ea5e9;color:#fff;border:none;border-radius:12px;padding:14px 32px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px;display:none;}
 .quiz-num{font-size:13px;color:#0284c7;font-weight:600;margin-bottom:8px;}
-.recipes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;align-items:start;}
+.recipes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
 .recipe-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #bae6fd;display:flex;flex-direction:column;break-inside:avoid;}
 .recipe-card:hover{transform:translateY(-3px);}
 .recipe-img{height:80px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;position:relative;border-radius:12px 12px 0 0;overflow:hidden;flex-shrink:0;}
@@ -294,79 +290,115 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
 
 <!-- PAGE MODULES -->
 <div class="page" id="page-modules">
-  <div style="background:#e0f2fe;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #bae6fd;">
-    <img src="logo_ecoedu.jpeg" style="width:36px;height:36px;border-radius:8px;object-fit:cover;" alt="Eco Edu"/>
-    <span style="font-size:16px;font-weight:700;color:#0c4a6e;" data-i18n="modules_title">Modules éducatifs</span>
+
+  <!-- Header compact -->
+  <div style="background:#e0f2fe;padding:14px 20px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #bae6fd;flex-shrink:0;">
+    <img src="logo_ecoedu.jpeg" style="width:32px;height:32px;border-radius:8px;object-fit:cover;" alt="Eco Edu"/>
+    <span style="font-size:15px;font-weight:700;color:#0c4a6e;" data-i18n="modules_title">Modules éducatifs</span>
   </div>
-  <div class="content-wrap">
+
+  <!-- Main scrollable area -->
+  <div style="padding:20px;max-width:1100px;margin:0 auto;width:100%;">
+
+    <!-- LISTE DES MODULES -->
     <div id="modules-list">
       <div class="modules-grid">
-        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes économiques et environnementaux</div></div>
-        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez et réduisez votre consommation d'eau quotidienne</div></div>
-        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux & Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Testez vos connaissances sur les espèces locales et mondiales</div></div>
-        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name" data-i18n="mod5_name">Recettes culturelles</div><div class="mod-desc" data-i18n="mod5_desc">Cuisine durable et traditionnelle des 6 pays partenaires</div></div>
-        <div class="mod-card"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte près de chez vous</div></div>
-        <div class="mod-card"><div class="mod-icon">🎬</div><div class="mod-name" data-i18n="mod6_name">Vidéos éducatives</div><div class="mod-desc" data-i18n="mod6_desc">Contenus visuels sur l'environnement et la culture</div></div>
-        <div class="mod-card"><div class="mod-icon">👗</div><div class="mod-name" data-i18n="mod7_name">Mode durable</div><div class="mod-desc" data-i18n="mod7_desc">Conseils pour changer, échanger et recycler ses vêtements</div></div>
-        <div class="mod-card"><div class="mod-icon">🌱</div><div class="mod-name" data-i18n="mod8_name">Réduire le gaspillage</div><div class="mod-desc" data-i18n="mod8_desc">Conseils pratiques pour réduire le gaspillage alimentaire</div></div>
+        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes</div></div>
+        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez votre consommation d'eau</div></div>
+        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux &amp; Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Apprendre en jouant</div></div>
+        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name" data-i18n="mod5_name">Recettes culturelles</div><div class="mod-desc" data-i18n="mod5_desc">Cuisine des 6 pays partenaires</div></div>
+        <div class="mod-card"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte près de vous</div></div>
+        <div class="mod-card"><div class="mod-icon">🎬</div><div class="mod-name" data-i18n="mod6_name">Vidéos éducatives</div><div class="mod-desc" data-i18n="mod6_desc">Contenus visuels</div></div>
+        <div class="mod-card"><div class="mod-icon">👗</div><div class="mod-name" data-i18n="mod7_name">Mode durable</div><div class="mod-desc" data-i18n="mod7_desc">Recycler et échanger ses vêtements</div></div>
+        <div class="mod-card"><div class="mod-icon">🌱</div><div class="mod-name" data-i18n="mod8_name">Réduire le gaspillage</div><div class="mod-desc" data-i18n="mod8_desc">Conseils anti-gaspillage</div></div>
       </div>
     </div>
+
+    <!-- MODULE GLOSSAIRE -->
     <div class="module-detail" id="module-glossaire">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
-      <h2>📖 <span data-i18n="mod1_name">Glossaire de la durabilité</span></h2>
+      <h2>📖 <span data-i18n="mod1_name">Glossaire</span></h2>
       <div class="glossaire-grid">
         <div class="term-card"><h3 data-i18n="term1_name">Économie circulaire</h3><p data-i18n="term1_def">Modèle économique visant à réduire les déchets en gardant les ressources en utilisation le plus longtemps possible.</p><span class="term-tag" data-i18n="term1_tag">Économie</span></div>
-        <div class="term-card"><h3 data-i18n="term2_name">Biodiversité</h3><p data-i18n="term2_def">Variété et variabilité de la vie sur Terre — des écosystèmes, espèces et gènes présents dans une région.</p><span class="term-tag" data-i18n="term2_tag">Environnement</span></div>
-        <div class="term-card"><h3 data-i18n="term3_name">Empreinte hydrique</h3><p data-i18n="term3_def">Volume total d'eau douce utilisé pour produire les biens et services consommés par un individu ou une communauté.</p><span class="term-tag" data-i18n="term3_tag">Eau</span></div>
-        <div class="term-card"><h3 data-i18n="term4_name">Patrimoine culturel</h3><p data-i18n="term4_def">Héritage de biens physiques et immatériels transmis par les générations passées, maintenu au présent.</p><span class="term-tag" data-i18n="term4_tag">Culture</span></div>
-        <div class="term-card"><h3 data-i18n="term5_name">Développement durable</h3><p data-i18n="term5_def">Développement qui répond aux besoins du présent sans compromettre la capacité des générations futures.</p><span class="term-tag" data-i18n="term5_tag">Général</span></div>
-        <div class="term-card"><h3 data-i18n="term6_name">Upcycling</h3><p data-i18n="term6_def">Transformer des déchets ou des vêtements usagés en nouveaux produits de valeur supérieure.</p><span class="term-tag" data-i18n="term6_tag">Mode durable</span></div>
+        <div class="term-card"><h3 data-i18n="term2_name">Biodiversité</h3><p data-i18n="term2_def">Variété et variabilité de la vie sur Terre.</p><span class="term-tag" data-i18n="term2_tag">Environnement</span></div>
+        <div class="term-card"><h3 data-i18n="term3_name">Empreinte hydrique</h3><p data-i18n="term3_def">Volume total d'eau douce utilisé pour produire les biens et services consommés.</p><span class="term-tag" data-i18n="term3_tag">Eau</span></div>
+        <div class="term-card"><h3 data-i18n="term4_name">Patrimoine culturel</h3><p data-i18n="term4_def">Héritage de biens physiques et immatériels transmis par les générations passées.</p><span class="term-tag" data-i18n="term4_tag">Culture</span></div>
+        <div class="term-card"><h3 data-i18n="term5_name">Développement durable</h3><p data-i18n="term5_def">Développement qui répond aux besoins du présent sans compromettre les générations futures.</p><span class="term-tag" data-i18n="term5_tag">Général</span></div>
+        <div class="term-card"><h3 data-i18n="term6_name">Upcycling</h3><p data-i18n="term6_def">Transformer des déchets ou vêtements usagés en nouveaux produits de valeur supérieure.</p><span class="term-tag" data-i18n="term6_tag">Mode durable</span></div>
       </div>
     </div>
+
+    <!-- MODULE CALCULATEUR -->
     <div class="module-detail" id="module-calculateur">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
       <h2>💧 <span data-i18n="mod3_name">Empreinte hydrique</span></h2>
-      <div class="calc-box">
-        <h2 data-i18n="calc_title">Votre empreinte quotidienne</h2>
-        <p data-i18n="calc_sub">Bougez les curseurs pour estimer votre consommation d'eau virtuelle.</p>
-        <div class="water-result"><div class="water-num" id="wt">3 240</div><div class="water-unit" data-i18n="calc_unit">litres / jour estimés</div></div>
-      </div>
-      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider1">🍖 Viande (portions/semaine)</span><span class="slider-val" id="vm">4</span></div><input type="range" min="0" max="14" value="4" id="sm"></div>
-      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider2">🚿 Douche (minutes/jour)</span><span class="slider-val" id="vs">8</span></div><input type="range" min="1" max="30" value="8" id="ss"></div>
-      <div class="slider-row"><div class="slider-lbl"><span data-i18n="slider3">👕 Vêtements neufs (par mois)</span><span class="slider-val" id="vc">3</span></div><input type="range" min="0" max="20" value="3" id="sc"></div>
-      <!-- LIEN EXTERNE — affiché en premier pour visibilité -->
-      <div style="background:#0ea5e9;border-radius:14px;padding:16px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-        <div style="font-size:28px;flex-shrink:0;">💧</div>
-        <div style="flex:1;min-width:200px;">
-          <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">Calculez votre empreinte eau complète</div>
-          <div style="font-size:12px;color:#bae6fd;margin-bottom:10px;">Découvrez votre empreinte eau personnelle détaillée sur le site officiel</div>
-          <a href="https://mon-empreinte-eau.fr/" target="_blank" rel="noopener noreferrer"
-             style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0ea5e9;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;white-space:nowrap;">
-            🌐 Ouvrir mon-empreinte-eau.fr
-          </a>
+
+      <div style="background:#0ea5e9;border-radius:12px;padding:16px;margin-bottom:16px;">
+        <h3 style="color:#fff;font-size:15px;font-weight:700;margin-bottom:6px;" data-i18n="calc_title">Votre empreinte quotidienne</h3>
+        <p style="color:#bae6fd;font-size:12px;margin-bottom:12px;" data-i18n="calc_sub">Bougez les curseurs pour estimer votre consommation d'eau virtuelle.</p>
+        <div style="background:rgba(255,255,255,0.2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:36px;font-weight:700;color:#fff;" id="wt">3 240</div>
+          <div style="font-size:13px;color:#e0f2fe;" data-i18n="calc_unit">litres / jour estimés</div>
         </div>
       </div>
 
-      <div class="tips-grid">
-        <div class="tip-card"><div class="tip-icon">🥗</div><p data-i18n="tip1">1 repas végétarien de plus = -500 L/jour</p></div>
-        <div class="tip-card"><div class="tip-icon">👗</div><p data-i18n="tip2">Échanger vos vêtements au lieu d'acheter</p></div>
-        <div class="tip-card"><div class="tip-icon">🚿</div><p data-i18n="tip3">Douche 5 min = -30 L vs 10 min</p></div>
-        <div class="tip-card"><div class="tip-icon">♻️</div><p data-i18n="tip4">1 jean recyclé = 7 000 L économisés</p></div>
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:13px;color:#0c4a6e;" data-i18n="slider1">🍖 Viande (portions/semaine)</span>
+          <span style="font-size:13px;font-weight:700;color:#0ea5e9;background:#e0f2fe;padding:2px 10px;border-radius:8px;" id="vm">4</span>
+        </div>
+        <input type="range" min="0" max="14" value="4" id="sm" style="width:100%;accent-color:#0ea5e9;">
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:13px;color:#0c4a6e;" data-i18n="slider2">🚿 Douche (minutes/jour)</span>
+          <span style="font-size:13px;font-weight:700;color:#0ea5e9;background:#e0f2fe;padding:2px 10px;border-radius:8px;" id="vs">8</span>
+        </div>
+        <input type="range" min="1" max="30" value="8" id="ss" style="width:100%;accent-color:#0ea5e9;">
+      </div>
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+          <span style="font-size:13px;color:#0c4a6e;" data-i18n="slider3">👕 Vêtements neufs (par mois)</span>
+          <span style="font-size:13px;font-weight:700;color:#0ea5e9;background:#e0f2fe;padding:2px 10px;border-radius:8px;" id="vc">3</span>
+        </div>
+        <input type="range" min="0" max="20" value="3" id="sc" style="width:100%;accent-color:#0ea5e9;">
+      </div>
+
+      <!-- LIEN EXTERNE -->
+      <button onclick="window.open('https://mon-empreinte-eau.fr/','_blank','noopener,noreferrer')"
+         style="display:flex;align-items:center;gap:12px;background:#0ea5e9;border-radius:12px;padding:14px 16px;text-decoration:none;margin-bottom:16px;width:100%;border:none;cursor:pointer;text-align:left;">
+        <span style="font-size:26px;">💧</span>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff;">Calculer mon empreinte eau complète</div>
+          <div style="font-size:12px;color:#bae6fd;">🌐 mon-empreinte-eau.fr</div>
+        </div>
+        <span style="margin-left:auto;color:#fff;font-size:20px;">→</span>
+      </button>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">🥗</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip1">1 repas végétarien = -500 L/jour</p></div>
+        <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">👗</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip2">Échanger ses vêtements</p></div>
+        <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">🚿</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip3">Douche 5 min = -30 L</p></div>
+        <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">♻️</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip4">1 jean recyclé = 7 000 L</p></div>
       </div>
     </div>
+
+    <!-- MODULE QUIZ -->
     <div class="module-detail" id="module-quiz">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
       <h2>🎮 <span data-i18n="mod4_name">Quiz Biodiversité</span></h2>
-      <div class="quiz-box">
-        <div class="quiz-num" id="qn">Question 1 / 3</div>
-        <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="qp" style="width:33%"></div></div>
-        <div class="quiz-q" id="qt"></div>
-        <div class="quiz-opts" id="qo"></div>
-        <div class="quiz-feedback" id="qf"><p id="qe"></p></div>
-        <button class="quiz-next-btn" id="qnb" onclick="nextQ()" data-i18n="quiz_next">Question suivante →</button>
+      <div style="background:#fff;border-radius:14px;border:1px solid #bae6fd;padding:20px;max-width:700px;margin:0 auto;">
+        <div style="font-size:12px;color:#0284c7;font-weight:600;margin-bottom:8px;" id="qn">Question 1 / 3</div>
+        <div style="width:100%;height:5px;background:#bae6fd;border-radius:3px;margin-bottom:18px;"><div style="height:100%;background:#0ea5e9;border-radius:3px;transition:width 0.4s;width:33%;" id="qp"></div></div>
+        <div style="font-size:16px;font-weight:600;color:#0c4a6e;line-height:1.5;margin-bottom:18px;" id="qt"></div>
+        <div style="display:flex;flex-direction:column;gap:10px;" id="qo"></div>
+        <div style="background:#e0f2fe;border-radius:10px;padding:14px;margin-top:14px;display:none;" id="qf"><p style="color:#0369a1;font-size:13px;line-height:1.6;" id="qe"></p></div>
+        <button style="background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px;display:none;width:100%;" id="qnb" onclick="nextQ()" data-i18n="quiz_next">Question suivante →</button>
       </div>
     </div>
-    <div class="module-detail" id="module-recettes">
+
+    <!-- MODULE RECETTES -->
+    id="module-recettes">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
       <h2>🍽️ <span data-i18n="mod5_name">Recettes culturelles durables</span></h2>
       <p style="font-size:13px;color:#0369a1;margin-bottom:8px;">Cliquez sur <strong>▶ Voir la recette</strong> pour afficher les ingrédients et étapes.</p>
@@ -845,6 +877,9 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
         </div>
       </div>
     </div>
+
+  </div>
+</div>
 
 <!-- PAGE PAYS -->
 <div class="page" id="page-pays">
