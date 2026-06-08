@@ -362,7 +362,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       <div class="recipes-grid" style="margin-bottom:32px;">
 
         <!-- RECETTE 1 : ACCRAS DE MORUE -->
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🐟
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
@@ -394,12 +394,12 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Astuce : la morue ne doit pas être trop salée — goûter avant d'assaisonner</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
 
         <!-- RECETTE 2 : COLOMBO DE POULET -->
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🍗
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
@@ -429,12 +429,12 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La poudre à colombo est l'épice signature de la Martinique — originaire des immigrants indiens</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
 
         <!-- RECETTE 3 : FÉROCE D'AVOCAT -->
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥑
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
@@ -463,12 +463,12 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La farine de manioc absorbe l'excès d'humidité et donne cette texture unique et "féroce" !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
 
         <!-- RECETTE 4 : BLANC MANGER COCO -->
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🥥
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
@@ -498,7 +498,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La vanille de Martinique est une des meilleures au monde — son arôme floral est incomparable !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
 
@@ -515,7 +515,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍝
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
@@ -534,10 +534,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Jamais de crème ! La texture crémeuse vient uniquement des œufs et de l'amidon des pâtes — c'est la vraie carbonara romaine</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🫘
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
@@ -556,10 +556,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le nom "Ribollita" signifie "re-bouillie" — la recette originale était faite avec les restes de soupe réchauffés plusieurs fois</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍚
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
@@ -578,10 +578,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La mantecatura (incorporation du beurre froid hors du feu) est le secret de la texture crémeuse — ne jamais couvrir le risotto en fin de cuisson</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#efebe9;font-size:52px;">☕
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
@@ -600,7 +600,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Tirami su" signifie "remonte-moi le moral" en italien — né à Trévise dans les années 1960, c'est le dessert le plus copié au monde</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
       </div>
@@ -612,7 +612,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥩
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
@@ -631,10 +631,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Il existe 291 variétés de köfte en Turquie ! La clé est de laisser reposer la préparation 30 min au frais avant de former les boulettes</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥐
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
@@ -653,10 +653,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le börek est le plat du vendredi matin dans beaucoup de familles turques — chaque région a sa forme : roulé, carré ou en triangles</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🫙
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
@@ -675,10 +675,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Dolma" vient du turc "doldurmak" (remplir) — le plat est meilleur froid le lendemain, arrosé d'huile d'olive et servi avec du yaourt</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🍯
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
@@ -697,7 +697,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le secret : sirop froid sur baklava chaud (ou l'inverse). Les pistaches de Gaziantep (IGP) sont les meilleures — leur couleur verte intense est inégalée</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
       </div>
@@ -709,7 +709,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🥘
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
@@ -728,10 +728,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le "socarrat" est la croûte de riz dorée au fond de la paellera — signe d'une vraie paella réussie ! Ne jamais remuer après avoir ajouté le riz</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#ffebee;font-size:52px;">🍅
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
@@ -750,10 +750,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le vinaigre de Xérès (Sherry) est essentiel pour l'authenticité — utiliser uniquement des tomates bien mûres et savoureuses pour un résultat parfait</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍳
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
@@ -772,10 +772,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le débat sur les oignons divise l'Espagne ! Les puristes madrilènes disent "sin cebolla" (sans oignon), mais la version avec oignon est plus moelleuse</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#efebe9;font-size:52px;">🍫
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
@@ -794,7 +794,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Les vraies churrerías espagnoles ouvrent tôt le matin pour servir les fêtards qui rentrent — à Madrid, San Ginés sert des churros depuis 1894 !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
       </div>
@@ -806,7 +806,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥩
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
@@ -825,10 +825,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La muscade est l'épice secrète des vraies köttbullar — servir obligatoirement avec de la confiture d'airelles (lingonsylt) et des cornichons marinés</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🐟
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
@@ -847,10 +847,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Gravlax" vient du suédois "grav" (enterré) — les pêcheurs vikings enterraient le saumon dans le sol pour le fermenter. Aujourd'hui on le réfrigère !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🌀
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
@@ -869,10 +869,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 Le 4 octobre est le "Kanelbullens dag" (Journée de la brioche à la cannelle) en Suède — les Suédois en mangent en moyenne 300 par an !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥔
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
@@ -891,7 +891,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 "Janssons frestelse" signifie "la tentation de Jansson" — la légende dit qu'un prédicateur prêchant l'austérité ne put résister à ce gratin lors d'un repas !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
       </div>
@@ -903,7 +903,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
         </div>
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🫘
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
@@ -922,10 +922,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La terrine en terre cuite (tava) est indispensable pour l'authenticité — elle donne une croûte légère sur le dessus tout en gardant la chaleur. Plat du dimanche par excellence !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#ffebee;font-size:52px;">🫑
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
@@ -944,10 +944,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 En Macédoine, la saison de l'ajvar en automne est un événement familial — toute la famille se réunit pour préparer des dizaines de pots pour l'hiver !</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥗
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
@@ -966,10 +966,10 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La shopska est la salade la plus populaire des Balkans — le fromage blanc émiettée sur le dessus sans mélanger est la règle absolue ! Accompagne tous les plats grillés</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
-        <div class="recipe-card" onclick="toggleRecipe(this)">
+        <div class="recipe-card">
           <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍯
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
@@ -988,7 +988,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
               </ol>
               <div style="font-size:11px;color:#7dd3fc;margin-top:8px;font-style:italic;">💡 La baklava macédonienne utilise des noix (pas des pistaches) et un sirop aux épices entières — chaque famille a sa recette secrète transmise de génération en génération</div>
             </div>
-            <button onclick="toggleRecipe(this.closest('.recipe-card'))" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
+            <button onclick="toggleRecipe(this.closest('.recipe-card'), event)" style="margin-top:10px;background:#e0f2fe;border:none;border-radius:8px;padding:5px 14px;font-size:12px;color:#0284c7;font-weight:600;cursor:pointer;" class="toggle-btn">📖 Voir la recette</button>
           </div>
         </div>
       </div>
@@ -1578,11 +1578,12 @@ function calcW() {
   if (el) el.addEventListener('input', calcW);
 });
 
-function toggleRecipe(card) {
+function toggleRecipe(card, event) {
+  if (event) event.stopPropagation();
   const detail = card.querySelector('.recipe-detail');
   const btn = card.querySelector('.toggle-btn');
   if (!detail) return;
-  if (detail.style.display === 'none') {
+  if (detail.style.display === 'none' || detail.style.display === '') {
     detail.style.display = 'block';
     if (btn) btn.textContent = '📕 Fermer la recette';
   } else {
