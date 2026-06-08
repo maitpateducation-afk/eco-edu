@@ -14,6 +14,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f9ff;color:#0c4a6e;}
+.emoji{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;font-style:normal;}
 nav{background:#fff;border-bottom:1px solid #bae6fd;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(14,165,233,0.08);}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
 .nav-logo img{width:40px;height:40px;border-radius:10px;object-fit:cover;}
@@ -108,7 +109,8 @@ input[type=range]{width:100%;accent-color:#0ea5e9;}
 .recipes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
 .recipe-card{background:#fff;border-radius:16px;overflow:visible;border:1px solid #bae6fd;transition:transform 0.15s;display:flex;flex-direction:column;}
 .recipe-card:hover{transform:translateY(-3px);}
-.recipe-img{height:120px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;border-radius:16px 16px 0 0;overflow:hidden;flex-shrink:0;}
+.recipe-img{height:110px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;border-radius:16px 16px 0 0;overflow:hidden;flex-shrink:0;line-height:1;}
+.recipe-img .emoji-food{font-size:48px;line-height:1;display:block;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;}
 .recipe-flag{position:absolute;top:8px;right:8px;background:#fff;border-radius:10px;padding:3px 8px;font-size:11px;color:#0284c7;border:1px solid #bae6fd;white-space:nowrap;}
 .recipe-body{padding:14px;flex:1;display:flex;flex-direction:column;}
 .recipe-body h3{color:#0c4a6e;font-size:14px;font-weight:700;margin-bottom:6px;}
@@ -167,13 +169,18 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 .footer-copy{font-size:12px;color:#7dd3fc;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-illus{display:none;}.stats{grid-template-columns:repeat(2,1fr);}.modules-grid{grid-template-columns:repeat(2,1fr);}.countries-grid{grid-template-columns:repeat(2,1fr);}.recipes-grid{grid-template-columns:repeat(2,1fr);}.tips-grid{grid-template-columns:repeat(2,1fr);}.glossaire-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.nav-links a{font-size:12px;padding:6px 10px;}}
 @media(max-width:600px){nav{padding:12px 16px;}.nav-links{display:none;}.hero-text{padding:32px 0;}.hero-inner{padding:0 16px;}.modules-grid{grid-template-columns:1fr;}.countries-grid{grid-template-columns:1fr;}.recipes-grid{grid-template-columns:1fr;}}
+
+/* Force logo sizes everywhere */
+img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
+.nav-logo img { width:40px !important; height:40px !important; border-radius:10px; object-fit:cover; }
+.footer-logo img { width:32px !important; height:32px !important; border-radius:8px; object-fit:cover; }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-logo" onclick="showPage('accueil')">
-    <img src="logo_ecoedu.jpeg" alt="Logo Eco Edu"/>
+    <img src="logo_ecoedu.jpeg" alt="Logo Eco Edu" style="width:40px;height:40px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
     <span class="nav-brand">Eco Edu</span>
   </div>
   <div class="nav-links">
@@ -268,7 +275,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
   </div>
   
       </div>
-      <div class="dl-phone"><div class="phone-prev"><img src="logo_ecoedu.jpeg" alt="Eco Edu"/><span>Eco Edu</span><small data-i18n="dl_phone_sub">Éducation durable et culturelle</small></div></div>
+      <div class="dl-phone"><div class="phone-prev"><img src="logo_ecoedu.jpeg" alt="Eco Edu" style="width:80px;height:80px;border-radius:20px;object-fit:cover;border:2px solid #fff;"/><span>Eco Edu</span><small data-i18n="dl_phone_sub">Éducation durable et culturelle</small></div></div>
     </div>
   </div>
   <div class="partners-wrap">
@@ -363,7 +370,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
         <!-- RECETTE 1 : ACCRAS DE MORUE -->
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🐟
+          <div class="recipe-img" style="background:#fff3e0;font-size:52px;" style="background:#fff3e0;"><span class="emoji" style="font-size:50px;">🐟</span>
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
           <div class="recipe-body">
@@ -400,7 +407,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
         <!-- RECETTE 2 : COLOMBO DE POULET -->
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🍗
+          <div class="recipe-img" style="background:#f3e5f5;font-size:52px;" style="background:#f3e5f5;"><span class="emoji" style="font-size:50px;">🍗</span>
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
           <div class="recipe-body">
@@ -435,7 +442,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
         <!-- RECETTE 3 : FÉROCE D'AVOCAT -->
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥑
+          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;" style="background:#e8f5e9;"><span class="emoji" style="font-size:50px;">🥑</span>
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
           <div class="recipe-body">
@@ -469,7 +476,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
         <!-- RECETTE 4 : BLANC MANGER COCO -->
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🥥
+          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;" style="background:#e0f7fa;"><span class="emoji" style="font-size:50px;">🥥</span>
             <div class="recipe-flag">🇫🇷 Martinique</div>
           </div>
           <div class="recipe-body">
@@ -516,7 +523,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍝
+          <div class="recipe-img" style="background:#fff8e1;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍝</span>
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
           <div class="recipe-body">
@@ -538,7 +545,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#f3e5f5;font-size:52px;">🫘
+          <div class="recipe-img" style="background:#f3e5f5;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥜</span>
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
           <div class="recipe-body">
@@ -560,7 +567,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍚
+          <div class="recipe-img" style="background:#fff9c4;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍚</span>
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
           <div class="recipe-body">
@@ -582,7 +589,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#efebe9;font-size:52px;">☕
+          <div class="recipe-img" style="background:#efebe9;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">☕</span>
             <div class="recipe-flag">🇮🇹 Italie</div>
           </div>
           <div class="recipe-body">
@@ -613,7 +620,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥩
+          <div class="recipe-img" style="background:#fce4ec;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥩</span>
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
           <div class="recipe-body">
@@ -635,7 +642,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥐
+          <div class="recipe-img" style="background:#e8f5e9;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥐</span>
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
           <div class="recipe-body">
@@ -657,7 +664,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🫙
+          <div class="recipe-img" style="background:#e0f7fa;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍯</span>
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
           <div class="recipe-body">
@@ -679,7 +686,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🍯
+          <div class="recipe-img" style="background:#fff3e0;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍯</span>
             <div class="recipe-flag">🇹🇷 Turquie</div>
           </div>
           <div class="recipe-body">
@@ -710,7 +717,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🥘
+          <div class="recipe-img" style="background:#fff9c4;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥘</span>
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
           <div class="recipe-body">
@@ -732,7 +739,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#ffebee;font-size:52px;">🍅
+          <div class="recipe-img" style="background:#ffebee;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍅</span>
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
           <div class="recipe-body">
@@ -754,7 +761,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff8e1;font-size:52px;">🍳
+          <div class="recipe-img" style="background:#fff8e1;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍳</span>
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
           <div class="recipe-body">
@@ -776,7 +783,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#efebe9;font-size:52px;">🍫
+          <div class="recipe-img" style="background:#efebe9;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍫</span>
             <div class="recipe-flag">🇪🇸 Espagne</div>
           </div>
           <div class="recipe-body">
@@ -807,7 +814,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥩
+          <div class="recipe-img" style="background:#e8f5e9;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥩</span>
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
           <div class="recipe-body">
@@ -829,7 +836,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e0f7fa;font-size:52px;">🐟
+          <div class="recipe-img" style="background:#e0f7fa;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🐟</span>
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
           <div class="recipe-body">
@@ -851,7 +858,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🌀
+          <div class="recipe-img" style="background:#fff3e0;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🌀</span>
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
           <div class="recipe-body">
@@ -873,7 +880,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fce4ec;font-size:52px;">🥔
+          <div class="recipe-img" style="background:#fce4ec;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥔</span>
             <div class="recipe-flag">🇸🇪 Suède</div>
           </div>
           <div class="recipe-body">
@@ -904,13 +911,13 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
       </div>
       <div class="recipes-grid" style="margin-bottom:28px;">
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff3e0;font-size:52px;">🫘
+          <div class="recipe-img" style="background:#fff3e0;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥜</span>
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
           <div class="recipe-body">
             <h3>Tavče Gravče</h3>
             <p>Haricots blancs mijotés au four avec poivrons, tomates et épices — le plat national de Macédoine</p>
-            <div class="recipe-tags"><span class="rtag">🫘 Haricots</span><span class="rtag">🌿 Végétarien</span><span class="rtag">⏱️ 2h</span></div>
+            <div class="recipe-tags"><span class="rtag">🥜 Haricots</span><span class="rtag">🌿 Végétarien</span><span class="rtag">⏱️ 2h</span></div>
             <div class="recipe-detail" id="recipe-21" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
               <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pers.)</div>
               <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
@@ -926,13 +933,13 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#ffebee;font-size:52px;">🫑
+          <div class="recipe-img" style="background:#ffebee;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🌿</span>
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
           <div class="recipe-body">
             <h3>Ajvar (Caviar de poivrons)</h3>
             <p>Condiment traditionnel aux poivrons rouges grillés et aubergines — la confiture des Balkans</p>
-            <div class="recipe-tags"><span class="rtag">🫑 Poivrons</span><span class="rtag">🍆 Aubergine</span><span class="rtag">⏱️ 1h30</span></div>
+            <div class="recipe-tags"><span class="rtag">🌿 Poivrons</span><span class="rtag">🍆 Aubergine</span><span class="rtag">⏱️ 1h30</span></div>
             <div class="recipe-detail" id="recipe-22" style="display:none;margin-top:14px;border-top:1px solid #e0f2fe;padding-top:14px;">
               <div style="font-size:12px;font-weight:700;color:#0284c7;margin-bottom:6px;">📋 Ingrédients (4 pots)</div>
               <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
@@ -948,7 +955,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#e8f5e9;font-size:52px;">🥗
+          <div class="recipe-img" style="background:#e8f5e9;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🥗</span>
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
           <div class="recipe-body">
@@ -970,7 +977,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
           </div>
         </div>
         <div class="recipe-card">
-          <div class="recipe-img" style="background:#fff9c4;font-size:52px;">🍯
+          <div class="recipe-img" style="background:#fff9c4;"><span style="font-size:48px;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif;line-height:1;">🍯</span>
             <div class="recipe-flag">🇲🇰 Macédoine du Nord</div>
           </div>
           <div class="recipe-body">
@@ -1050,7 +1057,7 @@ footer{background:#e0f2fe;border-top:1px solid #bae6fd;padding:28px 32px;}
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo"><img src="logo_ecoedu.jpeg" alt="Logo"/><span>Eco Edu</span></div>
+    <div class="footer-logo"><img src="logo_ecoedu.jpeg" alt="Logo" style="width:32px;height:32px;border-radius:8px;object-fit:cover;"/><span>Eco Edu</span></div>
     <div class="footer-links">
       <a onclick="showPage('accueil')" data-i18n="nav_home">Accueil</a>
       <a onclick="showPage('modules')" data-i18n="nav_modules">Modules</a>
