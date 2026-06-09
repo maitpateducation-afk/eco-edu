@@ -1,41 +1,24 @@
-const CACHE_NAME = 'eco-edu-v3';
-const FILES = [
-  '/',
-  '/index.html',
-  '/logo_ecoedu.jpeg',
-  '/europe.png',
-  '/manifest.json'
-];
+// Service Worker v4 - Force fresh content always
+const CACHE_NAME = 'eco-edu-v4';
 
+// On install: skip waiting immediately
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES))
-  );
   self.skipWaiting();
 });
 
+// On activate: delete ALL old caches immediately
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => {
-        console.log('Deleting old cache:', k);
-        return caches.delete(k);
-      }))
-    )
+      Promise.all(keys.map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
+// On fetch: ALWAYS go to network first, never serve stale cache
 self.addEventListener('fetch', e => {
-  // Always fetch fresh from network first, fallback to cache
   e.respondWith(
-    fetch(e.request)
-      .then(response => {
-        // Update cache with fresh version
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(e.request, copy));
-        return response;
-      })
-      .catch(() => caches.match(e.request))
+    fetch(e.request, {cache: 'no-store'})
+      .catch(() => new Response('Offline - please reconnect', {status: 503}))
   );
 });
