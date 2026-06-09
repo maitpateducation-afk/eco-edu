@@ -1,4 +1,3 @@
-
 const CACHE_NAME = 'eco-edu-v3';
 const FILES = [
   '/',
