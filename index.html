@@ -300,14 +300,12 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
     <!-- LISTE DES MODULES -->
     <div id="modules-list">
       <div class="modules-grid">
-        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name" data-i18n="mod1_name">Glossaire durabilité</div><div class="mod-desc" data-i18n="mod1_desc">Définitions claires des termes</div></div>
-        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name" data-i18n="mod3_name">Empreinte hydrique</div><div class="mod-desc" data-i18n="mod3_desc">Calculez votre consommation d'eau</div></div>
-        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name" data-i18n="mod4_name">Jeux &amp; Quiz</div><div class="mod-desc" data-i18n="mod4_desc">Apprendre en jouant</div></div>
-        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name" data-i18n="mod5_name">Recettes culturelles</div><div class="mod-desc" data-i18n="mod5_desc">Cuisine des 6 pays partenaires</div></div>
-        <div class="mod-card" onclick="showModule('carte')"><div class="mod-icon">♻️</div><div class="mod-name" data-i18n="mod2_name">Carte recyclage</div><div class="mod-desc" data-i18n="mod2_desc">Points de collecte GPS par pays</div></div>
-        <div class="mod-card" onclick="showModule('videos')"><div class="mod-icon">🎬</div><div class="mod-name" data-i18n="mod6_name">Vidéos éducatives</div><div class="mod-desc" data-i18n="mod6_desc">Culture et environnement</div></div>
-        <div class="mod-card" onclick="showModule('gaspillage')"><div class="mod-icon">🌱</div><div class="mod-name" data-i18n="mod8_name">Anti-gaspillage</div><div class="mod-desc" data-i18n="mod8_desc">Conseils pour réduire le gaspillage alimentaire</div></div>
-        <div class="mod-card" onclick="showModule('quiz2')"><div class="mod-icon">🏆</div><div class="mod-name">Quiz Culture & Économie</div><div class="mod-desc">Testez vos connaissances sur les 6 pays</div></div>
+        <div class="mod-card" onclick="showModule('glossaire')"><div class="mod-icon">📖</div><div class="mod-name">Glossaire</div><div class="mod-desc">Termes clés de la durabilité</div></div>
+        <div class="mod-card" onclick="showModule('calculateur')"><div class="mod-icon">💧</div><div class="mod-name">Empreinte hydrique</div><div class="mod-desc">Calculateur + conseils anti-gaspillage</div></div>
+        <div class="mod-card" onclick="showModule('quiz')"><div class="mod-icon">🎮</div><div class="mod-name">Jeux &amp; Quiz</div><div class="mod-desc">Quiz biodiversité, culture &amp; vidéos</div></div>
+        <div class="mod-card" onclick="showModule('recettes')"><div class="mod-icon">🍽️</div><div class="mod-name">Recettes culturelles</div><div class="mod-desc">Cuisine des 6 pays partenaires</div></div>
+        <div class="mod-card" onclick="showModule('carte')"><div class="mod-icon">♻️</div><div class="mod-name">Carte recyclage</div><div class="mod-desc">Points de collecte GPS par pays</div></div>
+        <div class="mod-card" onclick="showModule('videos')"><div class="mod-icon">🎬</div><div class="mod-name">Vidéos éducatives</div><div class="mod-desc">Culture et environnement</div></div>
       </div>
     </div>
 
@@ -378,6 +376,71 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
         <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">🚿</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip3">Douche 5 min = -30 L</p></div>
         <div style="background:#fff;border-radius:10px;padding:12px;border:1px solid #bae6fd;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">♻️</div><p style="font-size:12px;color:#0369a1;" data-i18n="tip4">1 jean recyclé = 7 000 L</p></div>
       </div>
+
+      <!-- ANTI-GASPILLAGE intégré -->
+      <div style="margin-top:20px;border-top:2px dashed #bae6fd;padding-top:16px;">
+        <h3 style="font-size:15px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">🌱 Réduire le gaspillage alimentaire</h3>
+        <p style="font-size:12px;color:#0369a1;margin-bottom:12px;">60% du gaspillage alimentaire mondial vient des ménages — voici comment agir.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">🛒</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Planifier ses courses</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li>Faites une liste avant de partir</li>
+              <li>Vérifiez vos stocks d'abord</li>
+              <li>Achetez en vrac pour la juste quantité</li>
+            </ul>
+          </div>
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">🥶</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Bien conserver</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li>Rangez les plus anciens devant</li>
+              <li>Congelez ce qui ne sera pas mangé</li>
+              <li>Fermez bien les emballages ouverts</li>
+            </ul>
+          </div>
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">👨‍🍳</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Cuisiner anti-gaspi</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li>Cuisinez les épluchures (chips, bouillons)</li>
+              <li>Préparez les restes en nouveaux plats</li>
+              <li>Congelez le pain rassis pour pain perdu</li>
+            </ul>
+          </div>
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">📅</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Les dates de péremption</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li><strong>DLC</strong> = danger après la date</li>
+              <li><strong>DDM</strong> = encore bon après</li>
+              <li>Les yaourts DDM valent 3 semaines de plus</li>
+            </ul>
+          </div>
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">🤝</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Partager et donner</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li>Utilisez l'app Too Good To Go</li>
+              <li>Donnez aux banques alimentaires</li>
+              <li>Partagez avec voisins et famille</li>
+            </ul>
+          </div>
+          <div style="background:#fff;border-radius:10px;border:1px solid #bae6fd;padding:12px;">
+            <div style="font-size:20px;margin-bottom:6px;">🌿</div>
+            <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:5px;">Composter</div>
+            <ul style="font-size:11px;color:#0369a1;padding-left:14px;line-height:1.8;">
+              <li>Compostez épluchures et marc de café</li>
+              <li>Réduit vos déchets de 30%</li>
+              <li>Enrichit la terre du jardin</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:#0ea5e9;border-radius:10px;padding:12px 14px;margin-top:12px;font-size:12px;color:#fff;">
+          📊 Si le gaspillage alimentaire était un pays, il serait le <strong>3ème émetteur de CO₂</strong> au monde.
+        </div>
+      </div>
     </div>
 
     <!-- MODULE QUIZ -->
@@ -391,6 +454,100 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
         <div style="display:flex;flex-direction:column;gap:10px;" id="qo"></div>
         <div style="background:#e0f2fe;border-radius:10px;padding:14px;margin-top:14px;display:none;" id="qf"><p style="color:#0369a1;font-size:13px;line-height:1.6;" id="qe"></p></div>
         <button style="background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px;display:none;width:100%;" id="qnb" onclick="nextQ()" data-i18n="quiz_next">Question suivante →</button>
+      </div>
+
+      <!-- QUIZ 2 — Culture & Économie -->
+      <div style="margin-top:24px;border-top:2px dashed #bae6fd;padding-top:16px;">
+        <h3 style="font-size:15px;font-weight:700;color:#0c4a6e;margin-bottom:12px;">🏆 Quiz Culture &amp; Économie</h3>
+        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:18px;">
+          <div style="font-size:12px;color:#0284c7;font-weight:600;margin-bottom:8px;" id="qn2">Question 1 / 5</div>
+          <div style="width:100%;height:5px;background:#bae6fd;border-radius:3px;margin-bottom:16px;"><div style="height:100%;background:#0ea5e9;border-radius:3px;transition:width 0.4s;width:20%;" id="qp2"></div></div>
+          <div style="font-size:15px;font-weight:600;color:#0c4a6e;line-height:1.5;margin-bottom:16px;" id="qt2"></div>
+          <div style="display:flex;flex-direction:column;gap:10px;" id="qo2"></div>
+          <div style="background:#e0f2fe;border-radius:10px;padding:12px;margin-top:12px;display:none;" id="qf2"><p style="color:#0369a1;font-size:13px;line-height:1.6;" id="qe2"></p></div>
+          <button style="background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:12px;display:none;width:100%;" id="qnb2" onclick="nextQ2()">Question suivante →</button>
+        </div>
+      </div>
+
+      <!-- VIDEOS éducatives -->
+      <div style="margin-top:24px;border-top:2px dashed #bae6fd;padding-top:16px;">
+        <h3 style="font-size:15px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">🎬 Vidéos éducatives</h3>
+        <p style="font-size:12px;color:#0369a1;margin-bottom:14px;">Cliquez sur une vidéo pour l'ouvrir sur YouTube dans un nouvel onglet.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#0c4a6e,#0369a1);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=GK_vRtHJZu4','_blank')">
+              <span style="font-size:32px;">🌊</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #0c4a6e;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">La biodiversité des océans</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Richesse des fonds marins et espèces menacées</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=GK_vRtHJZu4','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#065f46,#16a34a);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=ErATB1aMiSU','_blank')">
+              <span style="font-size:32px;">🦋</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #065f46;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">Qu'est-ce que la biodiversité ?</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Importance de la diversité du vivant</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=ErATB1aMiSU','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#92400e,#d97706);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=ip5sKFMCSGI','_blank')">
+              <span style="font-size:32px;">🌍</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #92400e;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">Le changement climatique</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Causes et conséquences du réchauffement</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=ip5sKFMCSGI','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=RSgXcei_5Ew','_blank')">
+              <span style="font-size:32px;">♻️</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #1e3a5f;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">L'économie circulaire</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">De linéaire à circulaire — comprendre</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=RSgXcei_5Ew','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#4c1d95,#7c3aed);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=3RRgVHd2TXQ','_blank')">
+              <span style="font-size:32px;">🏛️</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #4c1d95;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">Patrimoine culturel UNESCO</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Protection des sites du patrimoine mondial</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=3RRgVHd2TXQ','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
+            <div style="background:linear-gradient(135deg,#7f1d1d,#dc2626);height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;" onclick="window.open('https://www.youtube.com/watch?v=wbR-5mHI6bo','_blank')">
+              <span style="font-size:32px;">🍅</span>
+              <div style="position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #7f1d1d;margin-left:3px;"></div></div>
+            </div>
+            <div style="padding:10px;">
+              <div style="font-size:12px;font-weight:700;color:#0c4a6e;margin-bottom:3px;">Stop au gaspillage alimentaire</div>
+              <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">1/3 de la nourriture produite est gaspillée</div>
+              <button onclick="window.open('https://www.youtube.com/watch?v=wbR-5mHI6bo','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:6px;padding:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;">▶ Voir</button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
@@ -517,233 +674,7 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
     </div>
 
     <!-- MODULE VIDEOS -->
-    <div class="module-detail" id="module-videos">
-      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
-      <h2>🎬 Vidéos éducatives</h2>
-      <p style="font-size:13px;color:#0369a1;margin-bottom:16px;">Découvrez des vidéos sur la culture, la biodiversité et l'environnement. Cliquez pour ouvrir sur YouTube.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:#0c4a6e;padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=GK_vRtHJZu4','_blank')">
-            <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0c4a6e,#0369a1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🌊</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #0c4a6e;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">La biodiversité des océans</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Découvrez la richesse des fonds marins et les espèces menacées</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#e0f2fe;color:#0284c7;font-size:10px;padding:2px 7px;border-radius:6px;">🌊 Océan</span><span style="background:#e0f2fe;color:#0284c7;font-size:10px;padding:2px 7px;border-radius:6px;">🌿 Biodiversité</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=GK_vRtHJZu4','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:linear-gradient(135deg,#065f46,#16a34a);padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=ErATB1aMiSU','_blank')">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🦋</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #065f46;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">Qu'est-ce que la biodiversité ?</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Explication pour les jeunes — importance de la diversité du vivant</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#dcfce7;color:#16a34a;font-size:10px;padding:2px 7px;border-radius:6px;">🦋 Nature</span><span style="background:#dcfce7;color:#16a34a;font-size:10px;padding:2px 7px;border-radius:6px;">📚 Éducation</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=ErATB1aMiSU','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:linear-gradient(135deg,#92400e,#d97706);padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=ip5sKFMCSGI','_blank')">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🌍</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #92400e;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">Le changement climatique expliqué</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Comprendre les causes et conséquences du réchauffement climatique</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#fef9c3;color:#ca8a04;font-size:10px;padding:2px 7px;border-radius:6px;">🌡️ Climat</span><span style="background:#fef9c3;color:#ca8a04;font-size:10px;padding:2px 7px;border-radius:6px;">🌍 Planète</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=ip5sKFMCSGI','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=3RRgVHd2TXQ','_blank')">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🏛️</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #1e3a5f;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">Patrimoine culturel mondial</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">L'UNESCO et la protection des sites du patrimoine mondial</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#e0f2fe;color:#0284c7;font-size:10px;padding:2px 7px;border-radius:6px;">🏛️ Culture</span><span style="background:#e0f2fe;color:#0284c7;font-size:10px;padding:2px 7px;border-radius:6px;">🌍 UNESCO</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=3RRgVHd2TXQ','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:linear-gradient(135deg,#4c1d95,#7c3aed);padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=RSgXcei_5Ew','_blank')">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🌱</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #4c1d95;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">L'économie circulaire</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">Comment passer d'une économie linéaire à circulaire</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#ede9fe;color:#7c3aed;font-size:10px;padding:2px 7px;border-radius:6px;">♻️ Économie</span><span style="background:#ede9fe;color:#7c3aed;font-size:10px;padding:2px 7px;border-radius:6px;">🌿 Durable</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=RSgXcei_5Ew','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #bae6fd;border-radius:12px;overflow:hidden;">
-          <div style="background:linear-gradient(135deg,#7f1d1d,#dc2626);padding:0;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;"
-               onclick="window.open('https://www.youtube.com/watch?v=wbR-5mHI6bo','_blank')">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
-              <div style="font-size:36px;">🍅</div>
-              <div style="width:50px;height:50px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #7f1d1d;margin-left:4px;"></div>
-              </div>
-            </div>
-          </div>
-          <div style="padding:12px;">
-            <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:4px;">Stop au gaspillage alimentaire</div>
-            <div style="font-size:11px;color:#0369a1;margin-bottom:8px;">1/3 de la nourriture produite dans le monde est gaspillée chaque année</div>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;"><span style="background:#fef2f2;color:#dc2626;font-size:10px;padding:2px 7px;border-radius:6px;">🍅 Alimentation</span><span style="background:#fef2f2;color:#dc2626;font-size:10px;padding:2px 7px;border-radius:6px;">🌍 Impact</span></div>
-            <button onclick="window.open('https://www.youtube.com/watch?v=wbR-5mHI6bo','_blank')" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;">▶ Voir la vidéo</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- MODULE ANTI-GASPILLAGE -->
-    <div class="module-detail" id="module-gaspillage">
-      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
-      <h2>🌱 Réduire le gaspillage alimentaire</h2>
-      <div style="background:#dcfce7;border-radius:10px;padding:12px 16px;margin-bottom:16px;">
-        <p style="font-size:13px;color:#166534;line-height:1.6;">💡 <strong>Saviez-vous ?</strong> En France, chaque personne jette en moyenne <strong>20 kg</strong> de nourriture comestible par an, dont 7 kg encore emballés. <strong>60%</strong> du gaspillage alimentaire mondial provient des ménages.</p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">🛒</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Planifier ses courses</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li>Faites une liste avant de partir</li>
-            <li>Vérifiez vos stocks d'abord</li>
-            <li>Ne faites pas les courses le ventre vide</li>
-            <li>Achetez en vrac pour la juste quantité</li>
-            <li>Résistez aux promotions inutiles</li>
-          </ul>
-        </div>
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">🥶</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Bien conserver ses aliments</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li>Rangez le frigo avec les plus anciens devant</li>
-            <li>Congelez ce qui ne sera pas mangé à temps</li>
-            <li>Les légumes dans le bac à 0-4°C</li>
-            <li>Les produits laitiers en haut du frigo</li>
-            <li>Fermez bien les emballages ouverts</li>
-          </ul>
-        </div>
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">👨‍🍳</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Cuisiner anti-gaspillage</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li>Cuisinez les épluchures (chips, bouillons)</li>
-            <li>Utilisez les fanes de carottes, tiges de persil</li>
-            <li>Préparez les restes en nouveaux plats</li>
-            <li>Faites des soupes avec les légumes mous</li>
-            <li>Congelez le pain rassis pour le pain perdu</li>
-          </ul>
-        </div>
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">📅</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Comprendre les dates</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li><strong>DLC</strong> (Date Limite Consommation) = danger après</li>
-            <li><strong>DDM</strong> (À consommer de préférence avant) = encore bon après</li>
-            <li>Les yaourts DDM sont bons 3 semaines après</li>
-            <li>Les pâtes et riz se gardent des années</li>
-            <li>Faites confiance à vos sens (odeur, vue)</li>
-          </ul>
-        </div>
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">🤝</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Partager et donner</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li>Utilisez l'app <strong>Too Good To Go</strong></li>
-            <li>Partagez avec voisins et famille</li>
-            <li>Donnez aux banques alimentaires</li>
-            <li>Échangez sur des groupes locaux</li>
-            <li>Proposez vos surplus à des associations</li>
-          </ul>
-        </div>
-
-        <div style="background:#fff;border-radius:12px;border:1px solid #bae6fd;padding:14px;">
-          <div style="font-size:22px;margin-bottom:8px;">🌿</div>
-          <div style="font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:6px;">Composter ses déchets</div>
-          <ul style="font-size:12px;color:#0369a1;padding-left:16px;line-height:1.8;">
-            <li>Compostez épluchures, marc de café, coquilles</li>
-            <li>Réduisez vos déchets de 30% avec un compost</li>
-            <li>Le compost enrichit la terre du jardin</li>
-            <li>Faites du lombricompost en appartement</li>
-            <li>Cherchez un compost partagé près de chez vous</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div style="background:#0ea5e9;border-radius:12px;padding:14px 16px;margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-        <span style="font-size:26px;">📊</span>
-        <div style="flex:1;">
-          <div style="font-size:14px;font-weight:700;color:#fff;">Impact mondial</div>
-          <div style="font-size:12px;color:#bae6fd;">Si le gaspillage alimentaire était un pays, il serait le 3ème émetteur de CO₂ au monde après les États-Unis et la Chine.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MODULE QUIZ 2 — Culture & Économie -->
-    <div class="module-detail" id="module-quiz2">
-      <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
-      <h2>🏆 Quiz Culture &amp; Économie</h2>
-      <div style="background:#fff;border-radius:14px;border:1px solid #bae6fd;padding:20px;max-width:700px;margin:0 auto;">
-        <div style="font-size:12px;color:#0284c7;font-weight:600;margin-bottom:8px;" id="qn2">Question 1 / 5</div>
-        <div style="width:100%;height:5px;background:#bae6fd;border-radius:3px;margin-bottom:18px;"><div style="height:100%;background:#0ea5e9;border-radius:3px;transition:width 0.4s;width:20%;" id="qp2"></div></div>
-        <div style="font-size:16px;font-weight:600;color:#0c4a6e;line-height:1.5;margin-bottom:18px;" id="qt2"></div>
-        <div style="display:flex;flex-direction:column;gap:10px;" id="qo2"></div>
-        <div style="background:#e0f2fe;border-radius:10px;padding:14px;margin-top:14px;display:none;" id="qf2"><p style="color:#0369a1;font-size:13px;line-height:1.6;" id="qe2"></p></div>
-        <button style="background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px;display:none;width:100%;" id="qnb2" onclick="nextQ2()">Question suivante →</button>
-      </div>
-    </div>
-
-    <!-- MODULE RECETTES -->
-    id="module-recettes">
+    <div class="module-detail" id="module-recettes">
       <div class="back-link" onclick="hideModule()">← <span data-i18n="back">Retour aux modules</span></div>
       <h2>🍽️ <span data-i18n="mod5_name">Recettes culturelles durables</span></h2>
       <p style="font-size:13px;color:#0369a1;margin-bottom:8px;">Cliquez sur <strong>▶ Voir la recette</strong> pour afficher les ingrédients et étapes.</p>
@@ -1222,6 +1153,7 @@ img[src="logo_ecoedu.jpeg"] { max-width: 100%; height: auto; }
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <!-- PAGE PAYS -->
