@@ -1,4 +1,5 @@
-const CACHE_NAME = 'eco-edu-v1';
+
+const CACHE_NAME = 'eco-edu-v3';
 const FILES = [
   '/',
   '/index.html',
@@ -17,14 +18,25 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => {
+        console.log('Deleting old cache:', k);
+        return caches.delete(k);
+      }))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
+  // Always fetch fresh from network first, fallback to cache
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request).catch(() => caches.match('/index.html')))
+    fetch(e.request)
+      .then(response => {
+        // Update cache with fresh version
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(e.request, copy));
+        return response;
+      })
+      .catch(() => caches.match(e.request))
   );
 });
