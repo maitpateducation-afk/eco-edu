@@ -1932,11 +1932,7 @@ function showModule(id) {
   document.getElementById('modules-list').style.display = 'none';
   document.querySelectorAll('.module-detail').forEach(m => m.classList.remove('active'));
   document.getElementById('module-' + id).classList.add('active');
-  if (id === 'quiz') 
-// ===== QUIZ 2 — Culture & Économie =====
-
-
-loadQuiz();
+  if (id === 'quiz') loadQuiz();
   if (id === 'quiz2') loadQuiz2();
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
