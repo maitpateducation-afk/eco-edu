@@ -727,36 +727,43 @@ const RECIPES = [
 // RENDER RECIPES
 // ============================================================
 function renderRecipes() {
-  const container = document.getElementById('recipes-container');
+  var container = document.getElementById('recipes-container');
   if (!container) return;
-  let html = '';
-  let currentCountry = '';
-  RECIPES.forEach((r, i) => {
+  var html = '';
+  var currentCountry = '';
+  for (var i = 0; i < RECIPES.length; i++) {
+    var r = RECIPES[i];
     if (r.country !== currentCountry) {
       if (currentCountry !== '') html += '</div>';
       currentCountry = r.country;
-      html += `<div style="background:#e0f2fe;border-radius:9px;padding:9px 12px;margin-bottom:9px;${i>0?'margin-top:16px':''}display:flex;align-items:center;gap:8px;"><span style="font-size:20px;">${r.country.substring(0,2)}</span><strong style="font-size:13px;font-weight:700;color:#0c4a6e;">${r.country.substring(3)}</strong></div><div class="recipes-grid">`;
+      var mt = i > 0 ? 'margin-top:16px;' : '';
+      html += '<div style="background:#e0f2fe;border-radius:9px;padding:9px 12px;margin-bottom:9px;' + mt + 'display:flex;align-items:center;gap:8px;">';
+      html += '<span style="font-size:20px;">' + r.country.substring(0,2) + '</span>';
+      html += '<strong style="font-size:13px;font-weight:700;color:#0c4a6e;">' + r.country.substring(3) + '</strong></div>';
+      html += '<div class="recipes-grid">';
     }
-    const tags = r.tags.map(t=>`<span class="rtag">${t}</span>`).join('');
-    const ing = r.ing.map(x=>`<li>${x}</li>`).join('');
-    const steps = r.steps.map(x=>`<li>${x}</li>`).join('');
-    html += `<div class="recipe-card">
-      <div class="recipe-img" style="background:${r.bg};"><div class="recipe-img-label">${r.label}</div></div>
-      <div class="recipe-body">
-        <h3>${r.name}</h3>
-        <p>${r.desc}</p>
-        <div class="recipe-tags">${tags}</div>
-        <div class="recipe-detail" id="rd-${i}">
-          <div style="font-size:11px;font-weight:700;color:#0284c7;margin-bottom:4px;">📋 Ingrédients</div>
-          <ul style="font-size:11px;color:#0369a1;padding-left:13px;line-height:1.8;margin-bottom:8px;">${ing}</ul>
-          <div style="font-size:11px;font-weight:700;color:#0284c7;margin-bottom:4px;">👨‍🍳 Préparation</div>
-          <ol style="font-size:11px;color:#0369a1;padding-left:13px;line-height:1.9;">${steps}</ol>
-          <div style="font-size:10px;color:#7dd3fc;margin-top:6px;font-style:italic;">💡 ${r.tip}</div>
-        </div>
-        <button class="recipe-btn" id="rb-${i}" onclick="showRecipe(${i})">▶ Voir la recette</button>
-      </div>
-    </div>`;
-  });
+    var tags = '';
+    for (var t = 0; t < r.tags.length; t++) tags += '<span class="rtag">' + r.tags[t] + '</span>';
+    var ing = '';
+    for (var t = 0; t < r.ing.length; t++) ing += '<li>' + r.ing[t] + '</li>';
+    var steps = '';
+    for (var t = 0; t < r.steps.length; t++) steps += '<li>' + r.steps[t] + '</li>';
+    html += '<div class="recipe-card">';
+    html += '<div class="recipe-img" style="background:' + r.bg + ';"><div class="recipe-img-label">' + r.label + '</div></div>';
+    html += '<div class="recipe-body">';
+    html += '<h3>' + r.name + '</h3>';
+    html += '<p>' + r.desc + '</p>';
+    html += '<div class="recipe-tags">' + tags + '</div>';
+    html += '<div class="recipe-detail" id="rd-' + i + '">';
+    html += '<div style="font-size:11px;font-weight:700;color:#0284c7;margin-bottom:4px;">Ingr&eacute;dients</div>';
+    html += '<ul style="font-size:11px;color:#0369a1;padding-left:13px;line-height:1.8;margin-bottom:8px;">' + ing + '</ul>';
+    html += '<div style="font-size:11px;font-weight:700;color:#0284c7;margin-bottom:4px;">Pr&eacute;paration</div>';
+    html += '<ol style="font-size:11px;color:#0369a1;padding-left:13px;line-height:1.9;">' + steps + '</ol>';
+    html += '<div style="font-size:10px;color:#7dd3fc;margin-top:6px;font-style:italic;">💡 ' + r.tip + '</div>';
+    html += '</div>';
+    html += '<button class="recipe-btn" id="rb-' + i + '" onclick="showRecipe(' + i + ')">&#9658; Voir la recette</button>';
+    html += '</div></div>';
+  }
   html += '</div>';
   container.innerHTML = html;
 }
